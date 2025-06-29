@@ -17,16 +17,32 @@ export default function Home() {
       <InteractiveBackground />
       <div className="relative z-10">
         <Navigation />
-        <main>
+        <main className="performance-optimized">
           <HeroSection />
-          <CareerProfile />
-          <SkillsSection />
-          <ProjectsSection />
-          <DemonstrationsSection />
-          <ExperienceSection />
-          <EducationSection />
-          <CertificationsSection />
-          <ContactSection />
+          <div className="performance-optimized">
+            <CareerProfile />
+          </div>
+          <div className="performance-optimized">
+            <SkillsSection />
+          </div>
+          <div className="performance-optimized">
+            <ProjectsSection />
+          </div>
+          <div className="performance-optimized">
+            <DemonstrationsSection />
+          </div>
+          <div className="performance-optimized">
+            <ExperienceSection />
+          </div>
+          <div className="performance-optimized">
+            <EducationSection />
+          </div>
+          <div className="performance-optimized">
+            <CertificationsSection />
+          </div>
+          <div className="performance-optimized">
+            <ContactSection />
+          </div>
         </main>
         <Footer />
       </div>

@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance Critical CSS - First Load Optimizations */
+html {
+  scroll-behavior: smooth;
+  /* Prevent layout shifts during font loading */
+  font-display: swap;
+}
+
+body {
+  /* Optimize rendering performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  /* Prevent unnecessary repaints */
+  backface-visibility: hidden;
+  /* GPU acceleration for scrolling */
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
 
 
 :root {
@@ -267,12 +286,15 @@
     border: 1px solid rgba(100, 116, 139, 0.3);
   }
 
+  /* High Performance Animations */
   .card-hover {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.15s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .card-hover:hover {
-    transform: translateY(-4px);
+    transform: translate3d(0, -4px, 0);
     box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
   }
 
@@ -281,22 +303,29 @@
   }
 
   .skill-badge {
-    transition: transform 0.2s ease-out;
+    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+    backface-visibility: hidden;
   }
 
   .skill-badge:hover {
-    transform: scale(1.05);
+    transform: scale3d(1.05, 1.05, 1);
   }
 
+  /* Ultra-fast section reveals with GPU acceleration */
   .section-reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transform: translate3d(0, 30px, 0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease-out;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   .section-reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
   }
 
   /* Performance Optimizations */
@@ -380,14 +409,39 @@
     transform: translateY(-1px);
   }
 
-  /* Mobile optimizations */
+  /* Performance Optimizations */
+  .performance-optimized {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 400px;
+    contain: layout style paint;
+  }
+
+  /* Optimize for mobile performance */
   @media (max-width: 768px) {
     .floating-icon {
       animation-duration: 20s;
+      transform: translateZ(0); /* Force GPU acceleration */
     }
     
-    .performance-optimized {
-      contain-intrinsic-size: 1px 300px;
+    .card-hover {
+      transition-duration: 0.1s; /* Faster on mobile */
+    }
+    
+    .section-reveal {
+      transition-duration: 0.3s; /* Faster reveals on mobile */
+    }
+    
+    /* Reduce motion for battery saving */
+    @media (prefers-reduced-motion: reduce) {
+      .floating-icon {
+        animation: none;
+      }
+      
+      .section-reveal,
+      .card-hover,
+      .skill-badge {
+        transition: none;
+      }
     }
   }
 
