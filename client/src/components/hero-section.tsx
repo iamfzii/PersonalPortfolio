@@ -85,7 +85,7 @@ export default function HeroSection() {
                 className="text-blue-600 dark:text-blue-400 font-semibold mb-6"
                 style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}
               >
-                Tech delivery, systems, and support coordination
+                Transforming ideas into digital solutions
               </motion.p>
 
               <motion.p
