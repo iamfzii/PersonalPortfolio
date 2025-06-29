@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Badge } from "@/components/ui/badge";
-import { Award, Target, Users, Briefcase } from "lucide-react";
+import { Award, Target, Users, Briefcase, Clipboard, Package, Headphones } from "lucide-react";
 
 export default function CareerProfile() {
   const { ref } = useScrollReveal();
@@ -138,39 +138,47 @@ export default function CareerProfile() {
               {[
                 {
                   title: "Project Management",
+                  icon: Clipboard,
                   items: ["Agile Methodologies", "Sprint Planning", "Project Coordination", "Timeline Management"]
                 },
                 {
-                  title: "Product Management", 
+                  title: "Product Management",
+                  icon: Package, 
                   items: ["Requirements Analysis", "Stakeholder Communication", "Product Strategy", "Feature Planning"]
                 },
                 {
                   title: "Technical Support",
+                  icon: Headphones,
                   items: ["System Troubleshooting", "Performance Monitoring", "Quality Assurance", "User Support"]
                 }
-              ].map((competency, index) => (
-                <motion.div 
-                  key={competency.title} 
-                  className="space-y-4"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
-                  whileHover={{ y: -2 }}
-                >
-                  <h4 className="font-semibold theme-text-primary body-lg flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
-                    <span>{competency.title}</span>
-                  </h4>
-                  <ul className="space-y-2">
-                    {competency.items.map((item) => (
-                      <li key={item} className="flex items-center space-x-2 group">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:bg-blue-600 transition-colors"></div>
-                        <span className="body-sm theme-text-secondary group-hover:theme-text-primary transition-colors">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+              ].map((competency, index) => {
+                const IconComponent = competency.icon;
+                return (
+                  <motion.div 
+                    key={competency.title} 
+                    className="space-y-4"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ y: -2 }}
+                  >
+                    <h4 className="font-semibold theme-text-primary body-lg flex items-center space-x-3">
+                      <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 shadow-md">
+                        <IconComponent className="w-4 h-4 text-white" />
+                      </div>
+                      <span>{competency.title}</span>
+                    </h4>
+                    <ul className="space-y-2">
+                      {competency.items.map((item) => (
+                        <li key={item} className="flex items-center space-x-2 group">
+                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:bg-blue-600 transition-colors"></div>
+                          <span className="body-sm theme-text-secondary group-hover:theme-text-primary transition-colors">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
             </div>
           </Card>
         </motion.div>
