@@ -36,7 +36,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={ref}
-      className="section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5"
+      className="section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5 pt-20 md:pt-16"
     >
       <div className="content-container">
         <motion.div
