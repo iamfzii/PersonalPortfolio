@@ -128,7 +128,7 @@ export default function ContactSection() {
                           rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                           aria-label={`Contact via ${item.label}: ${item.value}`}
                         >
-                          <div className={`p-2 rounded-full bg-opacity-10 ${item.color.replace('text-', 'bg-')}`}>
+                          <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
                             <IconComponent className={`h-5 w-5 ${item.color}`} />
                           </div>
                           <div className="flex-1">
@@ -145,7 +145,7 @@ export default function ContactSection() {
                         </a>
                       ) : (
                         <div className="flex items-center space-x-4 p-4 rounded-lg theme-surface border theme-border">
-                          <div className={`p-2 rounded-full bg-opacity-10 ${item.color.replace('text-', 'bg-')}`}>
+                          <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
                             <IconComponent className={`h-5 w-5 ${item.color}`} />
                           </div>
                           <div className="flex-1">
@@ -191,8 +191,8 @@ export default function ContactSection() {
                       <Card className="theme-surface border theme-border hover:shadow-lg transition-all duration-300 group">
                         <CardContent className="p-6">
                           <div className="flex items-center space-x-4 mb-4">
-                            <div className="p-3 rounded-full theme-primary-bg bg-opacity-10">
-                              <IconComponent className="h-6 w-6 theme-primary" />
+                            <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                              <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                             </div>
                             <div className="flex-1">
                               <h4 className="font-semibold theme-text-primary group-hover:theme-primary transition-colors">
