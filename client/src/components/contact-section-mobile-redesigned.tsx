@@ -281,9 +281,7 @@ export default function ContactSection() {
                           <div className="text-sm md:text-base font-semibold theme-text-primary">
                             Lahore, Pakistan
                           </div>
-                          <div className="text-xs md:text-sm theme-text-muted">
-                            Available for remote collaboration
-                          </div>
+                          <div className="text-xs md:text-sm theme-text-muted">Available for remote collaboration Worldwide</div>
                         </div>
                       </div>
                     </CardContent>
