@@ -83,7 +83,7 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 pt-[0px] pb-[0px] mt-[-10px] mb-[-10px]">
+        <div className="flex justify-between items-center h-16 pt-[0px] pb-[0px] mt-[0px] mb-[0px]">
           <div className="flex items-center space-x-8">
             <motion.div
               initial={{ opacity: 0 }}
