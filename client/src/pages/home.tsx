@@ -7,7 +7,7 @@ import DemonstrationsSection from "@/components/demonstrations-section";
 import ExperienceSection from "@/components/experience-section";
 import EducationSection from "@/components/education-section";
 import CertificationsSection from "@/components/certifications-section";
-import ContactSection from "@/components/contact-section-branded";
+import ContactSection from "@/components/contact-section-mobile-redesigned";
 import Footer from "@/components/footer";
 import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
 import BackToTop from "@/components/back-to-top";
