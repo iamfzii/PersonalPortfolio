@@ -134,7 +134,7 @@ export default function ContactSection() {
               className="order-1 lg:order-2 lg:col-span-1 flex justify-center"
             >
               <div className="w-full max-w-sm lg:max-w-none">
-                <Card className="theme-surface rounded-3xl border-0 ring-1 ring-black/5 dark:ring-white/10 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-blue-50/90 via-purple-50/90 to-pink-50/90 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 overflow-hidden group hover:shadow-3xl transition-all duration-500">
+                <Card id="start-project-card" className="theme-surface rounded-3xl border-0 ring-1 ring-black/5 dark:ring-white/10 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-blue-50/90 via-purple-50/90 to-pink-50/90 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 overflow-hidden group hover:shadow-3xl transition-all duration-500">
                   <CardContent className="p-6 md:p-8 text-center">
                     <motion.div
                       className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 mb-4 md:mb-6 shadow-xl group-hover:scale-110 transition-transform duration-300"

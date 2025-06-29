@@ -36,7 +36,7 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={ref}
-      className="section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5 pt-24 md:pt-16"
+      className="section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5 pt-32 md:pt-16"
     >
       <div className="content-container">
         <motion.div
@@ -150,7 +150,22 @@ export default function HeroSection() {
                 className="flex flex-col sm:flex-row items-center justify-center gap-6"
               >
                 <Button
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                      // Focus on the "Start Your Project" card after scrolling
+                      setTimeout(() => {
+                        const startProjectCard = document.getElementById('start-project-card');
+                        if (startProjectCard) {
+                          startProjectCard.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                          });
+                        }
+                      }, 800);
+                    }
+                  }}
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                 >
