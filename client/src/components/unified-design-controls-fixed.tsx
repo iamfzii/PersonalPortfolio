@@ -154,7 +154,9 @@ export default function UnifiedDesignControls() {
               <Palette className="w-5 h-5 text-blue-600" />
               <span>Design Studio</span>
             </SheetTitle>
-            
+            <SheetDescription>
+              Customize your resume's appearance with professional themes, color combinations, and typography options.
+            </SheetDescription>
           </SheetHeader>
 
           <div className="space-y-8">
@@ -256,6 +258,7 @@ export default function UnifiedDesignControls() {
                 <EnhancedPDFGenerator />
               </div>
             </div>
+          </div>
         </SheetContent>
       </Sheet>
     </>
