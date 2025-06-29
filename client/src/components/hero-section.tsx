@@ -65,13 +65,13 @@ export default function HeroSection() {
     >
       <div className="content-container">
         <motion.div
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-6xl mx-auto text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <Card className="theme-surface rounded-3xl shadow-2xl border-0 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 overflow-hidden">
-            <div className="p-6 sm:p-8 md:p-10 lg:p-12">
+            <div className="p-6 sm:p-8 md:p-10 lg:p-16 xl:p-20">
               <motion.div variants={itemVariants} className="mb-8">
                 <div className="relative mx-auto mb-8">
                   <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl ring-4 ring-white dark:ring-gray-800">
