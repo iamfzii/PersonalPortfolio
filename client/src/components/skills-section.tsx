@@ -24,9 +24,15 @@ const skillCategories = [
     colors: ["bg-green-100 text-green-800", "bg-gray-100 text-gray-800", "bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-purple-100 text-purple-800"]
   },
   {
+    title: "Databases & Cloud Storage",
+    icon: Cloud,
+    skills: ["MongoDB", "Firebase Realtime Database", "NoSQL Databases", "Firestore (basic)", "Data Persistence", "Cloud-Based Data Sync"],
+    colors: ["bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-blue-100 text-blue-800", "bg-purple-100 text-purple-800", "bg-gray-100 text-gray-800", "bg-cyan-100 text-cyan-800"]
+  },
+  {
     title: "Data Science & Machine Learning",
     icon: Brain,
-    skills: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "OpenCV", "TensorFlow", "Keras", "TfidfVectorizer", "NLTK", "Mediapipe", "Data Preprocessing", "Data Visualization", "Regression", "Classification", "Clustering"],
+    skills: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "OpenCV", "TensorFlow", "Keras", "TfidfVectorizer", "NLTK", "Mediapipe", "Data Preprocessing", "Data Visualization", "Regression", "Classification", "Clustering", "Model Training", "Accuracy Evaluation", "Supervised & Unsupervised Learning"],
     colors: ["bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-red-100 text-red-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800", "bg-yellow-100 text-yellow-800"]
   },
   {
@@ -37,21 +43,27 @@ const skillCategories = [
   },
   {
     title: "DevOps, Hosting & Deployment",
-    icon: Cloud,
+    icon: Settings,
     skills: ["cPanel", "WHM", "Netlify", "Vercel", "FTP", "Git", "GitHub", "CI/CD Awareness", "DNS Management", "Domain Configuration", "Web Hosting Management", "WordPress CMS", "Google Workspace Admin"],
     colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800", "bg-orange-100 text-orange-800", "bg-gray-100 text-gray-800"]
   },
   {
     title: "Project Management & Agile Tools",
-    icon: Settings,
+    icon: TrendingUp,
     skills: ["Jira", "Trello", "Asana", "ClickUp", "Slack", "Google Sheets", "Agile Methodologies", "Sprint Planning", "Task Tracking", "Kanban Boards", "Team Collaboration"],
     colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-yellow-100 text-yellow-800"]
   },
   {
     title: "Marketing & Product Tools",
-    icon: TrendingUp,
+    icon: Server,
     skills: ["Facebook Ads Manager", "Meta Pixel", "A/B Testing", "Campaign Tracking", "Landing Page Deployment", "Ad Creative Coordination"],
     colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-purple-100 text-purple-800"]
+  },
+  {
+    title: "Networking & Systems",
+    icon: Settings,
+    skills: ["OSI Model", "TCP/IP", "DNS Configuration", "DHCP", "VPN Setup", "Port Management", "HTTP/HTTPS Protocols", "Basic Linux CLI", "Network Troubleshooting", "System Support"],
+    colors: ["bg-purple-100 text-purple-800", "bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-red-100 text-red-800", "bg-gray-100 text-gray-800"]
   }
 ];
 
@@ -72,12 +84,8 @@ export default function SkillsSection() {
           className="text-center mb-16"
         >
           <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
-            Technical Expertise
+            Technical Skills
           </h2>
-          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
-            Comprehensive skill set spanning modern development technologies, 
-            data science, and operational excellence built over 7 years of hands-on experience.
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">

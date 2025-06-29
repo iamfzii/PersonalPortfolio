@@ -26,12 +26,8 @@ export default function CareerProfile() {
           className="text-center mb-16"
         >
           <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
-            Professional Overview
+            Career Profile
           </h2>
-          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
-            A seasoned technical operations professional bridging development and deployment, 
-            with deep expertise in modern technology stacks and agile methodologies.
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -51,16 +47,7 @@ export default function CareerProfile() {
                 </div>
                 
                 <p className="body-base leading-relaxed theme-text-secondary">
-                  <strong className="theme-text-primary">Technical Operations Coordinator</strong> with 7 years of Computer Science & IT background, 
-                  specializing in the execution of <strong className="theme-text-primary">full-stack applications</strong>, 
-                  <strong className="theme-text-primary"> AI workflows</strong>, and <strong className="theme-text-primary">cloud-based solutions</strong>.
-                </p>
-                
-                <p className="body-base leading-relaxed theme-text-secondary">
-                  Expert at translating functional requirements into coordinated technical deliverables, 
-                  supporting development cycles, and troubleshooting deployment pipelines. Demonstrated ability 
-                  to work across system layers—from API integrations and database management to user-facing 
-                  components and machine learning model implementations.
+                  Technical Operations Coordinator with 7 years of Computer Science & IT background and experience facilitating the execution of full-stack applications, AI workflows, and cloud-based solutions. Adept at translating functional requirements into coordinated technical deliverables, supporting development cycles, and troubleshooting deployment pipelines. Demonstrated ability to work across system layers—from API integrations and database management to user-facing components and machine learning models—while maintaining operational continuity across tools, teams, and timelines.
                 </p>
 
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
