@@ -31,7 +31,7 @@ const typeColors = {
 };
 
 export default function EducationSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section
@@ -70,7 +70,7 @@ export default function EducationSection() {
                         <h3 className="font-heading font-semibold text-xl theme-text-primary">
                           {edu.degree}
                         </h3>
-                        <Badge className={`${typeColors[edu.type]} text-sm font-medium`}>
+                        <Badge className={`${typeColors[edu.type as keyof typeof typeColors]} text-sm font-medium`}>
                           {edu.period}
                         </Badge>
                       </div>

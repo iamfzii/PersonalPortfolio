@@ -17,7 +17,7 @@ const certifications = [
 ];
 
 export default function CertificationsSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section

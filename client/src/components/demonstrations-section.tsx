@@ -129,7 +129,7 @@ const complexityColors: Record<string, string> = {
 };
 
 export default function DemonstrationsSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section

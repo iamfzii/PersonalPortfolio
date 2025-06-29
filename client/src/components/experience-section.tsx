@@ -59,7 +59,7 @@ const timelineColors = {
 };
 
 export default function ExperienceSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section
@@ -92,7 +92,7 @@ export default function ExperienceSection() {
                 className="relative flex items-start"
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-6 w-4 h-4 ${timelineColors[experience.status]} rounded-full border-4 border-white shadow-lg`} />
+                <div className={`absolute left-6 w-4 h-4 ${timelineColors[experience.status as keyof typeof timelineColors]} rounded-full border-4 border-white shadow-lg`} />
                 
                 {/* Experience Card */}
                 <div className="ml-16 w-full">
@@ -104,7 +104,7 @@ export default function ExperienceSection() {
                         </h3>
                         <p className="theme-primary font-medium">{experience.company}</p>
                       </div>
-                      <Badge className={`${statusColors[experience.status]} text-sm font-medium`}>
+                      <Badge className={`${statusColors[experience.status as keyof typeof statusColors]} text-sm font-medium`}>
                         {experience.period}
                       </Badge>
                     </div>

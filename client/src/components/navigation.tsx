@@ -130,12 +130,49 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
-            {/* Enhanced PDF Download */}
-            <EnhancedPDFGenerator />
+          <div className="flex items-center space-x-2">
+            {/* Enhanced PDF Download - Desktop with text, Mobile icon only */}
+            <div className="hidden sm:block">
+              <EnhancedPDFGenerator />
+            </div>
+            <div className="sm:hidden">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="icon" className="theme-surface theme-border">
+                    <Download className="h-4 w-4 theme-text-secondary" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-48 theme-surface theme-border">
+                  <div className="space-y-2">
+                    <h4 className="font-medium theme-text-primary text-sm">Download Resume</h4>
+                    <EnhancedPDFGenerator />
+                  </div>
+                </PopoverContent>
+              </Popover>
+            </div>
 
-            {/* Main Design System Switcher */}
-            <DesignSystemSwitcher />
+            {/* Main Design System Switcher - Desktop with text, Mobile icon only */}
+            <div className="hidden sm:block">
+              <DesignSystemSwitcher />
+            </div>
+            <div className="sm:hidden">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="icon" className="theme-surface theme-border">
+                    <svg className="h-4 w-4 theme-text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M12 1v6m0 6v6m11-5h-6m-6 0H1"/>
+                    </svg>
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-56 theme-surface theme-border">
+                  <div className="space-y-3">
+                    <h4 className="font-medium theme-text-primary text-sm">Design Style</h4>
+                    <DesignSystemSwitcher />
+                  </div>
+                </PopoverContent>
+              </Popover>
+            </div>
 
             {/* Advanced Customization */}
             <Popover>
