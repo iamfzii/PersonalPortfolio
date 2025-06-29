@@ -66,7 +66,7 @@ export default function InteractiveBackground() {
   // Generate floating elements with memoization for performance
   const floatingElements = useMemo(() => {
     const elements: FloatingElement[] = [];
-    const elementCount = window.innerWidth < 768 ? 12 : 20; // Fewer on mobile
+    const elementCount = window.innerWidth < 768 ? 20 : 35; // More icons for better visibility
     
     for (let i = 0; i < elementCount; i++) {
       elements.push({
@@ -74,10 +74,10 @@ export default function InteractiveBackground() {
         iconData: techIcons[i % techIcons.length],
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 20 + 20, // 20-40px
-        duration: Math.random() * 30 + 40, // 40-70s for very slow movement
-        delay: Math.random() * 20,
-        opacity: Math.random() * 0.1 + 0.05, // Very subtle: 0.05-0.15
+        size: Math.random() * 25 + 25, // 25-50px (larger for better visibility)
+        duration: Math.random() * 25 + 30, // 30-55s (slightly faster)
+        delay: Math.random() * 15,
+        opacity: Math.random() * 0.15 + 0.08, // More visible: 0.08-0.23
       });
     }
     return elements;
@@ -120,8 +120,23 @@ export default function InteractiveBackground() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Base gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-green-50/30 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-green-950/20" />
+      {/* Enhanced gradient background with subtle animation */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-purple-50/30 to-green-50/40 dark:from-blue-950/30 dark:via-purple-950/20 dark:to-green-950/30"
+        animate={{
+          background: [
+            "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(34, 197, 94, 0.15) 100%)",
+            "linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(147, 51, 234, 0.15) 100%)",
+            "linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(34, 197, 94, 0.1) 50%, rgba(59, 130, 246, 0.15) 100%)",
+            "linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(34, 197, 94, 0.15) 100%)"
+          ]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
       
       {/* Ultra-subtle grain texture */}
       <div 
@@ -139,9 +154,9 @@ export default function InteractiveBackground() {
           Math.pow((mousePosition.x * 100) - element.x, 2) + 
           Math.pow((mousePosition.y * 100) - element.y, 2)
         );
-        const influence = Math.max(0, 1 - distance / 25); // Interaction radius
-        const scale = 1 + influence * 0.2; // Subtle scale on hover
-        const additionalOpacity = influence * 0.1; // Subtle opacity boost
+        const influence = Math.max(0, 1 - distance / 30); // Larger interaction radius
+        const scale = 1 + influence * 0.4; // More pronounced scale on hover
+        const additionalOpacity = influence * 0.2; // More visible opacity boost
 
         return (
           <motion.div
@@ -167,39 +182,76 @@ export default function InteractiveBackground() {
             }}
           >
             <IconComponent
-              className="w-full h-full drop-shadow-sm"
+              className="w-full h-full drop-shadow-md"
               style={{
                 color: element.iconData.color,
-                opacity: Math.min(element.opacity + additionalOpacity, 0.25),
+                opacity: Math.min(element.opacity + additionalOpacity, 0.35),
+                filter: `drop-shadow(0 0 ${2 + influence * 4}px ${element.iconData.color}40)`,
               }}
             />
           </motion.div>
         );
       })}
       
-      {/* Subtle animated particles (very minimal) */}
+      {/* Enhanced animated particles */}
       <div className="absolute inset-0">
-        {Array.from({ length: 6 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <motion.div
             key={`particle-${i}`}
-            className="absolute w-1 h-1 bg-blue-400/20 dark:bg-blue-300/10 rounded-full"
+            className="absolute w-1.5 h-1.5 bg-blue-400/30 dark:bg-blue-300/20 rounded-full shadow-sm"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -100, -200],
-              opacity: [0, 0.3, 0],
+              y: [0, -80, -160],
+              x: [0, Math.random() * 40 - 20, Math.random() * 20 - 10],
+              scale: [0.5, 1, 0.5],
+              opacity: [0, 0.6, 0],
             }}
             transition={{
-              duration: Math.random() * 8 + 12, // 12-20s very slow
+              duration: Math.random() * 6 + 8, // 8-14s
               repeat: Infinity,
-              delay: Math.random() * 10,
-              ease: "linear",
+              delay: Math.random() * 8,
+              ease: "easeInOut",
             }}
           />
         ))}
       </div>
+
+      {/* Subtle connecting lines between nearby icons */}
+      <svg className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
+        {floatingElements.slice(0, 8).map((element, index) => {
+          const nextElement = floatingElements[(index + 1) % 8];
+          const distance = Math.sqrt(
+            Math.pow(element.x - nextElement.x, 2) + 
+            Math.pow(element.y - nextElement.y, 2)
+          );
+          
+          if (distance < 40) { // Only draw lines for nearby elements
+            return (
+              <motion.line
+                key={`line-${element.id}-${nextElement.id}`}
+                x1={`${element.x}%`}
+                y1={`${element.y}%`}
+                x2={`${nextElement.x}%`}
+                y2={`${nextElement.y}%`}
+                stroke="rgba(59, 130, 246, 0.1)"
+                strokeWidth="1"
+                animate={{
+                  opacity: [0.05, 0.15, 0.05],
+                }}
+                transition={{
+                  duration: Math.random() * 4 + 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            );
+          }
+          return null;
+        })}
+      </svg>
     </div>
   );
 }
