@@ -19,13 +19,28 @@ import {
 } from "lucide-react";
 
 const techIcons = [
-  Code, Database, Cloud, Cpu, Zap, GitBranch, Server, 
-  Smartphone, Globe, Brain, Settings, Terminal, Layers, Wifi, Lock
+  { icon: Code, name: "React", color: "#61DAFB" },
+  { icon: Database, name: "MongoDB", color: "#47A248" },
+  { icon: Cloud, name: "AWS", color: "#FF9900" },
+  { icon: Cpu, name: "Python", color: "#3776AB" },
+  { icon: Zap, name: "Node.js", color: "#339933" },
+  { icon: GitBranch, name: "Git", color: "#F05032" },
+  { icon: Server, name: "Express", color: "#000000" },
+  { icon: Smartphone, name: "Mobile", color: "#007ACC" },
+  { icon: Globe, name: "Web", color: "#1572B6" },
+  { icon: Brain, name: "AI/ML", color: "#FF6F00" },
+  { icon: Settings, name: "DevOps", color: "#326CE5" },
+  { icon: Terminal, name: "CLI", color: "#4EAA25" },
+  { icon: Layers, name: "Docker", color: "#2496ED" },
+  { icon: Wifi, name: "API", color: "#009639" },
+  { icon: Lock, name: "Security", color: "#CC342D" }
 ];
 
 interface FloatingElement {
   id: number;
   Icon: typeof Code;
+  name: string;
+  color: string;
   x: number;
   y: number;
   size: number;
@@ -44,9 +59,12 @@ export default function InteractiveBackground() {
       
       // Generate floating tech icons
       for (let i = 0; i < 15; i++) {
+        const techIcon = techIcons[Math.floor(Math.random() * techIcons.length)];
         newElements.push({
           id: i,
-          Icon: techIcons[Math.floor(Math.random() * techIcons.length)],
+          Icon: techIcon.icon,
+          name: techIcon.name,
+          color: techIcon.color,
           x: Math.random() * 100,
           y: Math.random() * 100,
           size: Math.random() * 20 + 16, // 16-36px

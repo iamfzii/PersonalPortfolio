@@ -69,26 +69,28 @@ const skillCategories = [
 
 export default function SkillsSection() {
   const { ref } = useScrollReveal();
+  
+  const highlightedTechs = ["React.js", "Python", "JavaScript", "Node.js", "MongoDB", "TensorFlow", "Pandas", "Firebase", "HTML5", "CSS3"];
 
   return (
     <section
       id="skills"
       ref={ref}
-      className="section-reveal section-spacing bg-gradient-to-b from-background/50 to-transparent"
+      className="section-reveal py-12 bg-gradient-to-b from-background/50 to-transparent"
     >
       <div className="content-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
             Technical Skills
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="space-y-6">
           {skillCategories.map((category, categoryIndex) => {
             const IconComponent = category.icon;
             return (

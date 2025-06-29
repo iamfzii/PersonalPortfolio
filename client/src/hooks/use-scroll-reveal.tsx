@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 // High-performance scroll reveal with optimized intersection observer
 export function useScrollReveal() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
   // Memoize the callback to prevent unnecessary re-renders

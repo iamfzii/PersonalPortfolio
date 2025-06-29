@@ -3,11 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Menu, Settings, Download, Mail, Phone, ExternalLink } from "lucide-react";
+import { Menu, Settings, Download, Mail, Phone, ExternalLink, Palette } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { motion } from "framer-motion";
-import DesignSystemSwitcher from "@/components/design-system-switcher";
-import EnhancedPDFGenerator from "@/components/enhanced-pdf-generator";
+import UnifiedDesignControls from "@/components/unified-design-controls";
 
 const navigation = [
   { name: "Home", href: "#hero", ariaLabel: "Go to hero section" },
@@ -131,25 +130,7 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-2">
-            {/* Enhanced PDF Download - Desktop with text, Mobile icon only */}
-            <div className="hidden sm:block">
-              <EnhancedPDFGenerator />
-            </div>
-            <div className="sm:hidden">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" size="icon" className="theme-surface theme-border">
-                    <Download className="h-4 w-4 theme-text-secondary" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-48 theme-surface theme-border">
-                  <div className="space-y-2">
-                    <h4 className="font-medium theme-text-primary text-sm">Download Resume</h4>
-                    <EnhancedPDFGenerator />
-                  </div>
-                </PopoverContent>
-              </Popover>
-            </div>
+            <UnifiedDesignControls />
 
             {/* Combined Design System & Advanced Controls */}
             <Popover>
