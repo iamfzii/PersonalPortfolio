@@ -5,9 +5,13 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { generateSimpleResumePDF } from "@/lib/simple-pdf-generator";
 import profilePicture from "@assets/profile picture_1751053870878.jpg";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   const { ref } = useScrollReveal();
+  const [typewriterText, setTypewriterText] = useState("");
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const fullText = "7+ Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.";
 
   const handleDownloadPDF = () => {
     try {
@@ -16,6 +20,27 @@ export default function HeroSection() {
       console.error('PDF generation failed:', error);
     }
   };
+
+  // Typewriter effect
+  useEffect(() => {
+    // Start typing after a brief delay
+    const startDelay = setTimeout(() => {
+      let currentIndex = 0;
+      const timer = setInterval(() => {
+        if (currentIndex <= fullText.length) {
+          setTypewriterText(fullText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(timer);
+          setIsTypingComplete(true);
+        }
+      }, 50); // 50ms per character for smooth typing
+
+      return () => clearInterval(timer);
+    }, 1000); // Start after 1 second
+
+    return () => clearTimeout(startDelay);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -90,8 +115,13 @@ export default function HeroSection() {
 
               <motion.p
                 variants={itemVariants}
-                className="body-base mb-8 theme-text-muted max-w-3xl mx-auto leading-relaxed"
-              >7+ Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.</motion.p>
+                className="body-base mb-8 theme-text-muted max-w-3xl mx-auto leading-relaxed min-h-[4rem]"
+              >
+                {typewriterText}
+                {!isTypingComplete && (
+                  <span className="animate-pulse text-blue-500 font-bold ml-1">|</span>
+                )}
+              </motion.p>
 
               <motion.div
                 variants={itemVariants}
