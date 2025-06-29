@@ -154,9 +154,7 @@ export default function UnifiedDesignControls() {
               <Palette className="w-5 h-5 text-blue-600" />
               <span>Design Studio</span>
             </SheetTitle>
-            <SheetDescription>
-              Customize your portfolio with professional design themes, fonts, and color combinations. Export your resume as a PDF when ready.
-            </SheetDescription>
+            
           </SheetHeader>
 
           <div className="space-y-8">
@@ -258,7 +256,6 @@ export default function UnifiedDesignControls() {
                 <EnhancedPDFGenerator />
               </div>
             </div>
-          </div>
         </SheetContent>
       </Sheet>
     </>
