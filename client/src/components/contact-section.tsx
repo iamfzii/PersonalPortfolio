@@ -164,7 +164,7 @@ export default function ContactSection() {
                         className="w-full h-12 md:h-14 border-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 group text-sm md:text-base font-semibold"
                         asChild
                       >
-                        <a href="https://calendly.com/muhammad-fazeel" target="_blank" rel="noopener noreferrer">
+                        <a href="https://calendly.com/iamfzii/" target="_blank" rel="noopener noreferrer">
                           <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                           Schedule Call
                         </a>

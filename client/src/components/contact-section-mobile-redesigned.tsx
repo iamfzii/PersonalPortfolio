@@ -176,7 +176,7 @@ export default function ContactSection() {
                           className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 md:px-8 py-3 md:py-4 text-base md:text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group min-h-[48px]"
                           asChild
                         >
-                          <a href="mailto:muhammad.fazeel@email.com?subject=Project%20Opportunity&body=Hi%20Muhammad,%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity.%0A%0ABest%20regards">
+                          <a href="mailto:fazeel.connects@gmail.com?subject=Project%20Opportunity&body=Hi%20Muhammad,%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity.%0A%0ABest%20regards">
                             <MessageCircle className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 group-hover:rotate-12 transition-transform duration-300" />
                             Send Message
                           </a>
@@ -193,7 +193,7 @@ export default function ContactSection() {
                           className="w-full border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm group min-h-[48px]"
                           asChild
                         >
-                          <a href="https://calendly.com/muhammad-fazeel" target="_blank" rel="noopener noreferrer">
+                          <a href="https://calendly.com/iamfzii/" target="_blank" rel="noopener noreferrer">
                             <Calendar className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 group-hover:scale-110 transition-transform duration-300" />
                             Schedule Call
                           </a>

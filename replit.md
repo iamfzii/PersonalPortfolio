@@ -189,6 +189,7 @@ Changelog:
 - June 29, 2025. Interactive background and hero enhancements: Added ultra-optimized interactive background with 29 floating technology icons, mouse interaction effects, and performance throttling for 60fps. Enhanced hero section with emotional messaging, personality badges (Problem Solver, Team Builder, Innovation Driver), and psychological connection elements. Removed "scroll to explore" text. All optimizations maintain fast performance with reduced motion support and mobile-specific element counts.
 - June 29, 2025. Core competency icon enhancement: Replaced blue dots in Core Competencies section with professional icons (Clipboard for Project Management, Package for Product Management, Headphones for Technical Support) in gradient containers matching site design.
 - June 29, 2025. Contact information update: Updated all contact components and PDF generators with authentic contact details (fazeel.connects@gmail.com, 03014004214, Lahore Pakistan, github.com/iamfzii, linkedin.com/in/iamfzii) replacing placeholder data across contact sections, hero, footer, and resume export functionality.
+- June 29, 2025. Calendly integration: Added "Schedule Call" functionality across all contact sections linking to https://calendly.com/iamfzii/ for seamless appointment booking. Updated contact-section-mobile-redesigned, contact-section-branded, contact-section-enhanced, contact-section-mobile-optimized, and contact-section components with consistent Calendly integration.
 ```
 
 ## User Preferences

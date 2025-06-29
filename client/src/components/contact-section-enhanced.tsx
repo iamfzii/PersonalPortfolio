@@ -157,7 +157,7 @@ export default function ContactSection() {
                     className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
                     <a
-                      href="mailto:muhammad.fazeel@email.com?subject=Project%20Inquiry&body=Hi%20Muhammad,%0A%0AI%20would%20like%20to%20discuss..."
+                      href="mailto:fazeel.connects@gmail.com?subject=Project%20Inquiry&body=Hi%20Muhammad,%0A%0AI%20would%20like%20to%20discuss..."
                       className="flex items-center justify-center min-h-[56px]"
                     >
                       <Mail className="w-6 h-6 mr-3" />
@@ -172,13 +172,13 @@ export default function ContactSection() {
                     className="w-full border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                   >
                     <a
-                      href="https://linkedin.com/in/muhammad-fazeel"
+                      href="https://calendly.com/iamfzii/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center min-h-[56px]"
                     >
-                      <Linkedin className="w-6 h-6 mr-3" />
-                      Connect on LinkedIn
+                      <Calendar className="w-6 h-6 mr-3" />
+                      Schedule Call
                     </a>
                   </Button>
                 </div>
