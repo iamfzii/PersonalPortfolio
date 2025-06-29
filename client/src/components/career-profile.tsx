@@ -13,7 +13,7 @@ export default function CareerProfile() {
   ];
 
   return (
-    <section
+    <div
       id="career"
       ref={ref}
       className="section-reveal section-spacing-sm section-primary"
@@ -125,6 +125,6 @@ export default function CareerProfile() {
           </Card>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 }
