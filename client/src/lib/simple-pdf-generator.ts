@@ -19,13 +19,13 @@ export function generateSimpleResumePDF(): void {
 
   // Contact Info
   doc.setFontSize(10);
-  doc.text("Email: fazeel.engineer@outlook.com", margin, y);
-  doc.text("Phone: +92 300 1234567", pageWidth / 2, y);
+  doc.text("Email: fazeel.connects@gmail.com", margin, y);
+  doc.text("Phone: 03014004214", pageWidth / 2, y);
   y += 6;
   doc.text("Location: Lahore, Pakistan", margin, y);
-  doc.text("LinkedIn: linkedin.com/in/muhammadazeel", pageWidth / 2, y);
+  doc.text("LinkedIn: linkedin.com/in/iamfzii", pageWidth / 2, y);
   y += 6;
-  doc.text("GitHub: github.com/muhammadazeel", margin, y);
+  doc.text("GitHub: github.com/iamfzii", margin, y);
   y += 12;
 
   // Professional Summary

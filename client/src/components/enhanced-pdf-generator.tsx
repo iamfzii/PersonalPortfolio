@@ -53,11 +53,11 @@ const resumeData: ResumeData = {
   personalInfo: {
     name: "Muhammad Fazeel",
     title: "Technical Operations Coordinator",
-    email: "muhammad.fazeel@email.com",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
-    linkedin: "linkedin.com/in/muhammad-fazeel",
-    github: "github.com/muhammad-fazeel"
+    email: "fazeel.connects@gmail.com",
+    phone: "03014004214",
+    location: "Lahore, Pakistan",
+    linkedin: "linkedin.com/in/iamfzii",
+    github: "github.com/iamfzii"
   },
   summary: "Technical Operations Coordinator with 7 years of Computer Science & IT experience specializing in full-stack applications, AI workflows, and cloud-based solutions. Proven track record in managing complex technical systems, optimizing operational processes, and delivering scalable technology solutions.",
   skills: [

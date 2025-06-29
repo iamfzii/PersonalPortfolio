@@ -93,11 +93,11 @@ export function generateResumePDF(data: ResumeData): void {
   doc.setFont("helvetica", "normal");
   
   const contactInfo = [
-    data.personalInfo.email || "fazeel.engineer@outlook.com",
-    data.personalInfo.phone || "+92 300 1234567",
+    data.personalInfo.email || "fazeel.connects@gmail.com",
+    data.personalInfo.phone || "03014004214",
     data.personalInfo.location || "Lahore, Pakistan",
-    data.personalInfo.linkedin || "linkedin.com/in/muhammadazeel",
-    data.personalInfo.github || "github.com/muhammadazeel"
+    data.personalInfo.linkedin || "linkedin.com/in/iamfzii",
+    data.personalInfo.github || "github.com/iamfzii"
   ];
 
   contactInfo.forEach((info, index) => {

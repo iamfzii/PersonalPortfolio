@@ -8,35 +8,35 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "muhammad.fazeel@email.com",
-    href: "mailto:muhammad.fazeel@email.com",
+    value: "fazeel.connects@gmail.com",
+    href: "mailto:fazeel.connects@gmail.com",
     color: "text-blue-500"
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "03014004214",
+    href: "tel:+923014004214",
     color: "text-green-500"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/muhammad-fazeel",
-    href: "https://linkedin.com/in/muhammad-fazeel",
+    value: "linkedin.com/in/iamfzii",
+    href: "https://www.linkedin.com/in/iamfzii/",
     color: "text-blue-600"
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/muhammad-fazeel",
-    href: "https://github.com/muhammad-fazeel",
+    value: "github.com/iamfzii",
+    href: "https://github.com/iamfzii/",
     color: "text-gray-700 dark:text-gray-300"
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "San Francisco, CA",
+    value: "Lahore, Pakistan",
     href: null,
     color: "text-red-500"
   }

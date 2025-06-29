@@ -8,16 +8,16 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "muhammad.fazeel@email.com",
-    href: "mailto:muhammad.fazeel@email.com",
+    value: "fazeel.connects@gmail.com",
+    href: "mailto:fazeel.connects@gmail.com",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50 dark:bg-blue-900/20"
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
+    value: "03014004214",
+    href: "tel:+923014004214",
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50 dark:bg-green-900/20"
   },
@@ -25,7 +25,7 @@ const contactInfo = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "Connect with me",
-    href: "https://linkedin.com/in/muhammad-fazeel",
+    href: "https://www.linkedin.com/in/iamfzii/",
     color: "from-blue-600 to-blue-700",
     bgColor: "bg-blue-50 dark:bg-blue-900/20"
   },
@@ -33,7 +33,7 @@ const contactInfo = [
     icon: Github,
     label: "GitHub",
     value: "View my code",
-    href: "https://github.com/muhammad-fazeel",
+    href: "https://github.com/iamfzii/",
     color: "from-gray-600 to-gray-700",
     bgColor: "bg-gray-50 dark:bg-gray-800"
   }
