@@ -154,23 +154,9 @@ export default function UnifiedDesignControls() {
               <Palette className="w-5 h-5 text-blue-600" />
               <span>Design Studio</span>
             </SheetTitle>
-            <SheetDescription>
-              Customize your resume's appearance with professional themes, color combinations, and typography options.
-            </SheetDescription>
           </SheetHeader>
 
           <div className="space-y-8">
-            {/* Current Design */}
-            <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Current Design</h3>
-              <div className="flex items-center space-x-3 mb-2">
-                <div className={`w-4 h-4 rounded bg-gradient-to-r ${currentCombination.gradient}`}></div>
-                <span className="font-medium">{currentCombination.name}</span>
-              </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {currentCombination.description}
-              </p>
-            </div>
 
             {/* Quick Mode Toggle */}
             <div className="space-y-4">
