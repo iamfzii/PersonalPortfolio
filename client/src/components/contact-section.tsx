@@ -102,93 +102,95 @@ export default function ContactSection() {
           </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
           {/* Call to Action - First on Mobile, Right on Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-4 md:space-y-6 order-1 lg:order-2"
+            className="space-y-4 md:space-y-6 order-1 lg:order-2 w-full flex justify-center lg:justify-end"
           >
-            <Card className="theme-surface rounded-2xl shadow-xl border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 md:p-8 backdrop-blur-sm bg-gradient-to-br from-blue-50/90 to-purple-50/90 dark:from-blue-900/20 dark:to-purple-900/20 hover:shadow-2xl transition-all duration-500 hover:scale-105">
-              <CardContent className="p-0 space-y-4 md:space-y-6">
-                <div className="text-center">
-                  <motion.div
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 10, -10, 0]
-                    }}
-                    transition={{ 
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-4 shadow-lg"
-                  >
-                    <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                  </motion.div>
-                  
-                  <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-2">
-                    Let's Work Together
-                  </h3>
-                  <p className="text-sm md:text-base theme-text-secondary">
-                    Ready to bring your ideas to life? I'm just one message away!
-                  </p>
-                </div>
-
-                <div className="space-y-3 md:space-y-4">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button 
-                      size="lg" 
-                      className="w-full h-12 md:h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group text-sm md:text-base font-semibold"
-                      asChild
+            <div className="w-full max-w-md lg:max-w-none">
+              <Card className="theme-surface rounded-2xl shadow-xl border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 md:p-8 backdrop-blur-sm bg-gradient-to-br from-blue-50/90 to-purple-50/90 dark:from-blue-900/20 dark:to-purple-900/20 hover:shadow-2xl transition-all duration-500 hover:scale-105">
+                <CardContent className="p-0 space-y-4 md:space-y-6">
+                  <div className="text-center">
+                    <motion.div
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 10, -10, 0]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                      className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 mb-4 shadow-lg"
                     >
-                      <a href="mailto:muhammad.fazeel@email.com?subject=Project%20Opportunity&body=Hi%20Muhammad,%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity.%0A%0ABest%20regards">
-                        <Mail className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-                        Send Message
-                      </a>
-                    </Button>
-                  </motion.div>
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      className="w-full h-12 md:h-14 border-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 group text-sm md:text-base font-semibold"
-                      asChild
-                    >
-                      <a href="https://calendly.com/muhammad-fazeel" target="_blank" rel="noopener noreferrer">
-                        <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
-                        Schedule Call
-                      </a>
-                    </Button>
-                  </motion.div>
-                </div>
-
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="pt-3 md:pt-4 border-t border-gray-200 dark:border-gray-700 text-center"
-                >
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-xs md:text-sm font-medium text-green-600 dark:text-green-400">
-                      Online now
-                    </span>
+                      <MessageCircle className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                    </motion.div>
+                    
+                    <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-2">
+                      Let's Work Together
+                    </h3>
+                    <p className="text-sm md:text-base theme-text-secondary">
+                      Ready to bring your ideas to life? I'm just one message away!
+                    </p>
                   </div>
-                  <p className="text-xs md:text-sm theme-text-muted">
-                    Typical response time: Within 4 hours
-                  </p>
-                </motion.div>
-              </CardContent>
-            </Card>
+
+                  <div className="space-y-3 md:space-y-4">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        size="lg" 
+                        className="w-full h-12 md:h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group text-sm md:text-base font-semibold"
+                        asChild
+                      >
+                        <a href="mailto:muhammad.fazeel@email.com?subject=Project%20Opportunity&body=Hi%20Muhammad,%0A%0AI'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity.%0A%0ABest%20regards">
+                          <Mail className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                          Send Message
+                        </a>
+                      </Button>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="w-full h-12 md:h-14 border-2 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 group text-sm md:text-base font-semibold"
+                        asChild
+                      >
+                        <a href="https://calendly.com/muhammad-fazeel" target="_blank" rel="noopener noreferrer">
+                          <Calendar className="w-4 h-4 md:w-5 md:h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                          Schedule Call
+                        </a>
+                      </Button>
+                    </motion.div>
+                  </div>
+
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="pt-3 md:pt-4 border-t border-gray-200 dark:border-gray-700 text-center"
+                  >
+                    <div className="flex items-center justify-center space-x-2 mb-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-xs md:text-sm font-medium text-green-600 dark:text-green-400">
+                        Online now
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm theme-text-muted">
+                      Typical response time: Within 4 hours
+                    </p>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </div>
           </motion.div>
 
           {/* Contact Information - Second on Mobile, Left on Desktop */}
@@ -196,68 +198,70 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4 md:space-y-6 order-2 lg:order-1"
+            className="space-y-4 md:space-y-6 order-2 lg:order-1 w-full flex justify-center lg:justify-start"
           >
-            <div className="text-center lg:text-left">
-              <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-3 md:mb-4">
-                Get in Touch
-              </h3>
-              <p className="text-sm md:text-base theme-text-secondary leading-relaxed">
-                I'm always excited to discuss new projects and opportunities. 
-                Let's create something amazing together!
-              </p>
-            </div>
+            <div className="w-full max-w-md lg:max-w-none">
+              <div className="text-center lg:text-left">
+                <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-3 md:mb-4">
+                  Get in Touch
+                </h3>
+                <p className="text-sm md:text-base theme-text-secondary leading-relaxed">
+                  I'm always excited to discuss new projects and opportunities. 
+                  Let's create something amazing together!
+                </p>
+              </div>
 
-            <div className="space-y-3">
-              {contactInfo.map((contact, index) => {
-                const IconComponent = contact.icon;
-                return (
-                  <motion.div
-                    key={contact.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  >
-                    {contact.href ? (
-                      <a
-                        href={contact.href}
-                        className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-blue-200 dark:hover:border-blue-800 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 hover:scale-105"
-                        target={contact.href.startsWith('http') ? '_blank' : undefined}
-                        rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        <div className={`p-2 rounded-lg ${contact.color.includes('blue') ? 'bg-blue-50 dark:bg-blue-900/30' : contact.color.includes('green') ? 'bg-green-50 dark:bg-green-900/30' : contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'} group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0 text-center lg:text-left">
-                          <div className="text-xs md:text-sm font-medium theme-text-muted">
-                            {contact.label}
+              <div className="space-y-3">
+                {contactInfo.map((contact, index) => {
+                  const IconComponent = contact.icon;
+                  return (
+                    <motion.div
+                      key={contact.label}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                    >
+                      {contact.href ? (
+                        <a
+                          href={contact.href}
+                          className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-blue-200 dark:hover:border-blue-800 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 hover:scale-105"
+                          target={contact.href.startsWith('http') ? '_blank' : undefined}
+                          rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
+                          <div className={`p-2 rounded-lg ${contact.color.includes('blue') ? 'bg-blue-50 dark:bg-blue-900/30' : contact.color.includes('green') ? 'bg-green-50 dark:bg-green-900/30' : contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'} group-hover:scale-110 transition-transform duration-300`}>
+                            <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
                           </div>
-                          <div className="text-sm md:text-base theme-text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
-                            {contact.value}
+                          <div className="flex-1 min-w-0 text-center lg:text-left">
+                            <div className="text-xs md:text-sm font-medium theme-text-muted">
+                              {contact.label}
+                            </div>
+                            <div className="text-sm md:text-base theme-text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                              {contact.value}
+                            </div>
+                          </div>
+                          {contact.href.startsWith('http') && (
+                            <ExternalLink className="w-3 h-3 md:w-4 md:h-4 theme-text-muted group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                          )}
+                        </a>
+                      ) : (
+                        <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
+                          <div className={`p-2 rounded-lg ${contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'}`}>
+                            <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
+                          </div>
+                          <div className="flex-1 min-w-0 text-center lg:text-left">
+                            <div className="text-xs md:text-sm font-medium theme-text-muted">
+                              {contact.label}
+                            </div>
+                            <div className="text-sm md:text-base theme-text-primary">
+                              {contact.value}
+                            </div>
                           </div>
                         </div>
-                        {contact.href.startsWith('http') && (
-                          <ExternalLink className="w-3 h-3 md:w-4 md:h-4 theme-text-muted group-hover:text-blue-500 transition-colors flex-shrink-0" />
-                        )}
-                      </a>
-                    ) : (
-                      <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
-                        <div className={`p-2 rounded-lg ${contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'}`}>
-                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0 text-center lg:text-left">
-                          <div className="text-xs md:text-sm font-medium theme-text-muted">
-                            {contact.label}
-                          </div>
-                          <div className="text-sm md:text-base theme-text-primary">
-                            {contact.value}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
+                      )}
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
           </motion.div>
         </div>
