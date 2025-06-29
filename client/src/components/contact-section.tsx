@@ -102,78 +102,8 @@ export default function ContactSection() {
           </motion.div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
-          {/* Contact Information - Mobile Centered */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4 md:space-y-6 order-2 lg:order-1"
-          >
-            <div className="text-center lg:text-left">
-              <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-3 md:mb-4">
-                Get in Touch
-              </h3>
-              <p className="text-sm md:text-base theme-text-secondary leading-relaxed">
-                I'm always excited to discuss new projects and opportunities. 
-                Let's create something amazing together!
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              {contactInfo.map((contact, index) => {
-                const IconComponent = contact.icon;
-                return (
-                  <motion.div
-                    key={contact.label}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  >
-                    {contact.href ? (
-                      <a
-                        href={contact.href}
-                        className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-blue-200 dark:hover:border-blue-800 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 hover:scale-105"
-                        target={contact.href.startsWith('http') ? '_blank' : undefined}
-                        rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        <div className={`p-2 rounded-lg ${contact.color.includes('blue') ? 'bg-blue-50 dark:bg-blue-900/30' : contact.color.includes('green') ? 'bg-green-50 dark:bg-green-900/30' : contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'} group-hover:scale-110 transition-transform duration-300`}>
-                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0 text-center lg:text-left">
-                          <div className="text-xs md:text-sm font-medium theme-text-muted">
-                            {contact.label}
-                          </div>
-                          <div className="text-sm md:text-base theme-text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
-                            {contact.value}
-                          </div>
-                        </div>
-                        {contact.href.startsWith('http') && (
-                          <ExternalLink className="w-3 h-3 md:w-4 md:h-4 theme-text-muted group-hover:text-blue-500 transition-colors flex-shrink-0" />
-                        )}
-                      </a>
-                    ) : (
-                      <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
-                        <div className={`p-2 rounded-lg ${contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'}`}>
-                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0 text-center lg:text-left">
-                          <div className="text-xs md:text-sm font-medium theme-text-muted">
-                            {contact.label}
-                          </div>
-                          <div className="text-sm md:text-base theme-text-primary">
-                            {contact.value}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* Call to Action - Mobile Centered */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+          {/* Call to Action - First on Mobile, Right on Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -259,6 +189,76 @@ export default function ContactSection() {
                 </motion.div>
               </CardContent>
             </Card>
+          </motion.div>
+
+          {/* Contact Information - Second on Mobile, Left on Desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-4 md:space-y-6 order-2 lg:order-1"
+          >
+            <div className="text-center lg:text-left">
+              <h3 className="font-heading font-semibold text-xl md:text-2xl theme-text-primary mb-3 md:mb-4">
+                Get in Touch
+              </h3>
+              <p className="text-sm md:text-base theme-text-secondary leading-relaxed">
+                I'm always excited to discuss new projects and opportunities. 
+                Let's create something amazing together!
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {contactInfo.map((contact, index) => {
+                const IconComponent = contact.icon;
+                return (
+                  <motion.div
+                    key={contact.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                  >
+                    {contact.href ? (
+                      <a
+                        href={contact.href}
+                        className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface hover:shadow-lg transition-all duration-300 group border border-transparent hover:border-blue-200 dark:hover:border-blue-800 backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 hover:scale-105"
+                        target={contact.href.startsWith('http') ? '_blank' : undefined}
+                        rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      >
+                        <div className={`p-2 rounded-lg ${contact.color.includes('blue') ? 'bg-blue-50 dark:bg-blue-900/30' : contact.color.includes('green') ? 'bg-green-50 dark:bg-green-900/30' : contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'} group-hover:scale-110 transition-transform duration-300`}>
+                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
+                        </div>
+                        <div className="flex-1 min-w-0 text-center lg:text-left">
+                          <div className="text-xs md:text-sm font-medium theme-text-muted">
+                            {contact.label}
+                          </div>
+                          <div className="text-sm md:text-base theme-text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                            {contact.value}
+                          </div>
+                        </div>
+                        {contact.href.startsWith('http') && (
+                          <ExternalLink className="w-3 h-3 md:w-4 md:h-4 theme-text-muted group-hover:text-blue-500 transition-colors flex-shrink-0" />
+                        )}
+                      </a>
+                    ) : (
+                      <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 md:p-4 rounded-xl theme-surface backdrop-blur-sm bg-white/80 dark:bg-gray-900/80">
+                        <div className={`p-2 rounded-lg ${contact.color.includes('red') ? 'bg-red-50 dark:bg-red-900/30' : 'bg-gray-50 dark:bg-gray-800'}`}>
+                          <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${contact.color}`} />
+                        </div>
+                        <div className="flex-1 min-w-0 text-center lg:text-left">
+                          <div className="text-xs md:text-sm font-medium theme-text-muted">
+                            {contact.label}
+                          </div>
+                          <div className="text-sm md:text-base theme-text-primary">
+                            {contact.value}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
           </motion.div>
         </div>
       </div>
