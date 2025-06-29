@@ -4,44 +4,44 @@ import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp } from "
 
 const skillCategories = [
   {
-    title: "Programming & Scripting Languages",
+    title: "High-Performance Programming Stack",
     icon: Code,
-    skills: ["Python", "JavaScript", "Java", "C++", "HTML5", "CSS3", "Bash", "XML", "JSON"]
+    skills: ["Python Advanced", "JavaScript ES6+", "TypeScript", "React.js", "Node.js", "Java Enterprise", "C++ Systems", "HTML5 APIs", "CSS3 Grid/Flexbox"]
   },
   {
-    title: "Frontend Development & UI Technologies", 
+    title: "Modern Frontend Technologies", 
     icon: Palette,
-    skills: ["React.js", "Tailwind CSS", "Bootstrap", "HTML/CSS", "Responsive Web Design", "DOM Manipulation", "Component-Based Architecture", "State Management", "UI Prototyping", "Figma to Code Conversion"]
+    skills: ["React.js Advanced", "Next.js", "Tailwind CSS", "Vite Build Tool", "Component Architecture", "State Management (Redux)", "API Integration", "Responsive Design", "Progressive Web Apps"]
   },
   {
-    title: "Backend Development & API Integration",
+    title: "Enterprise Backend & API Systems",
     icon: Server,
-    skills: ["Node.js", "Express.js", "RESTful APIs", "API Testing (Postman)", "CRUD Operations", "Authentication & Authorization Workflows"]
+    skills: ["Node.js Microservices", "Express.js", "RESTful API Design", "GraphQL", "API Security", "Database Optimization", "Server Architecture", "Postman Advanced"]
   },
   {
-    title: "Databases & Cloud Storage",
+    title: "Cloud Infrastructure & Databases",
     icon: Cloud,
-    skills: ["MongoDB", "Firebase Realtime Database", "NoSQL Databases", "Firestore (basic)", "Data Persistence", "Cloud-Based Data Sync"]
+    skills: ["AWS Cloud Services", "Firebase Advanced", "MongoDB Atlas", "PostgreSQL", "Database Scaling", "Cloud Security", "Serverless Functions", "CDN Management"]
   },
   {
-    title: "Data Science & Machine Learning",
+    title: "AI & Machine Learning Technologies",
     icon: Brain,
-    skills: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "OpenCV", "TensorFlow", "Keras", "TfidfVectorizer", "NLTK", "Mediapipe", "Data Preprocessing", "Data Visualization", "Regression", "Classification", "Clustering", "Model Training", "Accuracy Evaluation", "Supervised & Unsupervised Learning"]
+    skills: ["TensorFlow Advanced", "PyTorch", "Scikit-learn", "OpenCV Computer Vision", "NLP with Transformers", "Deep Learning", "Model Deployment", "MLOps", "Data Pipeline Architecture"]
   },
   {
-    title: "AI & Automation Tools",
+    title: "Advanced AI & Automation Systems",
     icon: Zap,
-    skills: ["ChatGPT", "Gemini", "GitHub Copilot", "Notion AI", "Canva AI", "Midjourney", "AI Text Classification", "Prompt Engineering", "NLP Implementation"]
+    skills: ["GPT API Integration", "Prompt Engineering", "AI Workflow Automation", "GitHub Copilot", "Machine Learning APIs", "Computer Vision", "Natural Language Processing", "AI Model Training"]
   },
   {
-    title: "DevOps, Hosting & Deployment", 
+    title: "DevOps & Cloud Deployment", 
     icon: Settings,
-    skills: ["cPanel", "WHM", "Netlify", "Vercel", "FTP", "Git", "GitHub", "CI/CD Awareness", "DNS Management", "Domain Configuration", "Web Hosting Management", "WordPress CMS", "Google Workspace Admin"]
+    skills: ["Docker Containerization", "Kubernetes", "CI/CD Pipelines", "AWS Deployment", "Git Advanced", "Infrastructure as Code", "Monitoring Systems", "Load Balancing"]
   },
   {
-    title: "Project Management & Agile Tools",
+    title: "Enterprise Project Management",
     icon: TrendingUp,
-    skills: ["Jira", "Trello", "Asana", "ClickUp", "Slack", "Google Sheets", "Agile Methodologies", "Sprint Planning", "Task Tracking", "Kanban Boards", "Team Collaboration"]
+    skills: ["Agile Scrum Master", "JIRA Advanced", "Product Roadmapping", "Stakeholder Management", "Technical Team Leadership", "Sprint Planning", "Risk Management", "ROI Analysis"]
   },
   {
     title: "Marketing & Product Tools",
@@ -57,7 +57,7 @@ const skillCategories = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="section-spacing section-secondary">
+    <section id="skills" className="section-spacing-sm section-secondary">
       <div className="content-container">
         <div className="section-header">
           <h2 className="section-title text-slate-900 dark:text-white">

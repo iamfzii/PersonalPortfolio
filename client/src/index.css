@@ -603,7 +603,7 @@ body {
     }
     
     .section-spacing {
-      padding: clamp(3rem, 8vw, 6rem) 0;
+      padding: clamp(1.5rem, 4vw, 3rem) 0;
     }
     
     .section-title {
@@ -735,6 +735,21 @@ body {
   .typography-body {
     font-size: clamp(0.875rem, 2vw, 1.125rem);
     line-height: 1.6;
+  }
+
+  /* Fast-loading optimized spacing - Minimal gaps for instant content load */
+  .section-spacing {
+    padding: clamp(1.5rem, 4vw, 3rem) 0;
+  }
+
+  .section-spacing-sm {
+    padding: clamp(0.75rem, 2vw, 1.5rem) 0;
+  }
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 3vw, 2rem);
   }
 
   /* Mobile-optimized spacing */

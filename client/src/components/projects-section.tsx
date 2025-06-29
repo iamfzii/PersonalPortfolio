@@ -57,7 +57,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={ref}
-      className="section-reveal section-spacing"
+      className="section-reveal section-spacing-sm"
     >
       <div className="content-container">
         <motion.div

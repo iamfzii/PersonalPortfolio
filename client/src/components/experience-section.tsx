@@ -65,7 +65,7 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={ref}
-      className="section-reveal section-spacing bg-gradient-to-b from-background/50 to-transparent"
+      className="section-reveal section-spacing-sm bg-gradient-to-b from-background/50 to-transparent"
     >
       <div className="content-container">
         <motion.div

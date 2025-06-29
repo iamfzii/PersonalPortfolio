@@ -49,7 +49,7 @@ export default function ContactSection() {
     <section 
       id="contact" 
       ref={ref} 
-      className="section-reveal section-spacing-lg section-accent border-t border-slate-200 dark:border-slate-700"
+      className="section-reveal section-spacing-sm section-accent border-t border-slate-200 dark:border-slate-700"
       aria-labelledby="contact-heading"
     >
       <div className="content-container">

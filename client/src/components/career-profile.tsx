@@ -16,7 +16,7 @@ export default function CareerProfile() {
     <section
       id="career"
       ref={ref}
-      className="section-reveal section-spacing section-primary"
+      className="section-reveal section-spacing-sm section-primary"
     >
       <div className="content-container">
         <div className="section-header">
@@ -45,16 +45,21 @@ export default function CareerProfile() {
                   Technical Operations Coordinator with 7 years of Computer Science & IT background and experience facilitating the execution of full-stack applications, AI workflows, and cloud-based solutions. Adept at translating functional requirements into coordinated technical deliverables, supporting development cycles, and troubleshooting deployment pipelines. Demonstrated ability to work across system layers—from API integrations and database management to user-facing components and machine learning models—while maintaining operational continuity across tools, teams, and timelines.
                 </p>
 
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex flex-wrap gap-3">
-                    {["Project Management", "Product Analysis"].map((skill, index) => (
-                      <span 
-                        key={skill}
-                        className="skill-chip"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                <div className="pt-6">
+                  <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-4">Core Competencies</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                      <div className="font-bold text-blue-600 dark:text-blue-400">Product Management</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Roadmap & Strategy</div>
+                    </div>
+                    <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                      <div className="font-bold text-green-600 dark:text-green-400">Project Manager</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Agile & Delivery</div>
+                    </div>
+                    <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                      <div className="font-bold text-purple-600 dark:text-purple-400">Tech Support</div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">Operations & Solutions</div>
+                    </div>
                   </div>
                 </div>
               </div>
