@@ -62,13 +62,13 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-6xl mx-auto">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 lg:space-y-6 text-center lg:text-left"
           >
             <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-6">
               Get In Touch
@@ -88,35 +88,35 @@ export default function ContactSection() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="group flex items-center space-x-4 p-6 rounded-xl theme-surface border-0 ring-1 ring-black/5 dark:ring-white/10 hover:shadow-lg transition-all duration-300 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 hover:ring-blue-500/20"
+                        className="group flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 p-4 sm:p-6 rounded-xl theme-surface border-0 ring-1 ring-black/5 dark:ring-white/10 hover:shadow-lg transition-all duration-300 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 hover:ring-blue-500/20 hover:scale-105"
                         target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       >
-                        <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30">
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 group-hover:scale-110 transition-transform">
                           <IconComponent className={`h-6 w-6 ${item.color}`} />
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 text-center sm:text-left">
                           <h4 className="font-semibold theme-text-primary group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors body-lg">
                             {item.label}
                           </h4>
-                          <p className="body-base theme-text-secondary">
+                          <p className="body-sm sm:body-base theme-text-secondary break-all sm:break-words">
                             {item.value}
                           </p>
                         </div>
                         {item.href.startsWith('http') && (
-                          <ExternalLink className="h-5 w-5 theme-text-muted group-hover:text-blue-500 transition-colors" />
+                          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5 theme-text-muted group-hover:text-blue-500 transition-colors" />
                         )}
                       </a>
                     ) : (
-                      <div className="flex items-center space-x-4 p-6 rounded-xl theme-surface border-0 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
+                      <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-4 p-4 sm:p-6 rounded-xl theme-surface border-0 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
                         <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30">
                           <IconComponent className={`h-6 w-6 ${item.color}`} />
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 text-center sm:text-left">
                           <h4 className="font-semibold theme-text-primary body-lg">
                             {item.label}
                           </h4>
-                          <p className="body-base theme-text-secondary">
+                          <p className="body-sm sm:body-base theme-text-secondary">
                             {item.value}
                           </p>
                         </div>

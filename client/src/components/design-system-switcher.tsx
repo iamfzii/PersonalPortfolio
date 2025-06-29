@@ -176,57 +176,63 @@ export default function DesignSystemSwitcher() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 onClick={() => applyDesignCombination(combination)}
-                className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 hover:shadow-md ${
+                className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] ${
                   currentCombo?.id === combination.id
-                    ? "ring-2 ring-blue-500 bg-blue-50 dark:bg-blue-950/50"
-                    : "theme-border hover:theme-border"
+                    ? "ring-2 ring-blue-500 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/50 dark:to-blue-900/30 shadow-md"
+                    : "theme-border hover:theme-border hover:bg-gray-50 dark:hover:bg-gray-800/50"
                 }`}
               >
-                <div className="flex items-center space-x-3">
-                  {/* Color Preview */}
+                <div className="flex items-center space-x-4">
+                  {/* Enhanced Color Preview */}
                   <div className="flex-shrink-0">
-                    <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${combination.gradient} shadow-sm`} />
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${combination.gradient} shadow-lg border border-white/20 dark:border-gray-700/50`}>
+                      <div className="w-full h-full rounded-xl flex items-center justify-center">
+                        <div className="text-white text-xs font-bold opacity-80">Aa</div>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Details */}
+                  {/* Enhanced Details */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center space-x-2 mb-1">
-                      <h4 className="font-medium theme-text-primary text-sm truncate">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <h4 className="font-semibold theme-text-primary text-sm truncate">
                         {combination.name}
                       </h4>
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="secondary" className="text-xs px-2 py-1">
                         {combination.category}
                       </Badge>
                     </div>
-                    <p className="text-xs theme-text-muted mb-2">
+                    <p className="text-xs theme-text-muted mb-3 leading-relaxed">
                       {combination.description}
                     </p>
                     
-                    {/* Color Swatches */}
-                    <div className="flex items-center space-x-1">
-                      <div 
-                        className="w-3 h-3 rounded-full shadow-sm border border-white/20"
-                        style={{ backgroundColor: combination.preview.primary }}
-                      />
-                      <div 
-                        className="w-3 h-3 rounded-full shadow-sm border border-white/20"
-                        style={{ backgroundColor: combination.preview.secondary }}
-                      />
-                      <div 
-                        className="w-3 h-3 rounded-full shadow-sm border border-white/20"
-                        style={{ backgroundColor: combination.preview.accent }}
-                      />
-                      <span className="text-xs theme-text-muted ml-2">
+                    {/* Enhanced Font & Color Preview */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div 
+                          className="w-4 h-4 rounded-full shadow-sm border-2 border-white dark:border-gray-700"
+                          style={{ backgroundColor: combination.preview.primary }}
+                        />
+                        <div 
+                          className="w-4 h-4 rounded-full shadow-sm border-2 border-white dark:border-gray-700"
+                          style={{ backgroundColor: combination.preview.secondary }}
+                        />
+                        <div 
+                          className="w-4 h-4 rounded-full shadow-sm border-2 border-white dark:border-gray-700"
+                          style={{ backgroundColor: combination.preview.accent }}
+                        />
+                      </div>
+                      <div className="text-xs theme-text-muted font-medium capitalize bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
                         {combination.font} font
-                      </span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Selection Indicator */}
+                  {/* Enhanced Selection Indicator */}
                   {currentCombo?.id === combination.id && (
                     <div className="flex-shrink-0">
-                      <div className="w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-white" />
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg">
+                        <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                       </div>
                     </div>
                   )}

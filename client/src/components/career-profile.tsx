@@ -85,7 +85,7 @@ export default function CareerProfile() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16"
+          className="mt-12"
         >
           <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
             <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-6 text-center">
@@ -95,31 +95,39 @@ export default function CareerProfile() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Technical Integration",
-                  items: ["API Development", "Database Management", "System Architecture", "Performance Optimization"]
+                  title: "Project Management",
+                  items: ["Agile Methodologies", "Sprint Planning", "Project Coordination", "Timeline Management"]
                 },
                 {
-                  title: "Development Operations",
-                  items: ["CI/CD Pipelines", "Deployment Automation", "Infrastructure Management", "Quality Assurance"]
+                  title: "Product Management", 
+                  items: ["Requirements Analysis", "Stakeholder Communication", "Product Strategy", "Feature Planning"]
                 },
                 {
-                  title: "Cross-Functional Leadership",
-                  items: ["Agile Methodologies", "Sprint Planning", "Team Coordination", "Stakeholder Communication"]
+                  title: "Technical Support",
+                  items: ["System Troubleshooting", "Performance Monitoring", "Quality Assurance", "User Support"]
                 }
               ].map((competency, index) => (
-                <div key={competency.title} className="space-y-4">
-                  <h4 className="font-semibold theme-text-primary body-lg">
-                    {competency.title}
+                <motion.div 
+                  key={competency.title} 
+                  className="space-y-4"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                  whileHover={{ y: -2 }}
+                >
+                  <h4 className="font-semibold theme-text-primary body-lg flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
+                    <span>{competency.title}</span>
                   </h4>
                   <ul className="space-y-2">
                     {competency.items.map((item) => (
-                      <li key={item} className="flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                        <span className="body-sm theme-text-secondary">{item}</span>
+                      <li key={item} className="flex items-center space-x-2 group">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full group-hover:bg-blue-600 transition-colors"></div>
+                        <span className="body-sm theme-text-secondary group-hover:theme-text-primary transition-colors">{item}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>

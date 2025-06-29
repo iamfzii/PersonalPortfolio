@@ -138,14 +138,52 @@ export default function SkillsSection() {
           })}
         </div>
 
+        {/* Highlighted Key Technologies */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-12"
         >
-          <Card className="inline-block theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
-            <div className="flex items-center justify-center space-x-6">
+          <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
+            <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-6 text-center">
+              Highlighted Technologies
+            </h3>
+            
+            {/* Key Technologies in horizontal layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+              {[
+                { name: "React.js", color: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300", featured: true },
+                { name: "Python", color: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300", featured: true },
+                { name: "JavaScript", color: "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300", featured: true },
+                { name: "Node.js", color: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300", featured: true },
+                { name: "MongoDB", color: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300", featured: true },
+                { name: "TensorFlow", color: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300", featured: true },
+                { name: "Firebase", color: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300", featured: true },
+                { name: "Tailwind CSS", color: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300", featured: true },
+                { name: "Docker", color: "bg-sky-100 text-sky-800 dark:bg-sky-900/30 dark:text-sky-300", featured: true },
+                { name: "Git", color: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300", featured: true }
+              ].map((tech, index) => (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.9 + index * 0.05 }}
+                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  className="group"
+                >
+                  <Badge
+                    variant="secondary"
+                    className={`${tech.color} px-4 py-3 font-semibold text-center w-full rounded-xl border-0 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer group-hover:ring-2 group-hover:ring-blue-500/30`}
+                  >
+                    <span className="block text-sm">{tech.name}</span>
+                  </Badge>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="flex items-center justify-center space-x-8 pt-6 border-t border-gray-200 dark:border-gray-700">
               <div className="text-center">
                 <div className="heading-md font-bold theme-text-primary mb-1">7+</div>
                 <div className="body-sm theme-text-secondary">Years Experience</div>
@@ -157,7 +195,7 @@ export default function SkillsSection() {
               </div>
               <div className="w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
               <div className="text-center">
-                <div className="heading-md font-bold theme-text-primary mb-1">8</div>
+                <div className="heading-md font-bold theme-text-primary mb-1">10</div>
                 <div className="body-sm theme-text-secondary">Specializations</div>
               </div>
             </div>

@@ -82,17 +82,17 @@ body {
   line-height: 1.6;
 }
 
-/* Professional Section Spacing & Structure */
+/* Professional Section Spacing & Structure - Reduced for better flow */
 .section-spacing {
-  padding: clamp(5rem, 10vw, 10rem) 0;
-}
-
-.section-spacing-sm {
   padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
+.section-spacing-sm {
+  padding: clamp(2rem, 4vw, 4rem) 0;
+}
+
 .section-spacing-lg {
-  padding: clamp(6rem, 12vw, 12rem) 0;
+  padding: clamp(4rem, 8vw, 8rem) 0;
 }
 
 /* Alternating Section Backgrounds */
@@ -128,14 +128,82 @@ body {
   letter-spacing: -0.02em;
 }
 
-  /* Enhanced Interactivity & Hover States */
+  /* Enhanced Interactivity & Hover States with Emotional Engagement */
   .enhanced-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .enhanced-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Emotional engagement animations */
+  .heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    75% { transform: scale(0.95); }
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  /* Personal digital identity enhancements */
+  .signature-gradient {
+    background: linear-gradient(135deg, 
+      var(--theme-primary) 0%, 
+      var(--theme-secondary) 50%, 
+      var(--theme-accent) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Memorable micro-interactions */
+  .bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes bounceIn {
+    0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+    50% { transform: scale(1.05) rotate(5deg); }
+    70% { transform: scale(0.9) rotate(-2deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  .float-hover {
+    transition: transform 0.3s ease;
+  }
+
+  .float-hover:hover {
+    transform: translateY(-8px) rotate(2deg);
+    animation: gentle-float 2s ease-in-out infinite;
+  }
+
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(-8px) rotate(2deg); }
+    50% { transform: translateY(-12px) rotate(-1deg); }
   }
 
   /* Card animations with stagger effect */
@@ -613,6 +681,29 @@ body {
     contain: layout style paint;
   }
 
+  /* Fix hover invisible text issues */
+  .hover-visible {
+    color: inherit;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .hover-visible:hover {
+    color: var(--theme-primary);
+    opacity: 1;
+  }
+
+  /* Ensure text is always visible */
+  .always-visible {
+    color: var(--theme-text-primary) !important;
+    opacity: 1 !important;
+  }
+
+  .always-visible:hover {
+    color: var(--theme-primary) !important;
+    opacity: 1 !important;
+  }
+
   /* Mobile Optimization & Touch Interface */
   @media (max-width: 768px) {
     .floating-icon {
@@ -621,19 +712,24 @@ body {
     }
     
     .card-hover {
-      transition-duration: 0.1s; /* Faster on mobile */
+      transition-duration: 0.2s; /* Slightly faster on mobile */
     }
     
     .section-reveal {
-      transition-duration: 0.3s; /* Faster reveals on mobile */
+      transition-duration: 0.4s; /* Smooth reveals on mobile */
     }
     
     .section-spacing {
+      padding: clamp(2rem, 5vw, 4rem) 0;
+    }
+    
+    .section-spacing-sm {
       padding: clamp(1.5rem, 4vw, 3rem) 0;
     }
     
     .section-title {
-      font-size: clamp(2rem, 8vw, 3rem);
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.1;
     }
     
     .content-container {
@@ -641,36 +737,100 @@ body {
       padding-right: 1rem;
     }
     
-    /* Enhanced mobile buttons */
+    /* Enhanced mobile buttons with better touch targets */
     .btn-primary,
     .btn-secondary {
       min-height: 48px;
       font-size: 1rem;
-      padding: 0.875rem 1.5rem;
+      padding: 1rem 2rem;
+      border-radius: 12px;
     }
     
     /* Mobile card improvements */
     .enhanced-card {
       padding: 1.5rem;
+      border-radius: 16px;
     }
     
-    /* Mobile skill chips */
+    /* Mobile skill chips with better spacing */
     .skill-chip {
-      padding: 0.625rem 1rem;
-      font-size: 0.8rem;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+      border-radius: 12px;
+    }
+
+    /* Mobile navigation improvements */
+    .mobile-nav-item {
+      padding: 1rem;
+      font-size: 1.125rem;
+      border-radius: 12px;
+      margin: 0.5rem 0;
+    }
+
+    /* Better mobile contact cards */
+    .contact-card-mobile {
+      padding: 1.5rem;
+      text-align: center;
+      border-radius: 16px;
+    }
+
+    /* Mobile typography improvements */
+    .heading-xl {
+      font-size: clamp(2.25rem, 8vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    .heading-lg {
+      font-size: clamp(1.875rem, 6vw, 2.75rem);
+      line-height: 1.2;
+    }
+
+    .body-base {
+      font-size: 1rem;
+      line-height: 1.6;
     }
     
-    /* Reduce motion for battery saving */
+    /* Reduce motion for battery saving and better UX */
     @media (prefers-reduced-motion: reduce) {
-      .floating-icon {
+      .floating-icon,
+      .heartbeat,
+      .pulse-glow,
+      .signature-gradient,
+      .bounce-in,
+      .gentle-float {
         animation: none;
       }
       
       .section-reveal,
       .card-hover,
-      .skill-badge {
+      .skill-badge,
+      .enhanced-hover {
         transition: none;
       }
+    }
+
+    /* Dark mode mobile optimizations */
+    @media (prefers-color-scheme: dark) {
+      .enhanced-card {
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(100, 116, 139, 0.3);
+      }
+    }
+  }
+
+  /* Tablet optimizations */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .section-spacing {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .content-container {
+      padding: 0 2rem;
+    }
+
+    .grid-layout {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
   }
 
