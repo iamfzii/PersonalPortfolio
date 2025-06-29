@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
-import { Palette, Sun, Moon, Lightbulb, Leaf, Sunset } from "lucide-react";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { Badge } from "@/components/ui/badge";
+import { Palette, Sun, Moon, Lightbulb, Leaf, Sunset, Type, Layout, Zap, Sparkles, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "@/components/theme-provider";
 import EnhancedPDFGenerator from "@/components/enhanced-pdf-generator";
@@ -24,6 +27,7 @@ interface DesignCombination {
 }
 
 const designCombinations: DesignCombination[] = [
+  // Professional Category
   {
     id: "executive-pro",
     name: "Executive Pro",
@@ -35,6 +39,38 @@ const designCombinations: DesignCombination[] = [
     category: "professional"
   },
   {
+    id: "dark-elegance",
+    name: "Dark Elegance",
+    description: "Sophisticated dark theme with premium feel",
+    theme: "dark",
+    font: "elegant",
+    gradient: "from-slate-800 to-slate-900",
+    preview: { primary: "#1e293b", secondary: "#475569", accent: "#64748b" },
+    category: "professional"
+  },
+  {
+    id: "corporate-blue",
+    name: "Corporate Blue",
+    description: "Traditional corporate styling with modern touch",
+    theme: "blue",
+    font: "classic",
+    gradient: "from-blue-700 to-indigo-800",
+    preview: { primary: "#1d4ed8", secondary: "#3b82f6", accent: "#60a5fa" },
+    category: "professional"
+  },
+  {
+    id: "business-minimal",
+    name: "Business Minimal",
+    description: "Clean professional design for modern businesses",
+    theme: "light",
+    font: "minimal",
+    gradient: "from-slate-600 to-slate-800",
+    preview: { primary: "#475569", secondary: "#64748b", accent: "#94a3b8" },
+    category: "professional"
+  },
+
+  // Modern Category
+  {
     id: "tech-leader",
     name: "Tech Leader",
     description: "Modern tech-focused design with clean lines",
@@ -43,16 +79,6 @@ const designCombinations: DesignCombination[] = [
     gradient: "from-gray-900 to-blue-900",
     preview: { primary: "#111827", secondary: "#6b7280", accent: "#3b82f6" },
     category: "modern"
-  },
-  {
-    id: "creative-mind",
-    name: "Creative Mind",
-    description: "Vibrant and innovative design for creative professionals",
-    theme: "purple",
-    font: "bold",
-    gradient: "from-purple-600 to-pink-600",
-    preview: { primary: "#7c3aed", secondary: "#a855f7", accent: "#ec4899" },
-    category: "creative"
   },
   {
     id: "nature-innovator",
@@ -65,6 +91,48 @@ const designCombinations: DesignCombination[] = [
     category: "modern"
   },
   {
+    id: "modern-minimal",
+    name: "Modern Minimal",
+    description: "Clean minimalist design with subtle elegance",
+    theme: "light",
+    font: "minimal",
+    gradient: "from-gray-400 to-gray-600",
+    preview: { primary: "#6b7280", secondary: "#9ca3af", accent: "#4b5563" },
+    category: "modern"
+  },
+  {
+    id: "cyber-tech",
+    name: "Cyber Tech",
+    description: "Futuristic design with bold tech aesthetics",
+    theme: "dark",
+    font: "tech",
+    gradient: "from-cyan-600 to-blue-700",
+    preview: { primary: "#0891b2", secondary: "#06b6d4", accent: "#67e8f9" },
+    category: "modern"
+  },
+  {
+    id: "neo-modern",
+    name: "Neo Modern",
+    description: "Contemporary design with dynamic elements",
+    theme: "blue",
+    font: "modern",
+    gradient: "from-indigo-600 to-purple-700",
+    preview: { primary: "#4f46e5", secondary: "#6366f1", accent: "#8b5cf6" },
+    category: "modern"
+  },
+
+  // Creative Category
+  {
+    id: "creative-mind",
+    name: "Creative Mind",
+    description: "Vibrant and innovative design for creative professionals",
+    theme: "purple",
+    font: "bold",
+    gradient: "from-purple-600 to-pink-600",
+    preview: { primary: "#7c3aed", secondary: "#a855f7", accent: "#ec4899" },
+    category: "creative"
+  },
+  {
     id: "sunset-professional",
     name: "Sunset Professional",
     description: "Warm sunset colors with professional appeal",
@@ -74,6 +142,38 @@ const designCombinations: DesignCombination[] = [
     preview: { primary: "#f97316", secondary: "#fb923c", accent: "#ef4444" },
     category: "creative"
   },
+  {
+    id: "artistic-bold",
+    name: "Artistic Bold",
+    description: "Dynamic design for creative portfolios",
+    theme: "purple",
+    font: "bold",
+    gradient: "from-violet-600 to-fuchsia-600",
+    preview: { primary: "#7c2d12", secondary: "#c2410c", accent: "#ea580c" },
+    category: "creative"
+  },
+  {
+    id: "vibrant-energy",
+    name: "Vibrant Energy",
+    description: "High-energy design with bold color combinations",
+    theme: "sunset",
+    font: "bold",
+    gradient: "from-pink-500 to-orange-500",
+    preview: { primary: "#ec4899", secondary: "#f97316", accent: "#fbbf24" },
+    category: "creative"
+  },
+  {
+    id: "creative-gradient",
+    name: "Creative Gradient",
+    description: "Multi-color gradient design for artistic expression",
+    theme: "green",
+    font: "elegant",
+    gradient: "from-emerald-500 to-teal-600",
+    preview: { primary: "#10b981", secondary: "#14b8a6", accent: "#5eead4" },
+    category: "creative"
+  },
+
+  // Classic Category
   {
     id: "classic-scholar",
     name: "Classic Scholar",
@@ -85,24 +185,34 @@ const designCombinations: DesignCombination[] = [
     category: "classic"
   },
   {
-    id: "modern-minimal",
-    name: "Modern Minimal",
-    description: "Clean minimalist design with subtle elegance",
+    id: "vintage-professional",
+    name: "Vintage Professional",
+    description: "Classic design with vintage charm",
     theme: "light",
-    font: "minimal",
-    gradient: "from-gray-400 to-gray-600",
-    preview: { primary: "#6b7280", secondary: "#9ca3af", accent: "#4b5563" },
-    category: "modern"
+    font: "elegant",
+    gradient: "from-amber-700 to-orange-800",
+    preview: { primary: "#b45309", secondary: "#d97706", accent: "#f59e0b" },
+    category: "classic"
   },
   {
-    id: "dark-elegance",
-    name: "Dark Elegance",
-    description: "Sophisticated dark theme with premium feel",
+    id: "timeless-elegance",
+    name: "Timeless Elegance",
+    description: "Sophisticated classic design that never goes out of style",
     theme: "dark",
+    font: "classic",
+    gradient: "from-stone-700 to-neutral-800",
+    preview: { primary: "#44403c", secondary: "#57534e", accent: "#78716c" },
+    category: "classic"
+  },
+  {
+    id: "heritage-style",
+    name: "Heritage Style",
+    description: "Traditional design with heritage appeal",
+    theme: "blue",
     font: "elegant",
-    gradient: "from-slate-800 to-slate-900",
-    preview: { primary: "#1e293b", secondary: "#475569", accent: "#64748b" },
-    category: "professional"
+    gradient: "from-slate-600 to-blue-700",
+    preview: { primary: "#475569", secondary: "#1d4ed8", accent: "#3b82f6" },
+    category: "classic"
   }
 ];
 
@@ -111,11 +221,17 @@ const modeOptions = [
   { value: "dark", label: "Dark", icon: Moon },
   { value: "blue", label: "Blue", icon: Lightbulb },
   { value: "green", label: "Green", icon: Leaf },
+  { value: "purple", label: "Purple", icon: Palette },
   { value: "sunset", label: "Sunset", icon: Sunset },
 ];
 
 export default function UnifiedDesignControls() {
   const [isOpen, setIsOpen] = useState(false);
+  const [advancedMode, setAdvancedMode] = useState(false);
+  const [animations, setAnimations] = useState(true);
+  const [compactMode, setCompactMode] = useState(false);
+  const [fontSize, setFontSize] = useState([16]);
+  const [spacing, setSpacing] = useState([1]);
   const { theme, setTheme, fontCombination, setFontCombination } = useTheme();
 
   const applyDesignCombination = (combination: DesignCombination) => {
@@ -127,6 +243,24 @@ export default function UnifiedDesignControls() {
     root.style.setProperty('--theme-primary', combination.preview.primary);
     root.style.setProperty('--theme-secondary', combination.preview.secondary);
     root.style.setProperty('--theme-accent', combination.preview.accent);
+  };
+
+  const applyAdvancedSettings = () => {
+    const root = document.documentElement;
+    root.style.setProperty('--base-font-size', `${fontSize[0]}px`);
+    root.style.setProperty('--spacing-multiplier', spacing[0].toString());
+    
+    if (!animations) {
+      root.style.setProperty('--animation-duration', '0s');
+    } else {
+      root.style.removeProperty('--animation-duration');
+    }
+    
+    if (compactMode) {
+      root.style.setProperty('--section-padding', '2rem');
+    } else {
+      root.style.removeProperty('--section-padding');
+    }
   };
 
   // Find current combination or fallback
@@ -238,9 +372,152 @@ export default function UnifiedDesignControls() {
 
               <Separator />
 
+              {/* Advanced Customization */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-semibold text-lg flex items-center space-x-2">
+                    <Settings className="w-5 h-5" />
+                    <span>Advanced</span>
+                  </h3>
+                  <Switch
+                    checked={advancedMode}
+                    onCheckedChange={setAdvancedMode}
+                  />
+                </div>
+
+                {advancedMode && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="space-y-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl"
+                  >
+                    {/* Typography Controls */}
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Type className="w-4 h-4" />
+                        <label className="text-sm font-medium">Font Size</label>
+                        <Badge variant="secondary" className="text-xs">
+                          {fontSize[0]}px
+                        </Badge>
+                      </div>
+                      <Slider
+                        value={fontSize}
+                        onValueChange={(value) => {
+                          setFontSize(value);
+                          applyAdvancedSettings();
+                        }}
+                        max={24}
+                        min={12}
+                        step={1}
+                        className="w-full"
+                      />
+                    </div>
+
+                    {/* Spacing Controls */}
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Layout className="w-4 h-4" />
+                        <label className="text-sm font-medium">Spacing</label>
+                        <Badge variant="secondary" className="text-xs">
+                          {spacing[0]}x
+                        </Badge>
+                      </div>
+                      <Slider
+                        value={spacing}
+                        onValueChange={(value) => {
+                          setSpacing(value);
+                          applyAdvancedSettings();
+                        }}
+                        max={2}
+                        min={0.5}
+                        step={0.1}
+                        className="w-full"
+                      />
+                    </div>
+
+                    {/* Animation Toggle */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <Zap className="w-4 h-4" />
+                        <label className="text-sm font-medium">Animations</label>
+                      </div>
+                      <Switch
+                        checked={animations}
+                        onCheckedChange={(checked) => {
+                          setAnimations(checked);
+                          applyAdvancedSettings();
+                        }}
+                      />
+                    </div>
+
+                    {/* Compact Mode */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <Layout className="w-4 h-4" />
+                        <label className="text-sm font-medium">Compact Mode</label>
+                      </div>
+                      <Switch
+                        checked={compactMode}
+                        onCheckedChange={(checked) => {
+                          setCompactMode(checked);
+                          applyAdvancedSettings();
+                        }}
+                      />
+                    </div>
+
+                    {/* Font Weight Options */}
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Type className="w-4 h-4" />
+                        <label className="text-sm font-medium">Font Style</label>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2">
+                        {["modern", "classic", "tech", "elegant", "bold", "minimal"].map((font) => (
+                          <Button
+                            key={font}
+                            variant={fontCombination === font ? "default" : "outline"}
+                            size="sm"
+                            className="text-xs capitalize"
+                            onClick={() => setFontCombination(font as any)}
+                          >
+                            {font}
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Reset Button */}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                      onClick={() => {
+                        setFontSize([16]);
+                        setSpacing([1]);
+                        setAnimations(true);
+                        setCompactMode(false);
+                        const root = document.documentElement;
+                        root.style.removeProperty('--base-font-size');
+                        root.style.removeProperty('--spacing-multiplier');
+                        root.style.removeProperty('--animation-duration');
+                        root.style.removeProperty('--section-padding');
+                      }}
+                    >
+                      Reset to Defaults
+                    </Button>
+                  </motion.div>
+                )}
+              </div>
+
+              <Separator />
+
               {/* PDF Export */}
               <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Export Resume</h3>
+                <h3 className="font-semibold text-lg flex items-center space-x-2">
+                  <Sparkles className="w-5 h-5" />
+                  <span>Export Resume</span>
+                </h3>
                 <EnhancedPDFGenerator />
               </div>
             </div>
