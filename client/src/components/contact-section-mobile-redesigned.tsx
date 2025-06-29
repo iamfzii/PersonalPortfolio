@@ -98,6 +98,17 @@ export default function ContactSection() {
                 <span className="text-white font-bold text-xs md:text-sm">MF</span>
               </div>
             </div>
+
+            {/* Available for opportunities status */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex items-center justify-center space-x-2 mb-4"
+            >
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm md:text-base font-medium text-green-600 dark:text-green-400">
+                Available for new opportunities online
+              </span>
+            </motion.div>
             
             <motion.p 
               variants={itemVariants}
