@@ -80,17 +80,32 @@ export default function HeroSection() {
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-4"
+                className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-6"
               >
-                Connecting technology, teams & systems
+                Transforming Ideas into Digital Solutions
               </motion.p>
 
               <motion.p
                 variants={itemVariants}
-                className="body-base mb-12 theme-text-muted max-w-3xl mx-auto leading-relaxed"
+                className="body-base mb-8 theme-text-muted max-w-3xl mx-auto leading-relaxed"
               >
-                7 Years Computer Science & IT Experience
+                7 Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.
               </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-wrap justify-center gap-3 mb-12"
+              >
+                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                  Problem Solver
+                </span>
+                <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                  Team Builder
+                </span>
+                <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+                  Innovation Driver
+                </span>
+              </motion.div>
 
               <motion.div
                 variants={itemVariants}

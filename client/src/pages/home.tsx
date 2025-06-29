@@ -1,5 +1,5 @@
 import Navigation from "@/components/navigation-clean";
-import HeroSection from "@/components/fast-loading-hero";
+import HeroSection from "@/components/hero-section";
 import CareerProfile from "@/components/career-profile";
 import SkillsSection from "@/components/skills-section-optimized";
 import ProjectsSection from "@/components/projects-section";
@@ -9,7 +9,7 @@ import EducationSection from "@/components/education-section";
 import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-mobile-optimized";
 import Footer from "@/components/footer";
-import InteractiveBackground from "@/components/interactive-background-optimized";
+import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
 import BackToTop from "@/components/back-to-top";
 
 export default function Home() {
