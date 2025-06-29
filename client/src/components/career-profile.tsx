@@ -51,9 +51,7 @@ export default function CareerProfile() {
                   </h3>
                 </div>
                 
-                <p className="body-base leading-relaxed theme-text-secondary mb-6">
-                  Dynamic Technical Operations Coordinator who transforms complex technical challenges into streamlined business solutions. With 7 years of hands-on experience, I bridge the gap between technical innovation and operational excellence, driving project success through strategic coordination and adaptive problem-solving.
-                </p>
+                <p className="body-base leading-relaxed theme-text-secondary mb-6">Dynamic Technical Operations Coordinator who transforms complex technical challenges into streamlined business solutions. With 7+ years of hands-on experience, I bridge the gap between technical innovation and operational excellence, driving project success through strategic coordination and adaptive problem-solving.</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center space-x-2">
