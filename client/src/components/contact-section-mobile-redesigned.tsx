@@ -279,10 +279,10 @@ export default function ContactSection() {
                             Location
                           </div>
                           <div className="text-sm md:text-base font-semibold theme-text-primary">
-                            San Francisco, CA
+                            Lahore, Pakistan
                           </div>
                           <div className="text-xs md:text-sm theme-text-muted">
-                            Available for remote collaboration worldwide
+                            Available for remote collaboration
                           </div>
                         </div>
                       </div>
