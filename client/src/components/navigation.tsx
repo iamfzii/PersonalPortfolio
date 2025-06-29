@@ -3,20 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Palette, Menu, Settings, Type, Download } from "lucide-react";
+import { Menu, Settings, Download, Mail, Phone, ExternalLink } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { motion } from "framer-motion";
 import DesignSystemSwitcher from "@/components/design-system-switcher";
-import { generateATSResumePDF } from "@/lib/ats-pdf-generator";
+import EnhancedPDFGenerator from "@/components/enhanced-pdf-generator";
 
 const navigation = [
-  { name: "Home", href: "#hero" },
-  { name: "Profile", href: "#career" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Demos", href: "#demos" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
+  { name: "Home", href: "#hero", ariaLabel: "Go to hero section" },
+  { name: "Profile", href: "#career", ariaLabel: "Go to career profile section" },
+  { name: "Skills", href: "#skills", ariaLabel: "Go to skills section" },
+  { name: "Projects", href: "#projects", ariaLabel: "Go to projects section" },
+  { name: "Demos", href: "#demos", ariaLabel: "Go to demonstrations section" },
+  { name: "Experience", href: "#experience", ariaLabel: "Go to experience section" },
+  { name: "Education", href: "#education", ariaLabel: "Go to education section" },
+  { name: "Contact", href: "#contact", ariaLabel: "Go to contact section" },
 ];
 
 const themes = [
@@ -42,44 +43,59 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme, fontCombination, setFontCombination } = useTheme();
 
-  const handleDownloadPDF = () => {
-    try {
-      generateATSResumePDF();
-    } catch (error) {
-      console.error('PDF generation failed:', error);
+  // Enhanced scroll behavior with smooth animation and accessibility
+  const scrollToSection = (href: string, offset: number = 80) => {
+    const element = document.querySelector(href);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      
+      // Update focus for accessibility
+      const focusableElement = element.querySelector('h1, h2, h3, [tabindex]:not([tabindex="-1"])') as HTMLElement;
+      if (focusableElement) {
+        setTimeout(() => {
+          focusableElement.focus({ preventScroll: true });
+        }, 500);
+      }
     }
   };
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10);
 
-      // Update active section
-      const sections = document.querySelectorAll("section[id]");
-      const scrollPos = window.scrollY + 100;
+          // Update active section with improved detection
+          const sections = document.querySelectorAll("section[id]");
+          const scrollPos = window.scrollY + 120; // Adjusted for better detection
 
-      sections.forEach((section) => {
-        const element = section as HTMLElement;
-        const top = element.offsetTop;
-        const height = element.clientHeight;
+          sections.forEach((section) => {
+            const element = section as HTMLElement;
+            const top = element.offsetTop;
+            const height = element.clientHeight;
 
-        if (scrollPos >= top && scrollPos < top + height) {
-          setActiveSection(element.id);
-        }
-      });
+            if (scrollPos >= top && scrollPos < top + height) {
+              setActiveSection(element.id);
+            }
+          });
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
-    }
-  };
 
   return (
     <motion.nav
@@ -115,16 +131,8 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
-            {/* PDF Download Button */}
-            <Button 
-              onClick={handleDownloadPDF}
-              variant="outline" 
-              size="sm" 
-              className="theme-surface theme-border hover:theme-primary-bg hover:theme-text-primary-contrast transition-all duration-200"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Download PDF
-            </Button>
+            {/* Enhanced PDF Download */}
+            <EnhancedPDFGenerator />
 
             {/* Main Design System Switcher */}
             <DesignSystemSwitcher />
@@ -213,17 +221,10 @@ export default function Navigation() {
                     ))}
                   </div>
 
-                  {/* PDF Download for Mobile */}
+                  {/* Enhanced PDF Download for Mobile */}
                   <div className="space-y-2">
                     <h4 className="font-medium theme-text-primary text-sm mb-3">Resume</h4>
-                    <Button 
-                      onClick={handleDownloadPDF}
-                      variant="outline" 
-                      className="w-full theme-surface theme-border hover:theme-primary-bg hover:theme-text-primary-contrast transition-all duration-200"
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      Download PDF Resume
-                    </Button>
+                    <EnhancedPDFGenerator />
                   </div>
 
                   {/* Design System for Mobile */}

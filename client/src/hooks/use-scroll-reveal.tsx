@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useScrollReveal() {
   const ref = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const element = ref.current;
@@ -9,7 +10,10 @@ export function useScrollReveal() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        const isVisible = entry.isIntersecting;
+        setInView(isVisible);
+        
+        if (isVisible) {
           entry.target.classList.add("revealed");
         }
       },
@@ -26,5 +30,5 @@ export function useScrollReveal() {
     };
   }, []);
 
-  return ref;
+  return { ref, inView };
 }

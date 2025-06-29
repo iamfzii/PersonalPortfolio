@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://muhammadzeel.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Specific directives for better SEO
+Allow: /src/assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Disallow unnecessary paths
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /.env*
+Disallow: /package*.json
