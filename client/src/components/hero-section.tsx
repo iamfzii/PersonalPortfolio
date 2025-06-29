@@ -91,9 +91,7 @@ export default function HeroSection() {
               <motion.p
                 variants={itemVariants}
                 className="body-base mb-8 theme-text-muted max-w-3xl mx-auto leading-relaxed"
-              >
-                7 Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.
-              </motion.p>
+              >7+ Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.</motion.p>
 
               <motion.div
                 variants={itemVariants}
