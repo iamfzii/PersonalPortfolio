@@ -65,17 +65,23 @@ export default function ExperienceSection() {
     <section
       id="experience"
       ref={ref}
-      className="section-reveal py-16 px-4"
+      className="section-reveal section-spacing bg-gradient-to-b from-background/50 to-transparent"
     >
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
+      <div className="content-container">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-semibold text-3xl sm:text-4xl mb-6 text-center theme-text-primary"
+          className="text-center mb-16"
         >
-          Work Experience
-        </motion.h2>
+          <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
+            Professional Experience
+          </h2>
+          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
+            A proven track record of delivering technical solutions across project management, 
+            development, and operational excellence roles.
+          </p>
+        </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}

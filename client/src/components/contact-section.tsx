@@ -67,40 +67,40 @@ const quickActions = [
 ];
 
 export default function ContactSection() {
-  const { ref, inView } = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section 
       id="contact" 
       ref={ref} 
-      className="section-spacing performance-optimized theme-transition"
+      className="section-reveal section-spacing bg-gradient-to-b from-transparent to-background/50"
       aria-labelledby="contact-heading"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="content-container">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 
             id="contact-heading"
-            className="typography-h2 theme-text-primary mb-4 font-heading"
+            className="font-heading font-bold heading-lg mb-4 theme-text-primary"
             tabIndex={-1}
           >
             Let's Work Together
           </h2>
-          <p className="typography-body theme-text-secondary max-w-2xl mx-auto">
-            I'm always interested in discussing new opportunities, innovative projects, 
-            and ways to contribute to meaningful technical solutions.
+          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
+            Ready to collaborate on innovative technical solutions? I'm available for new opportunities 
+            and would love to discuss how I can contribute to your next project.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >

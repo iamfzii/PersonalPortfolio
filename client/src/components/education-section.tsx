@@ -37,17 +37,23 @@ export default function EducationSection() {
     <section
       id="education"
       ref={ref}
-      className="section-reveal py-16 px-4"
+      className="section-reveal section-spacing"
     >
-      <div className="max-w-4xl mx-auto">
-        <motion.h2
+      <div className="content-container">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-semibold text-3xl sm:text-4xl mb-6 text-center theme-text-primary"
+          className="text-center mb-16"
         >
-          Education
-        </motion.h2>
+          <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
+            Academic Foundation
+          </h2>
+          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
+            Strong educational background in computer science and information technology, 
+            providing the theoretical foundation for practical expertise.
+          </p>
+        </motion.div>
 
         <div className="grid gap-6">
           {education.map((edu, index) => {

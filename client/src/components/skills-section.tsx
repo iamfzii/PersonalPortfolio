@@ -62,19 +62,25 @@ export default function SkillsSection() {
     <section
       id="skills"
       ref={ref}
-      className="section-reveal py-16 px-4"
+      className="section-reveal section-spacing bg-gradient-to-b from-background/50 to-transparent"
     >
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
+      <div className="content-container">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-heading font-semibold text-3xl sm:text-4xl mb-6 text-center theme-text-primary"
+          className="text-center mb-16"
         >
-          Skill Stack
-        </motion.h2>
+          <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
+            Technical Expertise
+          </h2>
+          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
+            Comprehensive skill set spanning modern development technologies, 
+            data science, and operational excellence built over 7 years of hands-on experience.
+          </p>
+        </motion.div>
 
-        <div className="grid gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => {
             const IconComponent = category.icon;
             return (
@@ -83,13 +89,22 @@ export default function SkillsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                className="group"
               >
-                <Card className="theme-surface rounded-2xl shadow-lg p-6 card-hover theme-border border">
-                  <h3 className="font-heading font-semibold text-xl mb-4 theme-primary flex items-center">
-                    <IconComponent className="w-5 h-5 mr-3" />
-                    {category.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
+                <Card className="h-full theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 hover:shadow-xl transition-all duration-300 hover:ring-blue-500/20 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
+                  <div className="flex items-start space-x-4 mb-6">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 group-hover:from-blue-100 group-hover:to-blue-200 dark:group-hover:from-blue-800/40 dark:group-hover:to-blue-700/40 transition-all duration-300">
+                      <IconComponent className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                        {category.title}
+                      </h3>
+                      <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-3">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div
                         key={skill}
@@ -97,13 +112,12 @@ export default function SkillsSection() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
                         whileHover={{ scale: 1.05 }}
-                        className="skill-badge"
                       >
                         <Badge
                           variant="secondary"
-                          className={`px-3 py-1 text-sm font-medium transition-transform duration-200 cursor-pointer ${
+                          className={`px-4 py-2 body-sm font-medium transition-all duration-200 cursor-pointer hover:shadow-md border-0 ${
                             category.colors[skillIndex % category.colors.length]
-                          }`}
+                          } hover:scale-105 hover:bg-opacity-80`}
                         >
                           {skill}
                         </Badge>
@@ -115,6 +129,32 @@ export default function SkillsSection() {
             );
           })}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <Card className="inline-block theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
+            <div className="flex items-center justify-center space-x-6">
+              <div className="text-center">
+                <div className="heading-md font-bold theme-text-primary mb-1">7+</div>
+                <div className="body-sm theme-text-secondary">Years Experience</div>
+              </div>
+              <div className="w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
+              <div className="text-center">
+                <div className="heading-md font-bold theme-text-primary mb-1">50+</div>
+                <div className="body-sm theme-text-secondary">Technologies</div>
+              </div>
+              <div className="w-px h-12 bg-gray-300 dark:bg-gray-600"></div>
+              <div className="text-center">
+                <div className="heading-md font-bold theme-text-primary mb-1">8</div>
+                <div className="body-sm theme-text-secondary">Specializations</div>
+              </div>
+            </div>
+          </Card>
+        </motion.div>
       </div>
     </section>
   );
