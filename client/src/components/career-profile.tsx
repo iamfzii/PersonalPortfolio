@@ -16,19 +16,14 @@ export default function CareerProfile() {
     <section
       id="career"
       ref={ref}
-      className="section-reveal section-spacing"
+      className="section-reveal section-spacing section-primary"
     >
       <div className="content-container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
+        <div className="section-header">
+          <h2 className="section-title text-slate-900 dark:text-white">
             Career Profile
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Professional Summary */}
@@ -52,10 +47,10 @@ export default function CareerProfile() {
 
                 <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex flex-wrap gap-3">
-                    {["Full-Stack Development", "AI & ML", "Cloud Operations", "Technical Leadership"].map((skill, index) => (
+                    {["Project Management", "Product Analysis"].map((skill, index) => (
                       <span 
                         key={skill}
-                        className="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full body-sm font-medium"
+                        className="skill-chip"
                       >
                         {skill}
                       </span>

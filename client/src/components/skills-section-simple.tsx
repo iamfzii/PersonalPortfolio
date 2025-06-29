@@ -57,32 +57,32 @@ const skillCategories = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+    <section id="skills" className="section-spacing section-secondary">
+      <div className="content-container">
+        <div className="section-header">
+          <h2 className="section-title text-slate-900 dark:text-white">
             Technical Skills
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                    <IconComponent className="w-5 h-5 text-blue-600" />
+              <Card key={index} className="enhanced-card group">
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-tight">
                     {category.title}
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary" className="text-xs">
+                    <span key={skillIndex} className="skill-chip">
                       {skill}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </Card>

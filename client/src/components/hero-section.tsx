@@ -66,24 +66,30 @@ export default function HeroSection() {
 
               <motion.h1
                 variants={itemVariants}
-                className="font-heading font-bold heading-xl mb-4 theme-text-primary"
+                className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 theme-text-primary tracking-tight"
               >
                 Muhammad Fazeel
               </motion.h1>
 
-              <motion.p
+              <motion.h2
                 variants={itemVariants}
-                className="body-lg mb-8 theme-text-secondary font-medium max-w-2xl mx-auto"
+                className="font-heading font-bold text-xl sm:text-2xl md:text-3xl mb-4 theme-text-secondary"
               >
                 Technical Operations Coordinator
+              </motion.h2>
+
+              <motion.p
+                variants={itemVariants}
+                className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-4"
+              >
+                Connecting technology, teams & systems
               </motion.p>
 
               <motion.p
                 variants={itemVariants}
                 className="body-base mb-12 theme-text-muted max-w-3xl mx-auto leading-relaxed"
               >
-                7 years of Computer Science & IT experience with expertise in technical operations, 
-                system optimization, and cross-functional team leadership.
+                7 Years Computer Science & IT Experience
               </motion.p>
 
               <motion.div
@@ -126,24 +132,24 @@ export default function HeroSection() {
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                className="flex flex-col sm:flex-row items-center justify-center gap-6"
               >
                 <Button
-                  onClick={handleDownloadPDF}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                 >
-                  <Download className="w-5 h-5 mr-2" />
-                  Download Resume
+                  <MessageCircle className="w-6 h-6 mr-3" />
+                  Let's Work Together
                 </Button>
                 <Button
+                  onClick={handleDownloadPDF}
                   variant="outline"
                   size="lg"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-md"
+                  className="border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                 >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Get In Touch
+                  <Download className="w-6 h-6 mr-3" />
+                  Download Resume
                 </Button>
               </motion.div>
             </div>

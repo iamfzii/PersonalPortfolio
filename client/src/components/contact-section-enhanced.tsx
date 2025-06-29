@@ -49,24 +49,18 @@ export default function ContactSection() {
     <section 
       id="contact" 
       ref={ref} 
-      className="section-reveal section-spacing bg-gradient-to-b from-transparent to-background/50"
+      className="section-reveal section-spacing-lg section-accent border-t border-slate-200 dark:border-slate-700"
       aria-labelledby="contact-heading"
     >
       <div className="content-container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
-            Let's Work Together
+        <div className="section-header">
+          <h2 className="section-title text-slate-900 dark:text-white">
+            Ready to Connect?
           </h2>
-          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
-            Ready to collaborate on innovative technical solutions? I'm available for new opportunities 
-            and would love to discuss how I can contribute to your next project.
+          <p className="section-subtitle">
+            Open to remote opportunities and ready to contribute to your next technical project.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Information */}
@@ -141,33 +135,33 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-8"
           >
-            <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
+            <Card className="enhanced-card">
               <div className="text-center space-y-6">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                   <MessageCircle className="w-8 h-8 text-white" />
                 </div>
                 
                 <div>
-                  <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-2">
-                    Start a Conversation
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                    Let's Work Together
                   </h3>
-                  <p className="body-base theme-text-secondary">
-                    Let's discuss your project requirements and explore how my technical expertise can help achieve your goals.
+                  <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Open to remote opportunities and ready to contribute to innovative technical solutions.
                   </p>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 pt-4">
                   <Button 
                     asChild
                     size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
                     <a
                       href="mailto:muhammad.fazeel@email.com?subject=Project%20Inquiry&body=Hi%20Muhammad,%0A%0AI%20would%20like%20to%20discuss..."
-                      className="flex items-center justify-center"
+                      className="flex items-center justify-center min-h-[56px]"
                     >
-                      <Mail className="w-5 h-5 mr-2" />
-                      Send Email
+                      <Mail className="w-6 h-6 mr-3" />
+                      Send Message
                     </a>
                   </Button>
                   
@@ -175,15 +169,15 @@ export default function ContactSection() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="w-full border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:shadow-md"
+                    className="w-full border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-8 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
                   >
                     <a
                       href="https://linkedin.com/in/muhammad-fazeel"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center"
+                      className="flex items-center justify-center min-h-[56px]"
                     >
-                      <Linkedin className="w-5 h-5 mr-2" />
+                      <Linkedin className="w-6 h-6 mr-3" />
                       Connect on LinkedIn
                     </a>
                   </Button>

@@ -10,6 +10,7 @@ import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-enhanced";
 import Footer from "@/components/footer";
 import InteractiveBackground from "@/components/interactive-background";
+import BackToTop from "@/components/back-to-top";
 
 export default function Home() {
   return (
@@ -19,32 +20,17 @@ export default function Home() {
         <Navigation />
         <main className="performance-optimized">
           <HeroSection />
-          <div className="performance-optimized">
-            <CareerProfile />
-          </div>
-          <div className="performance-optimized">
-            <SkillsSection />
-          </div>
-          <div className="performance-optimized">
-            <ProjectsSection />
-          </div>
-          <div className="performance-optimized">
-            <DemonstrationsSection />
-          </div>
-          <div className="performance-optimized">
-            <ExperienceSection />
-          </div>
-          <div className="performance-optimized">
-            <EducationSection />
-          </div>
-          <div className="performance-optimized">
-            <CertificationsSection />
-          </div>
-          <div className="performance-optimized">
-            <ContactSection />
-          </div>
+          <CareerProfile />
+          <SkillsSection />
+          <ProjectsSection />
+          <DemonstrationsSection />
+          <ExperienceSection />
+          <EducationSection />
+          <CertificationsSection />
+          <ContactSection />
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </div>
   );
