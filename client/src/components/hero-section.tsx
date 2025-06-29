@@ -170,16 +170,16 @@ export default function HeroSection() {
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                 >
-                  <MessageCircle className="w-6 h-6 mr-3" />
+                  <MessageCircle className="w-6 h-6 mr-3 theme-icon-primary" />
                   Let's Work Together
                 </Button>
                 <Button
                   onClick={handleDownloadPDF}
                   variant="outline"
                   size="lg"
-                  className="border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm"
+                  className="border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl fast-transition hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm gpu-accelerated"
                 >
-                  <Download className="w-6 h-6 mr-3" />
+                  <Download className="w-6 h-6 mr-3 theme-icon-secondary" />
                   Download Resume
                 </Button>
               </motion.div>

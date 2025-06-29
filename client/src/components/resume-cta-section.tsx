@@ -41,8 +41,8 @@ export default function ResumeCTASection() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="mb-8"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
-                    <FileText className="w-10 h-10 text-white" />
+                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg gpu-accelerated">
+                    <FileText className="w-10 h-10 text-white theme-icon-primary" />
                   </div>
                 </motion.div>
 
@@ -73,16 +73,16 @@ export default function ResumeCTASection() {
                   className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10"
                 >
                   <div className="flex items-center justify-center space-x-3 text-blue-600 dark:text-blue-400">
-                    <Star className="w-5 h-5" />
-                    <span className="body-sm font-medium">7+ Years Experience</span>
+                    <Star className="w-5 h-5 theme-icon-primary" />
+                    <span className="body-sm font-medium hover-visible">7+ Years Experience</span>
                   </div>
                   <div className="flex items-center justify-center space-x-3 text-green-600 dark:text-green-400">
-                    <Award className="w-5 h-5" />
-                    <span className="body-sm font-medium">50+ Technologies</span>
+                    <Award className="w-5 h-5 theme-icon-primary" />
+                    <span className="body-sm font-medium hover-visible">50+ Technologies</span>
                   </div>
                   <div className="flex items-center justify-center space-x-3 text-purple-600 dark:text-purple-400">
-                    <FileText className="w-5 h-5" />
-                    <span className="body-sm font-medium">ATS-Optimized</span>
+                    <FileText className="w-5 h-5 theme-icon-primary" />
+                    <span className="body-sm font-medium hover-visible">ATS-Optimized</span>
                   </div>
                 </motion.div>
 
@@ -94,10 +94,10 @@ export default function ResumeCTASection() {
                   <Button
                     onClick={handleDownloadPDF}
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-12 py-4 text-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-8 sm:px-12 py-4 text-base sm:text-lg rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 active:scale-95 touch-manipulation"
                   >
-                    <Download className="w-6 h-6 mr-3" />
-                    Download Resume PDF
+                    <Download className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 transition-transform group-hover:scale-110" />
+                    <span className="whitespace-nowrap">Download Resume PDF</span>
                   </Button>
                   
                   <p className="text-xs theme-text-muted mt-4">
