@@ -21,11 +21,19 @@ export default function CareerProfile() {
       className="section-reveal section-spacing-sm section-primary"
     >
       <div className="content-container">
-        <div className="section-header">
-          <h2 className="section-title text-slate-900 dark:text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8 md:mb-12"
+        >
+          <h2 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-slate-900 dark:text-white mb-4 hover-visible">
             Career Profile
           </h2>
-        </div>
+          <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Transforming technical challenges into business solutions through strategic coordination
+          </p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Professional Summary */}

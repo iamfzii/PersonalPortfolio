@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
-import UnifiedDesignControls from "@/components/unified-design-controls";
+import UnifiedDesignControls from "@/components/unified-design-controls-fixed";
 
 const navigation = [
   { name: "Home", href: "#hero", ariaLabel: "Go to hero section" },
@@ -116,13 +116,16 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-2">
-            <UnifiedDesignControls />
+            {/* Desktop Design Controls */}
+            <div className="hidden md:block">
+              <UnifiedDesignControls />
+            </div>
             
             {/* Mobile menu */}
             <div className="md:hidden">
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" className="theme-surface theme-border">
+                  <Button variant="outline" size="icon" className="theme-surface theme-border relative z-60">
                     <Menu className="h-4 w-4 theme-text-secondary" />
                   </Button>
                 </SheetTrigger>
@@ -142,6 +145,12 @@ export default function Navigation() {
                         {item.name}
                       </button>
                     ))}
+                    
+                    {/* Mobile Design Controls */}
+                    <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                      <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 mb-4">Design Controls</h3>
+                      <UnifiedDesignControls />
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
