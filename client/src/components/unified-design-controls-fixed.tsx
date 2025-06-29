@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { Palette, Sun, Moon, Lightbulb, Leaf, Sunset } from "lucide-react";
 import { motion } from "framer-motion";
@@ -154,21 +154,22 @@ export default function UnifiedDesignControls() {
               <Palette className="w-5 h-5 text-blue-600" />
               <span>Design Studio</span>
             </SheetTitle>
+            <SheetDescription>
+              Customize your portfolio with professional design themes, fonts, and color combinations. Export your resume as a PDF when ready.
+            </SheetDescription>
           </SheetHeader>
 
           <div className="space-y-8">
             {/* Current Design */}
             <div className="space-y-4">
               <h3 className="font-semibold text-lg">Current Design</h3>
-              <div className="p-4 rounded-xl border-2 border-blue-200 dark:border-blue-800 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className={`w-4 h-4 rounded bg-gradient-to-r ${currentCombination.gradient}`}></div>
-                  <span className="font-medium">{currentCombination.name}</span>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {currentCombination.description}
-                </p>
+              <div className="flex items-center space-x-3 mb-2">
+                <div className={`w-4 h-4 rounded bg-gradient-to-r ${currentCombination.gradient}`}></div>
+                <span className="font-medium">{currentCombination.name}</span>
               </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {currentCombination.description}
+              </p>
             </div>
 
             {/* Quick Mode Toggle */}
