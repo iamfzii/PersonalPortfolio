@@ -6,64 +6,39 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const skillCategories = [
   {
-    title: "Programming & Scripting Languages",
-    icon: Code,
-    skills: ["Python", "JavaScript", "Java", "C++", "HTML5", "CSS3", "Bash", "XML", "JSON"],
-    colors: ["bg-blue-100 text-blue-800", "bg-yellow-100 text-yellow-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-orange-100 text-orange-800", "bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-gray-100 text-gray-800", "bg-indigo-100 text-indigo-800"]
-  },
-  {
-    title: "Frontend Development & UI Technologies",
+    title: "Frontend",
     icon: Palette,
-    skills: ["React.js", "Tailwind CSS", "Bootstrap", "HTML/CSS", "Responsive Web Design", "DOM Manipulation", "Component-Based Architecture", "State Management", "UI Prototyping", "Figma to Code Conversion"],
-    colors: ["bg-cyan-100 text-cyan-800", "bg-blue-100 text-blue-800", "bg-purple-100 text-purple-800", "bg-orange-100 text-orange-800", "bg-green-100 text-green-800", "bg-pink-100 text-pink-800"]
+    category: "frontend",
+    skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design", "DOM Manipulation", "Component Architecture"],
+    colors: ["bg-cyan-100 text-cyan-800", "bg-yellow-100 text-yellow-800", "bg-orange-100 text-orange-800", "bg-blue-100 text-blue-800", "bg-teal-100 text-teal-800", "bg-purple-100 text-purple-800", "bg-green-100 text-green-800", "bg-pink-100 text-pink-800", "bg-indigo-100 text-indigo-800"]
   },
   {
-    title: "Backend Development & API Integration",
+    title: "Backend",
     icon: Server,
-    skills: ["Node.js", "Express.js", "RESTful APIs", "API Testing (Postman)", "CRUD Operations", "Authentication & Authorization Workflows"],
-    colors: ["bg-green-100 text-green-800", "bg-gray-100 text-gray-800", "bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-purple-100 text-purple-800"]
+    category: "backend", 
+    skills: ["Node.js", "Express.js", "Python", "Java", "RESTful APIs", "Authentication", "CRUD Operations", "API Testing"],
+    colors: ["bg-green-100 text-green-800", "bg-gray-100 text-gray-800", "bg-blue-100 text-blue-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-orange-100 text-orange-800", "bg-teal-100 text-teal-800", "bg-yellow-100 text-yellow-800"]
   },
   {
-    title: "Databases & Cloud Storage",
+    title: "Cloud & Tools", 
     icon: Cloud,
-    skills: ["MongoDB", "Firebase Realtime Database", "NoSQL Databases", "Firestore (basic)", "Data Persistence", "Cloud-Based Data Sync"],
-    colors: ["bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-blue-100 text-blue-800", "bg-purple-100 text-purple-800", "bg-gray-100 text-gray-800", "bg-cyan-100 text-cyan-800"]
+    category: "cloud",
+    skills: ["MongoDB", "Firebase", "Git", "GitHub", "Netlify", "Vercel", "cPanel", "Docker", "CI/CD"],
+    colors: ["bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-red-100 text-red-800", "bg-gray-100 text-gray-800", "bg-teal-100 text-teal-800", "bg-purple-100 text-purple-800", "bg-blue-100 text-blue-800", "bg-cyan-100 text-cyan-800", "bg-indigo-100 text-indigo-800"]
   },
   {
-    title: "Data Science & Machine Learning",
+    title: "Data & ML",
     icon: Brain,
-    skills: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "OpenCV", "TensorFlow", "Keras", "TfidfVectorizer", "NLTK", "Mediapipe", "Data Preprocessing", "Data Visualization", "Regression", "Classification", "Clustering", "Model Training", "Accuracy Evaluation", "Supervised & Unsupervised Learning"],
-    colors: ["bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-red-100 text-red-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800", "bg-yellow-100 text-yellow-800"]
+    category: "data",
+    skills: ["Python", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Keras", "OpenCV", "Matplotlib", "Data Visualization"],
+    colors: ["bg-blue-100 text-blue-800", "bg-orange-100 text-orange-800", "bg-yellow-100 text-yellow-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-green-100 text-green-800", "bg-cyan-100 text-cyan-800", "bg-pink-100 text-pink-800", "bg-gray-100 text-gray-800"]
   },
   {
-    title: "AI & Automation Tools",
-    icon: Zap,
-    skills: ["ChatGPT", "Gemini", "GitHub Copilot", "Notion AI", "Canva AI", "Midjourney", "AI Text Classification", "Prompt Engineering", "NLP Implementation"],
-    colors: ["bg-green-100 text-green-800", "bg-blue-100 text-blue-800", "bg-gray-100 text-gray-800", "bg-purple-100 text-purple-800", "bg-pink-100 text-pink-800"]
-  },
-  {
-    title: "DevOps, Hosting & Deployment",
-    icon: Settings,
-    skills: ["cPanel", "WHM", "Netlify", "Vercel", "FTP", "Git", "GitHub", "CI/CD Awareness", "DNS Management", "Domain Configuration", "Web Hosting Management", "WordPress CMS", "Google Workspace Admin"],
-    colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-purple-100 text-purple-800", "bg-orange-100 text-orange-800", "bg-gray-100 text-gray-800"]
-  },
-  {
-    title: "Project Management & Agile Tools",
+    title: "Project Management",
     icon: TrendingUp,
-    skills: ["Jira", "Trello", "Asana", "ClickUp", "Slack", "Google Sheets", "Agile Methodologies", "Sprint Planning", "Task Tracking", "Kanban Boards", "Team Collaboration"],
-    colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-yellow-100 text-yellow-800"]
-  },
-  {
-    title: "Marketing & Product Tools",
-    icon: Server,
-    skills: ["Facebook Ads Manager", "Meta Pixel", "A/B Testing", "Campaign Tracking", "Landing Page Deployment", "Ad Creative Coordination"],
-    colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-purple-100 text-purple-800"]
-  },
-  {
-    title: "Networking & Systems",
-    icon: Settings,
-    skills: ["OSI Model", "TCP/IP", "DNS Configuration", "DHCP", "VPN Setup", "Port Management", "HTTP/HTTPS Protocols", "Basic Linux CLI", "Network Troubleshooting", "System Support"],
-    colors: ["bg-purple-100 text-purple-800", "bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-orange-100 text-orange-800", "bg-red-100 text-red-800", "bg-gray-100 text-gray-800"]
+    category: "management",
+    skills: ["Jira", "Trello", "Asana", "ClickUp", "Slack", "Agile Methodologies", "Sprint Planning", "Team Collaboration"],
+    colors: ["bg-blue-100 text-blue-800", "bg-green-100 text-green-800", "bg-red-100 text-red-800", "bg-purple-100 text-purple-800", "bg-yellow-100 text-yellow-800", "bg-cyan-100 text-cyan-800", "bg-orange-100 text-orange-800", "bg-teal-100 text-teal-800"]
   }
 ];
 
@@ -90,9 +65,17 @@ export default function SkillsSection() {
           </h2>
         </motion.div>
 
-        <div className="space-y-6">
+        <div className="max-w-6xl mx-auto space-y-8">
           {skillCategories.map((category, categoryIndex) => {
             const IconComponent = category.icon;
+            const categoryColors: Record<string, string> = {
+              frontend: 'from-cyan-500 to-blue-500',
+              backend: 'from-green-500 to-emerald-500', 
+              cloud: 'from-purple-500 to-violet-500',
+              data: 'from-orange-500 to-red-500',
+              management: 'from-indigo-500 to-purple-500'
+            };
+            
             return (
               <motion.div
                 key={category.title}
@@ -103,14 +86,15 @@ export default function SkillsSection() {
               >
                 <Card className="h-full theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 hover:shadow-xl transition-all duration-300 hover:ring-blue-500/20 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
                   <div className="flex items-start space-x-4 mb-6">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 group-hover:from-blue-100 group-hover:to-blue-200 dark:group-hover:from-blue-800/40 dark:group-hover:to-blue-700/40 transition-all duration-300">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${categoryColors[category.category] || 'from-blue-50 to-blue-100'} bg-opacity-10 group-hover:bg-opacity-20 transition-all duration-300 relative`}>
                       <IconComponent className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-900/30 dark:to-blue-800/30 group-hover:from-blue-100/70 group-hover:to-blue-200/70 dark:group-hover:from-blue-800/40 dark:group-hover:to-blue-700/40 transition-all duration-300" />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-heading font-semibold heading-sm theme-text-primary mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {category.title}
                       </h3>
-                      <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mb-4 group-hover:w-16 transition-all duration-300"></div>
+                      <div className={`w-12 h-1 bg-gradient-to-r ${categoryColors[category.category] || 'from-blue-500 to-blue-600'} rounded-full mb-4 group-hover:w-16 transition-all duration-300`}></div>
                     </div>
                   </div>
                   

@@ -1,0 +1,54 @@
+Refine and professionally polish my resume website. The goal is to elevate the visual design, interaction behavior, and user experience across both desktop and mobile views — without changing the existing structure or stack.
+
+This site is built to represent me as a Technical Operations Coordinator. It must feel confident, visually balanced, and credible to hiring managers. Focus on clean design logic, hierarchy, subtle motion, and personalization.
+
+🧩 Hero Section
+- Center-align content block visually on both desktop and mobile
+- Add an initials-based avatar or minimalist personal branding element
+- Include a short tagline below my name that reflects my domain (e.g., “Tech delivery, systems, and support coordination”)
+- Increase font size and weight of name/title using scalable `clamp()` logic
+
+🎯 Skill Stack
+- Replace raw lists with visually styled skill chips or badges
+- Group skills into clear categories: “Frontend”, “Backend”, “Cloud & Tools”, “Data & ML”
+- Add hover tooltip or color accent per category for quick scanability
+
+📂 Projects & Demonstrations
+- Wrap each entry in a card-style layout with:
+  - Box shadow or soft border
+  - Clear spacing between title, stack, and skills used
+  - Project type label (e.g. "ML Demo", "Mini App", "Frontend Project")
+- Apply scroll-triggered fade-in or slide-up animations using modern motion standards
+- Add hover scale effect or background highlight for interactivity
+
+📱 Mobile Experience
+- Add consistent padding (`1.5rem`) around content
+- Improve vertical spacing between sections
+- Center-align Hero and CTA buttons
+- Add a floating “Back to Top” button for long pages
+
+🎨 Theme System Upgrade
+- Theme toggle should also affect:
+  - Font pairing (e.g., serif vs sans-serif)
+  - Button color and border-radius
+  - Background tone and shadow levels
+- Include smooth CSS transitions when switching themes
+
+🎥 Interaction Enhancements
+- Add hover/focus styles to all buttons and links
+- Add subtle motion to section transitions: `fade-in`, `slide-in`, or `scale-in`
+- Use scroll observer logic to animate sections on entry (with staggered timing)
+
+📄 Resume CTA
+- Make the resume download button a primary CTA block
+- Style it with strong visual emphasis and center it in its own section or fixed footer
+
+🧠 General UI Upgrades
+- Use consistent max-width for content containers (`max-width: 1280px`)
+- Ensure headings use a distinct font or heavier weight than paragraph text
+- Use spacing tokens (e.g., 2rem, 3rem) to create vertical rhythm between sections
+- Add optional footer section with soft divider and links (LinkedIn, GitHub, email)
+
+⚠️ Do not rewrite the entire app or structure. Improve only the design system, component presentation, interactivity, theme dynamics, and resume action visibility.
+
+🎯 Final goal: the site should look and feel like a complete digital resume — professionally designed, motion-aware, responsive, and personalized for hiring teams to trust and explore.

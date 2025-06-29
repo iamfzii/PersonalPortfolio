@@ -8,6 +8,7 @@ import ExperienceSection from "@/components/experience-section";
 import EducationSection from "@/components/education-section";
 import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-mobile-redesigned";
+import ResumeCTASection from "@/components/resume-cta-section";
 import Footer from "@/components/footer-redesigned";
 import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
 import BackToTop from "@/components/back-to-top";
@@ -27,6 +28,7 @@ export default function Home() {
           <ExperienceSection />
           <EducationSection />
           <CertificationsSection />
+          <ResumeCTASection />
           <ContactSection />
         </main>
         <Footer />

@@ -66,23 +66,26 @@ export default function HeroSection() {
 
               <motion.h1
                 variants={itemVariants}
-                className="font-heading font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 theme-text-primary tracking-tight"
+                className="font-heading font-black theme-text-primary tracking-tight mb-6"
+                style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
               >
                 Muhammad Fazeel
               </motion.h1>
 
               <motion.h2
                 variants={itemVariants}
-                className="font-heading font-bold text-xl sm:text-2xl md:text-3xl mb-4 theme-text-secondary"
+                className="font-heading font-bold theme-text-secondary mb-4"
+                style={{ fontSize: 'clamp(1.25rem, 4vw, 2rem)' }}
               >
                 Technical Operations Coordinator
               </motion.h2>
 
               <motion.p
                 variants={itemVariants}
-                className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-6"
+                className="text-blue-600 dark:text-blue-400 font-semibold mb-6"
+                style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}
               >
-                Transforming Ideas into Digital Solutions
+                Tech delivery, systems, and support coordination
               </motion.p>
 
               <motion.p
@@ -112,21 +115,21 @@ export default function HeroSection() {
                 className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-6"
               >
                 <a
-                  href="mailto:fazeel@example.com"
+                  href="mailto:fazeel.connects@gmail.com"
                   className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-medium">Email</span>
                 </a>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+923014004214"
                   className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-medium">Phone</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/fazeel"
+                  href="https://linkedin.com/in/iamfzii"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
@@ -135,7 +138,7 @@ export default function HeroSection() {
                   <span className="text-xs font-medium">LinkedIn</span>
                 </a>
                 <a
-                  href="https://github.com/fazeel"
+                  href="https://github.com/iamfzii"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
