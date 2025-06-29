@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Monitor, Bot, ExternalLink, Play, Code2, Zap, Brain, Cpu, Database } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const webDemos = [
   {
@@ -130,6 +131,12 @@ const complexityColors: Record<string, string> = {
 
 export default function DemonstrationsSection() {
   const { ref } = useScrollReveal();
+  const { displayText, isComplete, startTypewriter } = useTypewriter({
+    text: "Interactive showcases of web development and machine learning projects",
+    speed: 40,
+    delay: 500,
+    startOnView: true
+  });
 
   return (
     <section
@@ -138,14 +145,21 @@ export default function DemonstrationsSection() {
       className="section-reveal py-16 px-4"
     >
       <div className="max-w-6xl mx-auto">
-        <motion.h2
+        <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          onViewportEnter={() => startTypewriter()}
           transition={{ duration: 0.6 }}
-          className="font-heading font-semibold text-3xl sm:text-4xl mb-6 text-center theme-text-primary"
+          className="text-center mb-12"
         >
-          Live Demonstrations
-        </motion.h2>
+          <h2 className="font-heading font-semibold text-3xl sm:text-4xl mb-4 theme-text-primary">
+            Live Demonstrations
+          </h2>
+          <p className="text-base md:text-lg theme-text-muted max-w-2xl mx-auto min-h-[2rem]">
+            {displayText}
+            {!isComplete && <span className="animate-pulse text-blue-500 font-bold ml-1">|</span>}
+          </p>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Web UI Demos */}

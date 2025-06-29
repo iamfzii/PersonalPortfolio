@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Smartphone, Calculator, FileText, Hand, BarChart3, Ship, ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const projects = [
   {
@@ -58,6 +59,12 @@ const projects = [
 
 export default function ProjectsSection() {
   const { ref } = useScrollReveal();
+  const { displayText, isComplete, startTypewriter } = useTypewriter({
+    text: "A portfolio of applications showcasing full-stack development, machine learning, and user experience design across web and mobile platforms",
+    speed: 35,
+    delay: 300,
+    startOnView: true
+  });
 
   return (
     <section
@@ -69,15 +76,16 @@ export default function ProjectsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          onViewportEnter={() => startTypewriter()}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
             Featured Projects
           </h2>
-          <p className="body-lg theme-text-secondary max-w-3xl mx-auto">
-            A portfolio of applications showcasing full-stack development, machine learning, 
-            and user experience design across web and mobile platforms.
+          <p className="body-lg theme-text-secondary max-w-3xl mx-auto min-h-[3rem]">
+            {displayText}
+            {!isComplete && <span className="animate-pulse text-blue-500 font-bold ml-1">|</span>}
           </p>
         </motion.div>
 

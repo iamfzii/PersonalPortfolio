@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useTypewriter } from "@/hooks/use-typewriter";
 
 const skillCategories = [
   {
@@ -44,6 +45,12 @@ const skillCategories = [
 
 export default function SkillsSection() {
   const { ref } = useScrollReveal();
+  const { displayText, isComplete, startTypewriter } = useTypewriter({
+    text: "Comprehensive technical expertise across modern development technologies",
+    speed: 45,
+    delay: 400,
+    startOnView: true
+  });
   
   const highlightedTechs = ["React.js", "Python", "JavaScript", "Node.js", "MongoDB", "TensorFlow", "Pandas", "Firebase", "HTML5", "CSS3"];
 
@@ -57,12 +64,17 @@ export default function SkillsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          onViewportEnter={() => startTypewriter()}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
           <h2 className="font-heading font-bold heading-lg mb-4 theme-text-primary">
             Technical Skills
           </h2>
+          <p className="text-base md:text-lg theme-text-muted max-w-2xl mx-auto min-h-[2rem]">
+            {displayText}
+            {!isComplete && <span className="animate-pulse text-blue-500 font-bold ml-1">|</span>}
+          </p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto space-y-8">
