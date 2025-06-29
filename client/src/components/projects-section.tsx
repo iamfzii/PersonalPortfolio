@@ -51,7 +51,7 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section

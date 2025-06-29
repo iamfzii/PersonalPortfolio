@@ -56,7 +56,7 @@ const skillCategories = [
 ];
 
 export default function SkillsSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section

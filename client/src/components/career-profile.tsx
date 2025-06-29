@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function CareerProfile() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   return (
     <section

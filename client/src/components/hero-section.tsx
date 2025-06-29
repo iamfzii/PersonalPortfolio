@@ -7,7 +7,7 @@ import { generateSimpleResumePDF } from "@/lib/simple-pdf-generator";
 import profilePicture from "@assets/profile picture_1751053870878.jpg";
 
 export default function HeroSection() {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   const handleDownloadPDF = () => {
     try {
