@@ -96,7 +96,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -189,16 +189,16 @@ export default function ContactSection() {
                       transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
                     >
                       <Card className="theme-surface border theme-border hover:shadow-lg transition-all duration-300 group">
-                        <CardContent className="p-6">
-                          <div className="flex items-center space-x-4 mb-4">
-                            <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
-                              <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        <CardContent className="p-4 sm:p-6">
+                          <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                            <div className="p-2 sm:p-3 rounded-full bg-blue-100 dark:bg-blue-900/30 flex-shrink-0">
+                              <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
                             </div>
-                            <div className="flex-1">
-                              <h4 className="font-semibold theme-text-primary group-hover:theme-primary transition-colors">
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold theme-text-primary group-hover:theme-primary transition-colors text-sm sm:text-base">
                                 {action.label}
                               </h4>
-                              <p className="text-sm theme-text-secondary">
+                              <p className="text-xs sm:text-sm theme-text-secondary truncate">
                                 {action.description}
                               </p>
                             </div>
@@ -207,16 +207,18 @@ export default function ContactSection() {
                           <Button
                             asChild
                             variant={action.variant}
-                            className="w-full focus-visible"
+                            size="sm"
+                            className="w-full focus-visible text-xs sm:text-sm"
                           >
                             <a
                               href={action.href}
                               target="_blank"
                               rel="noopener noreferrer"
                               aria-label={action.label}
+                              className="flex items-center justify-center gap-1 sm:gap-2"
                             >
-                              {action.label}
-                              <ExternalLink className="h-4 w-4 ml-2" />
+                              <span className="truncate">{action.label}</span>
+                              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
                             </a>
                           </Button>
                         </CardContent>

@@ -18,33 +18,33 @@ export default function Footer() {
             Ready to collaborate on your next project? Let's discuss how I can help bring your technical vision to life.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6 mb-6 sm:mb-8">
             <a
               href="mailto:fazeel@example.com"
-              className="flex items-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200"
+              className="flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              <Mail className="w-4 h-4" />
-              <span>fazeel@example.com</span>
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span className="text-sm sm:text-base">fazeel@example.com</span>
             </a>
             <a
               href="https://linkedin.com/in/fazeel"
-              className="flex items-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200"
+              className="flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              <Linkedin className="w-4 h-4" />
-              <span>LinkedIn</span>
+              <Linkedin className="w-4 h-4 flex-shrink-0" />
+              <span className="text-sm sm:text-base">LinkedIn</span>
             </a>
             <a
               href="https://github.com/fazeel"
-              className="flex items-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200"
+              className="flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-colors duration-200 p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              <Github className="w-4 h-4" />
-              <span>GitHub</span>
+              <Github className="w-4 h-4 flex-shrink-0" />
+              <span className="text-sm sm:text-base">GitHub</span>
             </a>
           </div>
 
-          <div className="flex justify-center space-x-4 mb-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
             <Button
-              className="theme-primary-bg text-white px-8 py-3 hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="theme-primary-bg text-white px-6 sm:px-8 py-2 sm:py-3 hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm sm:text-base"
               onClick={() => window.print()}
             >
               <Download className="w-4 h-4 mr-2" />
@@ -52,7 +52,7 @@ export default function Footer() {
             </Button>
             <Button
               variant="outline"
-              className="theme-surface theme-border px-8 py-3 hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="theme-surface theme-border px-6 sm:px-8 py-2 sm:py-3 hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-sm sm:text-base"
             >
               <Calendar className="w-4 h-4 mr-2" />
               Schedule Call

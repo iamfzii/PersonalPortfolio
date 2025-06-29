@@ -46,28 +46,28 @@ export default function CertificationsSection() {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 whileHover={{ y: -2 }}
               >
-                <Card className="theme-surface rounded-2xl shadow-lg p-6 card-hover theme-border border">
-                  <div className="flex items-start">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${cert.gradient} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}>
-                      <IconComponent className="w-8 h-8 text-white" />
+                <Card className="theme-surface rounded-2xl shadow-lg p-4 sm:p-6 card-hover theme-border border">
+                  <div className="flex flex-col sm:flex-row items-start gap-4">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${cert.gradient} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center justify-between mb-2">
-                        <h3 className="font-heading font-semibold text-xl theme-text-primary">
+                    <div className="flex-1 w-full">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                        <h3 className="font-heading font-semibold text-lg sm:text-xl theme-text-primary">
                           {cert.title}
                         </h3>
-                        <Badge className="bg-green-100 text-green-800 text-sm font-medium">
+                        <Badge className="bg-green-100 text-green-800 text-xs sm:text-sm font-medium self-start">
                           {cert.year}
                         </Badge>
                       </div>
-                      <p className="theme-primary font-medium mb-2">{cert.issuer}</p>
-                      <p className="theme-text-secondary mb-4 text-sm leading-relaxed">
+                      <p className="theme-primary font-medium mb-2 text-sm sm:text-base">{cert.issuer}</p>
+                      <p className="theme-text-secondary mb-4 text-xs sm:text-sm leading-relaxed">
                         {cert.description}
                       </p>
-                      <div className="flex space-x-3">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                         <Button
                           size="sm"
-                          className="theme-primary-bg text-white hover:shadow-md transition-all duration-200"
+                          className="theme-primary-bg text-white hover:shadow-md transition-all duration-200 text-xs sm:text-sm"
                         >
                           <ExternalLink className="w-3 h-3 mr-1" />
                           View Certificate
@@ -75,7 +75,7 @@ export default function CertificationsSection() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="theme-surface theme-border hover:shadow-md transition-all duration-200"
+                          className="theme-surface theme-border hover:shadow-md transition-all duration-200 text-xs sm:text-sm"
                         >
                           <Shield className="w-3 h-3 mr-1" />
                           Verify Credential
