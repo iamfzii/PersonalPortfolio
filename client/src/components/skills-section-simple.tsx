@@ -69,12 +69,12 @@ export default function SkillsSection() {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={index} className="enhanced-card group">
+              <Card key={index} className="enhanced-card enhanced-hover group p-6 rounded-xl border-0 shadow-lg bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm ring-1 ring-black/5 dark:ring-white/10">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-tight">
+                  <h3 className="typography-h3 text-slate-900 dark:text-white leading-tight">
                     {category.title}
                   </h3>
                 </div>

@@ -46,7 +46,7 @@ export default function HeroSection() {
           animate="visible"
         >
           <Card className="theme-surface rounded-3xl shadow-2xl border-0 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 overflow-hidden">
-            <div className="p-8 sm:p-12 md:p-16 lg:p-20">
+            <div className="p-6 sm:p-8 md:p-10 lg:p-12">
               <motion.div variants={itemVariants} className="mb-8">
                 <div className="relative mx-auto mb-8">
                   <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl ring-4 ring-white dark:ring-gray-800">
@@ -94,39 +94,39 @@ export default function HeroSection() {
 
               <motion.div
                 variants={itemVariants}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+                className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-6"
               >
                 <a
                   href="mailto:fazeel@example.com"
-                  className="group flex items-center justify-center space-x-3 theme-text-muted hover:theme-primary transition-all duration-300 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+                  className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
-                  <Mail className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="body-sm font-medium">Email</span>
+                  <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium">Email</span>
                 </a>
                 <a
                   href="tel:+1234567890"
-                  className="group flex items-center justify-center space-x-3 theme-text-muted hover:theme-primary transition-all duration-300 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+                  className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
-                  <Phone className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="body-sm font-medium">Phone</span>
+                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium">Phone</span>
                 </a>
                 <a
                   href="https://linkedin.com/in/fazeel"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center space-x-3 theme-text-muted hover:theme-primary transition-all duration-300 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+                  className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
-                  <Linkedin className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="body-sm font-medium">LinkedIn</span>
+                  <Linkedin className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium">LinkedIn</span>
                 </a>
                 <a
                   href="https://github.com/fazeel"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center space-x-3 theme-text-muted hover:theme-primary transition-all duration-300 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+                  className="group flex items-center justify-center space-x-2 theme-text-muted hover:theme-primary transition-all duration-300 p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
                 >
-                  <Github className="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="body-sm font-medium">GitHub</span>
+                  <Github className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium">GitHub</span>
                 </a>
               </motion.div>
 
