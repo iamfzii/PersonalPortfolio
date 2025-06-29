@@ -320,9 +320,36 @@ body {
   100% { background-position: 200% 200%; }
 }
 
-/* Performance optimizations for fast loading and scrolling */
+/* Critical performance optimizations for fast loading */
 * {
   scroll-behavior: smooth;
+}
+
+/* Preload critical resources */
+body {
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+  loading: lazy;
+}
+
+/* Optimize animations for 60fps */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    animation-fill-mode: both;
+  }
+}
+
+/* GPU acceleration for smooth scrolling */
+.smooth-scroll {
+  transform: translateZ(0);
+  will-change: scroll-position;
 }
 
 /* Scrollbar styling for design panel */

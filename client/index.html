@@ -27,18 +27,29 @@
     <meta property="twitter:description" content="Technical Operations Coordinator specializing in full-stack applications, AI workflows, and cloud-based solutions.">
     <meta property="twitter:image" content="https://muhammadzeel.com/profile-preview.jpg">
     
-    <!-- Critical Performance Optimizations -->
+    <!-- Critical Performance Optimizations for Instant Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Critical font preloading for faster render -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <!-- Inline critical CSS for instant render -->
+    <style>
+      /* Critical path CSS for instant loading */
+      html { font-family: system-ui, -apple-system, sans-serif; }
+      body { margin: 0; background: white; color: #000; font-size: 16px; line-height: 1.5; }
+      .dark body { background: #0f0f23; color: #fff; }
+      * { box-sizing: border-box; }
+      .loading { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      .spinner { width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; animation: spin 1s linear infinite; }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+    
+    <!-- Async font loading to prevent render blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     
     <!-- Resource hints for better performance -->
-    <link rel="prefetch" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/main.tsx">
     
     <!-- Viewport optimizations -->
     <meta name="theme-color" content="#3b82f6">
