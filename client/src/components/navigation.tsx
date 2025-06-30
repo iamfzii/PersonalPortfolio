@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Palette } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { motion } from "framer-motion";
-import UnifiedDesignControls from "@/components/unified-design-controls";
+import SimpleDesignControls from "@/components/simple-design-controls";
 
 
 const navigation = [
@@ -110,109 +110,7 @@ export default function Navigation() {
           </div>
 
           <div className="flex items-center space-x-2 ml-auto">
-            <UnifiedDesignControls />
-
-            {/* Combined Design System & Advanced Controls */}
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="theme-surface theme-border px-3 py-2 hidden sm:flex items-center space-x-2">
-                  <Palette className="h-4 w-4 theme-text-secondary" />
-                  <span className="theme-text-primary text-sm">Design</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-80 theme-surface theme-border" side="bottom" align="end">
-                <div className="space-y-6">
-                  {/* Individual Controls */}
-                  <div>
-                    <h4 className="font-medium theme-text-primary mb-3">Individual Controls</h4>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <label className="text-sm theme-text-secondary mb-2 block">Color Theme</label>
-                        <div className="grid grid-cols-3 gap-2">
-                          {themes.map((themeOption) => (
-                            <button
-                              key={themeOption.value}
-                              onClick={() => setTheme(themeOption.value as any)}
-                              className={`p-2 rounded-lg border transition-all duration-200 hover:scale-105 ${
-                                theme === themeOption.value
-                                  ? "ring-2 ring-blue-500 border-blue-300"
-                                  : "border-gray-200 dark:border-gray-700 hover:border-gray-300"
-                              }`}
-                            >
-                              <div className={`w-full h-4 ${themeOption.color} rounded mb-1`} />
-                              <div className="text-xs theme-text-primary truncate">
-                                {themeOption.name.split(' ')[0]}
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <label className="text-sm theme-text-secondary mb-2 block">Typography</label>
-                        <div className="space-y-1">
-                          {fontCombinations.map((font) => (
-                            <button
-                              key={font.value}
-                              onClick={() => setFontCombination(font.value as any)}
-                              className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all duration-200 hover:scale-[1.02] ${
-                                fontCombination === font.value
-                                  ? "theme-primary-bg text-white shadow-md"
-                                  : "hover:bg-gray-100 dark:hover:bg-gray-800"
-                              }`}
-                            >
-                              <div className="font-medium">{font.name}</div>
-                              <div className="opacity-70">{font.description}</div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </PopoverContent>
-            </Popover>
-
-            {/* Mobile Design Controls */}
-            <div className="sm:hidden">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button variant="outline" size="icon" className="theme-surface theme-border">
-                    <Palette className="h-4 w-4 theme-text-secondary" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-72 theme-surface theme-border">
-                  <div className="space-y-4">
-                    <h4 className="font-medium theme-text-primary text-sm">Design Controls</h4>
-                    
-                    <div className="space-y-3">
-                      <div>
-                        <label className="text-xs theme-text-secondary mb-2 block">Quick Themes</label>
-                        <div className="grid grid-cols-2 gap-2">
-                          {themes.slice(0, 4).map((themeOption) => (
-                            <button
-                              key={themeOption.value}
-                              onClick={() => setTheme(themeOption.value as any)}
-                              className={`p-2 rounded-md border text-xs transition-all duration-150 ${
-                                theme === themeOption.value
-                                  ? "ring-2 ring-blue-500 border-blue-300"
-                                  : "border-gray-200 dark:border-gray-700"
-                              }`}
-                            >
-                              <div className={`w-full h-3 ${themeOption.color} rounded mb-1`} />
-                              <div className="theme-text-primary truncate">
-                                {themeOption.name.split(' ')[0]}
-                              </div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </PopoverContent>
-              </Popover>
-            </div>
+            <SimpleDesignControls />
 
 
           </div>
