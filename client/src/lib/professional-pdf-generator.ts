@@ -360,10 +360,6 @@ export function generateProfessionalResumePDF(): void {
   doc.line(margin, currentY, pageWidth - margin, currentY);
   currentY += 10;
   
-  // Personal Summary (replacing Professional Summary)
-  addSection('Personal Summary');
-  addText(professionalResumeData.personalInfo.summary, 10, 'normal');
-  
   // Career Profile
   addSection('Career Profile');
   addText(professionalResumeData.careerProfile, 10, 'normal');

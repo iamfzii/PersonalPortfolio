@@ -3,14 +3,14 @@ import { Card } from "@/components/ui/card";
 import { Download, FileText, Star, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { generateSimpleResumePDF } from "@/lib/simple-pdf-generator";
+import { generateProfessionalResumePDF } from "@/lib/professional-pdf-generator";
 
 export default function ResumeCTASection() {
   const { ref } = useScrollReveal();
 
   const handleDownloadPDF = () => {
     try {
-      generateSimpleResumePDF();
+      generateProfessionalResumePDF();
     } catch (error) {
       console.error('PDF generation failed:', error);
     }

@@ -67,7 +67,7 @@ export default function ProfessionalResumeExport() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-8 items-center px-2 md:px-0">
               {/* Features List */}
               <div className="space-y-4">
                 <h3 className="font-heading font-semibold text-lg theme-text-primary mb-4">
@@ -90,17 +90,18 @@ export default function ProfessionalResumeExport() {
               </div>
 
               {/* Download Button */}
-              <div className="text-center">
+              <div className="text-center px-2">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  className="w-full"
                 >
                   <Button
                     onClick={handleDownloadPDF}
                     disabled={isGenerating}
                     size="lg"
                     className={`
-                      w-full h-14 rounded-2xl font-semibold text-base transition-all duration-300 shadow-xl
+                      w-full h-14 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl max-w-full
                       ${isGenerated 
                         ? 'bg-green-600 hover:bg-green-700 text-white' 
                         : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white hover:shadow-2xl'
