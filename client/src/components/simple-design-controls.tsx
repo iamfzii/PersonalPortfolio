@@ -15,16 +15,67 @@ const themes = [
 ];
 
 const fontCombinations = [
-  { name: "Modern", value: "modern", description: "Inter + Source Sans Pro" },
-  { name: "Classic", value: "classic", description: "Playfair + Lora" },
-  { name: "Tech", value: "tech", description: "Space Grotesk + IBM Plex" },
-  { name: "Elegant", value: "elegant", description: "Montserrat + Source Sans" },
-  { name: "Bold", value: "bold", description: "Poppins + Roboto" },
-  { name: "Minimal", value: "minimal", description: "Inter Only" },
+  { name: "Modern", value: "modern", description: "Clean professional design" },
+  { name: "Classic", value: "classic", description: "Traditional elegance" },
+  { name: "Tech", value: "tech", description: "Command-line inspired" },
+  { name: "Elegant", value: "elegant", description: "Refined sophistication" },
+  { name: "Bold", value: "bold", description: "Strong visual impact" },
+  { name: "Minimal", value: "minimal", description: "Clean simplicity" },
+];
+
+// Technical Operations Design Combinations
+const technicalCombinations = [
+  { 
+    name: "Command Interface", 
+    theme: "dark", 
+    font: "tech", 
+    description: "Terminal-inspired design for technical professionals",
+    color: "bg-green-400"
+  },
+  { 
+    name: "Operations Dashboard", 
+    theme: "blue", 
+    font: "modern", 
+    description: "Clean monitoring interface aesthetic",
+    color: "bg-blue-500"
+  },
+  { 
+    name: "System Admin", 
+    theme: "dark", 
+    font: "minimal", 
+    description: "Professional system administration theme",
+    color: "bg-gray-600"
+  },
+  { 
+    name: "Tech Lead", 
+    theme: "purple", 
+    font: "bold", 
+    description: "Leadership-focused technical design",
+    color: "bg-purple-500"
+  },
+  { 
+    name: "DevOps Professional", 
+    theme: "green", 
+    font: "tech", 
+    description: "Infrastructure and automation focused",
+    color: "bg-emerald-500"
+  },
+  { 
+    name: "Technical Writer", 
+    theme: "light", 
+    font: "elegant", 
+    description: "Documentation and communication style",
+    color: "bg-slate-500"
+  },
 ];
 
 export default function SimpleDesignControls() {
   const { theme, setTheme, fontCombination, setFontCombination } = useTheme();
+
+  const applyTechnicalCombination = (combination: any) => {
+    setTheme(combination.theme);
+    setFontCombination(combination.font);
+  };
 
   return (
     <Popover>
@@ -63,6 +114,32 @@ export default function SimpleDesignControls() {
                   </Button>
                 );
               })}
+            </div>
+          </div>
+
+          <Separator />
+
+          {/* Technical Operations Presets */}
+          <div className="space-y-3">
+            <h3 className="font-semibold text-base">Technical Operations</h3>
+            <div className="space-y-1">
+              {technicalCombinations.map((combination) => (
+                <button
+                  key={combination.name}
+                  onClick={() => applyTechnicalCombination(combination)}
+                  className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all duration-200 ${
+                    theme === combination.theme && fontCombination === combination.font
+                      ? "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
+                      : "hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div className={`w-3 h-3 rounded-full ${combination.color}`}></div>
+                    <div className="font-medium">{combination.name}</div>
+                  </div>
+                  <div className="opacity-70 ml-5">{combination.description}</div>
+                </button>
+              ))}
             </div>
           </div>
 
