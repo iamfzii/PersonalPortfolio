@@ -2,13 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mail, Phone, Linkedin, Github, Download, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useOptimizedScrollReveal } from "@/hooks/use-optimized-scroll-reveal";
 import { generateProfessionalResumePDF } from "@/lib/professional-pdf-generator";
 import profilePicture from "@assets/profile picture_1751053870878.jpg";
 import { useState, useEffect } from "react";
 
 export default function HeroSection() {
-  const { ref } = useScrollReveal();
+  const { elementRef, animationClass } = useOptimizedScrollReveal({
+    enableInstantLoad: true,
+    animationClass: 'animate-fade-in-up-fast'
+  });
   const [typewriterText, setTypewriterText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const fullText = "7+ Years of passion in Computer Science & IT. I believe technology should solve real problems and create meaningful connections. Let's build something extraordinary together.";
@@ -60,8 +63,8 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      ref={ref}
-      className="section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5 pt-32 md:pt-16"
+      ref={elementRef}
+      className={`section-reveal section-spacing bg-gradient-to-b from-transparent via-transparent to-background/5 pt-32 md:pt-16 content-section fast-load ${animationClass}`}
     >
       <div className="content-container">
         <motion.div

@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useOptimizedScrollReveal } from "@/hooks/use-optimized-scroll-reveal";
 import { useMemo } from "react";
 
 const skillCategories = [
@@ -63,7 +63,10 @@ const skillCategories = [
 ];
 
 export default function SkillsSection() {
-  const { ref } = useScrollReveal();
+  const { elementRef, animationClass } = useOptimizedScrollReveal({
+    enableInstantLoad: true,
+    animationClass: 'animate-fade-in-up-fast'
+  });
   
   const highlightedTechs = useMemo(() => [
     "React.js", "Python", "JavaScript", "Node.js", "MongoDB", "TensorFlow", 
@@ -103,8 +106,8 @@ export default function SkillsSection() {
   return (
     <section
       id="skills"
-      ref={ref}
-      className="section-reveal section-spacing-sm bg-gradient-to-b from-background/50 to-transparent"
+      ref={elementRef}
+      className={`section-reveal section-spacing-sm bg-gradient-to-b from-background/50 to-transparent content-section fast-load ${animationClass}`}
     >
       <div className="content-container">
         <motion.div
