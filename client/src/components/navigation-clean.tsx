@@ -13,6 +13,7 @@ const navigation = [
   { name: "Demos", href: "#demos", ariaLabel: "Go to demonstrations section" },
   { name: "Experience", href: "#experience", ariaLabel: "Go to experience section" },
   { name: "Education", href: "#education", ariaLabel: "Go to education section" },
+  { name: "Resume", href: "#resume-export", ariaLabel: "Download professional resume" },
   { name: "Contact", href: "#contact", ariaLabel: "Go to contact section" },
 ];
 
