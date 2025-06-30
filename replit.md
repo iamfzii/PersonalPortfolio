@@ -204,6 +204,7 @@ Changelog:
 - June 30, 2025. Design studio expansion: Enhanced technical operations themes from 6 to 12 specialized combinations, adding Cybersecurity Pro, Cloud Architect, Data Engineer, Site Reliability, Network Operations, and IT Operations themes. Each theme features unique color indicators and descriptions tailored for specific technical roles. Increased popover height to accommodate the expanded theme selection.
 - June 30, 2025. Personality badges update: Changed hero section personality badges from "Problem Solver, Team Builder, Innovation Driver" to "Project Leader, Process Optimizer, Operations Expert" to better reflect technical operations leadership focus.
 - June 30, 2025. Mobile personality badges fix: Fixed horizontal alignment of personality badges on OnePlus 9 Pro with flex-nowrap layout, flex-shrink-0 containers, reduced mobile padding, and whitespace-nowrap text to prevent vertical stacking.
+- June 30, 2025. Profile picture and badges enhancement: Added shadow-2xl and ring-4 outline to profile picture, removed all hover effects for clean professional look. Updated personality badges to wrap naturally line-by-line with max-width container instead of forced horizontal layout.
 ```
 
 ## User Preferences
