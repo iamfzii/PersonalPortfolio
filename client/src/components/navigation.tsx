@@ -109,27 +109,7 @@ export default function Navigation() {
           <div className="flex items-center space-x-8">
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`theme-text-secondary hover:theme-primary transition-colors duration-200 font-medium relative ${
-                  activeSection === item.href.slice(1) ? "theme-primary" : ""
-                }`}
-              >
-                {item.name}
-                {activeSection === item.href.slice(1) && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 theme-primary-bg"
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 ml-auto">
             <UnifiedDesignControls />
 
             {/* Combined Design System & Advanced Controls */}
