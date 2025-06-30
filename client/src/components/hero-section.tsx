@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Phone, Linkedin, Github, Download, MessageCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Mail, Phone, Linkedin, Github, Download, MessageCircle, Heart, Zap, Target, Star, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { useOptimizedScrollReveal } from "@/hooks/use-optimized-scroll-reveal";
 import { generateProfessionalResumePDF } from "@/lib/professional-pdf-generator";
@@ -76,18 +77,46 @@ export default function HeroSection() {
           <Card className="theme-surface rounded-3xl shadow-2xl border-0 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 overflow-hidden">
             <div className="p-6 sm:p-8 md:p-10 lg:p-16 xl:p-20">
               <motion.div variants={itemVariants} className="mb-8">
-                <div className="relative mx-auto mb-8">
-                  <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl ring-4 ring-white dark:ring-gray-800">
+                <div className="relative mx-auto mb-8 group">
+                  {/* Animated ring effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-spin opacity-75 blur-sm"></div>
+                  <div className="absolute inset-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse"></div>
+                  
+                  {/* Profile picture container */}
+                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-800 transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
                     <img 
                       src={profilePicture} 
                       alt="Muhammad Fazeel - Technical Operations Coordinator" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       loading="eager"
                     />
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  {/* Subtle brand element */}
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-sm">MF</span>
+                  
+                  {/* Brand badge with pulsing effect */}
+                  <motion.div 
+                    className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    animate={{ 
+                      boxShadow: [
+                        "0 0 20px rgb(59 130 246 / 0.3)",
+                        "0 0 40px rgb(59 130 246 / 0.6)",
+                        "0 0 20px rgb(59 130 246 / 0.3)"
+                      ]
+                    }}
+                    transition={{ 
+                      boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse" }
+                    }}
+                  >
+                    <span className="text-white font-bold text-sm drop-shadow-lg">MF</span>
+                    <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-yellow-300 animate-ping" />
+                  </motion.div>
+                  
+                  {/* Status indicator */}
+                  <div className="absolute -top-1 -left-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white shadow-lg animate-pulse">
+                    <div className="w-full h-full bg-green-500 rounded-full animate-ping"></div>
                   </div>
                 </div>
               </motion.div>
@@ -130,15 +159,41 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"
               >
-                <span className="px-2 sm:px-4 py-1.5 sm:py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
-                  Problem Solver
-                </span>
-                <span className="px-2 sm:px-4 py-1.5 sm:py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
-                  Team Builder
-                </span>
-                <span className="px-2 sm:px-4 py-1.5 sm:py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
-                  Innovation Driver
-                </span>
+                <motion.div 
+                  className="group relative overflow-hidden"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-blue-600 group-hover:to-cyan-600">
+                    <Target className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-pulse" />
+                    Problem Solver
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
+                  </Badge>
+                </motion.div>
+                
+                <motion.div 
+                  className="group relative overflow-hidden"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-emerald-600 group-hover:to-green-600">
+                    <Heart className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 heartbeat" />
+                    Team Builder
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
+                  </Badge>
+                </motion.div>
+                
+                <motion.div 
+                  className="group relative overflow-hidden"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-purple-600 group-hover:to-pink-600">
+                    <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-bounce" />
+                    Innovation Driver
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
+                  </Badge>
+                </motion.div>
               </motion.div>
 
               <motion.div
@@ -183,38 +238,54 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center justify-center gap-6"
               >
-                <Button
-                  onClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                      // Focus on the "Start Your Project" card after scrolling
-                      setTimeout(() => {
-                        const startProjectCard = document.getElementById('start-project-card');
-                        if (startProjectCard) {
-                          startProjectCard.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                          });
-                        }
-                      }, 800);
-                    }
-                  }}
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold px-10 py-4 text-lg rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <MessageCircle className="w-6 h-6 mr-3 theme-icon-primary" />
-                  Let's Work Together
-                </Button>
-                <Button
-                  onClick={handleDownloadPDF}
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-slate-400 dark:border-slate-500 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400"
+                  <Button
+                    onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                        // Focus on the "Start Your Project" card after scrolling
+                        setTimeout(() => {
+                          const startProjectCard = document.getElementById('start-project-card');
+                          if (startProjectCard) {
+                            startProjectCard.scrollIntoView({ 
+                              behavior: 'smooth', 
+                              block: 'center' 
+                            });
+                          }
+                        }, 800);
+                      }
+                    }}
+                    size="lg"
+                    className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold px-12 py-5 text-lg rounded-3xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform border-0"
+                  >
+                    <MessageCircle className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="relative z-10">Let's Work Together</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                    <Star className="absolute top-1 right-2 w-4 h-4 text-yellow-300 opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300" />
+                  </Button>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <Download className="w-6 h-6 mr-3 theme-icon-secondary" />
-                  Download Resume
-                </Button>
+                  <Button
+                    onClick={handleDownloadPDF}
+                    variant="outline"
+                    size="lg"
+                    className="group relative overflow-hidden border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-12 py-5 text-lg font-bold rounded-3xl transition-all duration-500 hover:shadow-xl bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 backdrop-blur-sm"
+                  >
+                    <Download className="w-6 h-6 mr-3 group-hover:animate-bounce transition-transform duration-300" />
+                    <span className="relative z-10">Download Resume</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-100/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  </Button>
+                </motion.div>
               </motion.div>
             </div>
           </Card>

@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp } from "lucide-react";
+import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp, Star, Sparkles, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useTypewriter } from "@/hooks/use-typewriter";
@@ -117,15 +117,35 @@ export default function SkillsSection() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="group/skill relative"
                       >
                         <Badge
                           variant="secondary"
-                          className={`px-4 py-2 body-sm font-medium transition-all duration-200 cursor-pointer hover:shadow-md border-0 ${
+                          className={`relative overflow-hidden px-4 py-2.5 body-sm font-semibold transition-all duration-300 cursor-pointer border-0 ${
                             category.colors[skillIndex % category.colors.length]
-                          } hover:scale-105 hover:bg-opacity-80`}
+                          } hover:shadow-lg group-hover/skill:shadow-xl transform group-hover/skill:bg-gradient-to-r group-hover/skill:from-blue-500 group-hover/skill:to-purple-500 group-hover/skill:text-white`}
                         >
-                          {skill}
+                          <span className="relative z-10">{skill}</span>
+                          
+                          {/* Skill mastery indicator for key technologies */}
+                          {['React.js', 'JavaScript', 'Python', 'Node.js', 'MongoDB', 'Git'].includes(skill) && (
+                            <Star className="absolute -top-1 -right-1 w-3 h-3 text-yellow-400 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 animate-pulse" />
+                          )}
+                          
+                          {/* Shimmer effect on hover */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/skill:translate-x-full transition-transform duration-700" />
+                          
+                          {/* Sparkle effect for special skills */}
+                          {['Machine Learning', 'AI/ML', 'Data Science', 'Cloud Computing'].includes(skill) && (
+                            <Sparkles className="absolute top-0 right-0 w-3 h-3 text-blue-400 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 animate-bounce" />
+                          )}
+                          
+                          {/* Trophy for management skills */}
+                          {['Project Management', 'Team Leadership', 'Agile'].includes(skill) && (
+                            <Trophy className="absolute -top-1 -right-1 w-3 h-3 text-amber-400 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300" />
+                          )}
                         </Badge>
                       </motion.div>
                     ))}
