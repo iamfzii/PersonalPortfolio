@@ -197,6 +197,7 @@ Changelog:
 - June 30, 2025. Two-column PDF content update: Replaced dummy content in two-column PDF generator with authentic data from live website including real projects (Messaging Android App, Tax Calculator, Logistics Dashboard, Fake News Classification), actual experience (Capestone Shipping Dubai, GODEV positions), updated skills categorization, education details (NCBA&E Bachelor's, GCT Diploma), and live demonstrations. PDF now accurately reflects current portfolio content.
 - June 30, 2025. Navigation simplification: Completely removed both desktop and mobile navigation menus, keeping only design controls button. This creates a cleaner, more professional interface focused on content rather than navigation complexity, perfect for a resume website format.
 - June 30, 2025. Mobile menu elimination: Replaced UnifiedDesignControls with SimpleDesignControls component to remove the three-line hamburger menu button that was appearing on mobile devices like OnePlus 9 Pro. Now uses consistent popover-based design controls across all devices for a cleaner interface.
+- June 30, 2025. Button minimization: Removed "Design" text from navigation button, leaving only the palette icon for maximum visual simplicity and clean aesthetic.
 ```
 
 ## User Preferences

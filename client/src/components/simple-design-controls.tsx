@@ -31,11 +31,10 @@ export default function SimpleDesignControls() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          size="sm"
+          size="icon"
           className="relative group hover:shadow-md transition-all duration-300 border-2 hover:border-blue-300 dark:hover:border-blue-600"
         >
-          <Palette className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-          <span className="hidden sm:inline">Design</span>
+          <Palette className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
         </Button>
       </PopoverTrigger>
       
