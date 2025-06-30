@@ -9,6 +9,7 @@ import EducationSection from "@/components/education-section";
 import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-mobile-redesigned";
 import ProfessionalResumeExport from "@/components/professional-resume-export";
+import TwoColumnResumeExport from "@/components/two-column-resume-export";
 import Footer from "@/components/footer-redesigned";
 import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
 import BackToTop from "@/components/back-to-top";
@@ -29,6 +30,7 @@ export default function Home() {
           <EducationSection />
           <CertificationsSection />
           <ProfessionalResumeExport />
+          <TwoColumnResumeExport />
           <ContactSection />
         </main>
         <Footer />

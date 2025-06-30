@@ -14,6 +14,7 @@ const navigation = [
   { name: "Experience", href: "#experience", ariaLabel: "Go to experience section" },
   { name: "Education", href: "#education", ariaLabel: "Go to education section" },
   { name: "Resume", href: "#resume-export", ariaLabel: "Download professional resume" },
+  { name: "Two-Column", href: "#two-column-resume", ariaLabel: "Download two-column resume" },
   { name: "Contact", href: "#contact", ariaLabel: "Go to contact section" },
 ];
 
