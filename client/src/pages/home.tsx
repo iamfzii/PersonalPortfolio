@@ -11,7 +11,7 @@ import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-mobile-redesigned";
 import TwoColumnResumeExport from "@/components/two-column-resume-export";
 import Footer from "@/components/footer-redesigned";
-import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
+import InteractiveBackground from "@/components/ultra-fast-interactive-background";
 import FloatingCTAElements from "@/components/floating-cta-elements";
 import BackToTop from "@/components/back-to-top";
 
@@ -21,40 +21,52 @@ export default function Home() {
       <InteractiveBackground />
       <div className="relative z-10">
         <Navigation />
-        <main className="performance-optimized gpu-accelerated">
-          <div className="content-optimized">
+        <main className="performance-optimized gpu-accelerated" role="main">
+          {/* Above-the-fold critical content for instant loading */}
+          <section className="above-fold" id="hero" aria-label="Hero Section">
             <HeroSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          {/* Below-the-fold optimized sections */}
+          <section className="content-optimized" id="career" aria-label="Career Profile">
             <CareerProfile />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="brand-manifesto" aria-label="Brand Manifesto">
             <BrandManifesto />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="skills" aria-label="Technical Skills">
             <SkillsSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="projects" aria-label="Featured Projects">
             <ProjectsSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="demos" aria-label="Live Demonstrations">
             <DemonstrationsSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="experience" aria-label="Work Experience">
             <ExperienceSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="education" aria-label="Education Background">
             <EducationSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="certifications" aria-label="Professional Certifications">
             <CertificationsSection />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="resume-download" aria-label="Resume Download">
             <TwoColumnResumeExport />
-          </div>
-          <div className="content-optimized">
+          </section>
+          
+          <section className="content-optimized" id="contact" aria-label="Contact Information">
             <ContactSection />
-          </div>
+          </section>
         </main>
         <Footer />
         <FloatingCTAElements />

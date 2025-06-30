@@ -4,49 +4,93 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Performance optimizations for ultra-fast loading */
+/* Ultra-fast loading performance optimizations */
 @layer base {
-  /* Critical performance CSS */
+  /* Critical performance CSS for instant rendering */
   html {
     font-display: swap;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
   
   body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    font-variant-ligatures: common-ligatures;
   }
   
-  /* GPU acceleration for smooth animations */
+  /* Enhanced GPU acceleration for 120Hz+ displays */
   .performance-optimized {
-    will-change: transform;
+    will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
+    perspective: 1000px;
+    contain: layout style paint;
   }
   
   .gpu-accelerated {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
   }
   
-  /* Content visibility optimization for off-screen content */
+  /* Advanced content visibility for instant loading */
   .content-optimized {
     content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
+    contain-intrinsic-size: 1px 1000px;
+    contain: layout style paint;
   }
   
-  /* Preload critical images */
+  /* Critical above-the-fold optimization */
+  .above-fold {
+    content-visibility: visible;
+    contain: none;
+  }
+  
+  /* Preload critical images with enhanced performance */
   img[loading="eager"] {
     content-visibility: visible;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
   
-  /* Optimize scrolling performance */
+  /* Ultra-smooth scrolling optimization */
   * {
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   
-  /* Reduce motion for accessibility and performance */
+  /* Enhanced animation performance */
+  .animate-fast {
+    animation-fill-mode: both;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
+  /* Interactive element optimization */
+  .interactive-element {
+    cursor: pointer;
+    will-change: transform, opacity;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .interactive-element:hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  /* Background optimization for better performance */
+  .background-optimized {
+    will-change: auto;
+    contain: strict;
+    isolation: isolate;
+  }
+  
+  /* Enhanced reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -54,6 +98,18 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    
+    .interactive-element:hover {
+      transform: none !important;
+    }
+  }
+  
+  /* High refresh rate optimization */
+  @media (min-resolution: 120dpi) {
+    .performance-optimized {
+      transform: translate3d(0, 0, 0) scale(1);
     }
   }
 }
