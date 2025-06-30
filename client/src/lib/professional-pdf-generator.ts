@@ -291,52 +291,77 @@ export function generateProfessionalResumePDF(): void {
 
   // Start building the PDF
   
-  // Header Section
-  doc.setFontSize(20);
+  // Header Section - Centered
+  doc.setFontSize(24);
   doc.setFont('helvetica', 'bold');
-  doc.setTextColor(primaryColor);
-  doc.text(professionalResumeData.personalInfo.name, margin, currentY);
-  currentY += 8;
+  doc.setTextColor('#1e40af'); // Primary blue
+  const nameWidth = doc.getTextWidth(professionalResumeData.personalInfo.name);
+  doc.text(professionalResumeData.personalInfo.name, (pageWidth - nameWidth) / 2, currentY);
+  currentY += 10;
   
-  doc.setFontSize(14);
+  doc.setFontSize(16);
   doc.setFont('helvetica', 'normal');
-  doc.setTextColor(secondaryColor);
-  doc.text(professionalResumeData.personalInfo.title, margin, currentY);
-  currentY += 6;
+  doc.setTextColor('#374151'); // Dark gray
+  const titleWidth = doc.getTextWidth(professionalResumeData.personalInfo.title);
+  doc.text(professionalResumeData.personalInfo.title, (pageWidth - titleWidth) / 2, currentY);
+  currentY += 8;
   
   doc.setFontSize(12);
   doc.setFont('helvetica', 'normal');
-  doc.setTextColor(primaryColor);
-  doc.text(professionalResumeData.personalInfo.tagline, margin, currentY);
+  doc.setTextColor('#1e40af'); // Primary blue
+  const taglineWidth = doc.getTextWidth(professionalResumeData.personalInfo.tagline);
+  doc.text(professionalResumeData.personalInfo.tagline, (pageWidth - taglineWidth) / 2, currentY);
+  currentY += 12;
+  
+  // Contact Information - Centered and organized
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor('#374151'); // Dark gray
+  
+  // First row - Email and Phone
+  const emailText = `Email: ${professionalResumeData.personalInfo.email}`;
+  const phoneText = `Phone: ${professionalResumeData.personalInfo.phone}`;
+  const emailWidth = doc.getTextWidth(emailText);
+  const phoneWidth = doc.getTextWidth(phoneText);
+  const totalWidth1 = emailWidth + phoneWidth + 20; // 20px spacing
+  const startX1 = (pageWidth - totalWidth1) / 2;
+  
+  doc.text(emailText, startX1, currentY);
+  doc.text(phoneText, startX1 + emailWidth + 20, currentY);
+  currentY += 5;
+  
+  // Second row - Location
+  const locationText = `Location: ${professionalResumeData.personalInfo.location}`;
+  const locationWidth = doc.getTextWidth(locationText);
+  doc.text(locationText, (pageWidth - locationWidth) / 2, currentY);
+  currentY += 5;
+  
+  // Third row - Portfolio and LinkedIn
+  const portfolioText = `Portfolio: ${professionalResumeData.personalInfo.portfolio}`;
+  const linkedinText = `LinkedIn: ${professionalResumeData.personalInfo.linkedin}`;
+  const portfolioWidth = doc.getTextWidth(portfolioText);
+  const linkedinWidth = doc.getTextWidth(linkedinText);
+  const totalWidth2 = portfolioWidth + linkedinWidth + 20; // 20px spacing
+  const startX2 = (pageWidth - totalWidth2) / 2;
+  
+  doc.text(portfolioText, startX2, currentY);
+  doc.text(linkedinText, startX2 + portfolioWidth + 20, currentY);
+  currentY += 5;
+  
+  // Fourth row - GitHub
+  const githubText = `GitHub: ${professionalResumeData.personalInfo.github}`;
+  const githubWidth = doc.getTextWidth(githubText);
+  doc.text(githubText, (pageWidth - githubWidth) / 2, currentY);
   currentY += 10;
   
-  // Contact Information
-  doc.setFontSize(9);
-  doc.setFont('helvetica', 'normal');
-  doc.setTextColor(textColor);
-  const contactInfo = [
-    `📧 ${professionalResumeData.personalInfo.email}`,
-    `📱 ${professionalResumeData.personalInfo.phone}`,
-    `📍 ${professionalResumeData.personalInfo.location}`,
-    `🔗 ${professionalResumeData.personalInfo.portfolio}`,
-    `💼 ${professionalResumeData.personalInfo.linkedin}`,
-    `🔗 ${professionalResumeData.personalInfo.github}`
-  ];
+  // Add horizontal divider
+  doc.setDrawColor('#e5e7eb'); // Light gray
+  doc.setLineWidth(1);
+  doc.line(margin, currentY, pageWidth - margin, currentY);
+  currentY += 10;
   
-  contactInfo.forEach((info, index) => {
-    if (index % 2 === 0) {
-      doc.text(info, margin, currentY);
-    } else {
-      doc.text(info, margin + contentWidth/2, currentY);
-      currentY += 4;
-    }
-  });
-  
-  if (contactInfo.length % 2 !== 0) currentY += 4;
-  currentY += 5;
-
-  // Professional Summary
-  addSection('Professional Summary');
+  // Personal Summary (replacing Professional Summary)
+  addSection('Personal Summary');
   addText(professionalResumeData.personalInfo.summary, 10, 'normal');
   
   // Career Profile

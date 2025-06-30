@@ -52,7 +52,7 @@ export default function ProfessionalResumeExport() {
               </h2>
               
               <p className="text-base md:text-lg theme-text-muted max-w-2xl mx-auto mb-6">
-                Get a professionally formatted PDF resume with all the content from this portfolio website - ready for job applications and international opportunities.
+                Download a professionally formatted A4 PDF resume with centered header, clean typography, and all authentic content from this portfolio - optimized for recruiters and ATS systems.
               </p>
 
               <div className="flex items-center justify-center gap-2 mb-8">
