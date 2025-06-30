@@ -78,45 +78,53 @@ export default function HeroSection() {
             <div className="p-6 sm:p-8 md:p-10 lg:p-16 xl:p-20">
               <motion.div variants={itemVariants} className="mb-8">
                 <div className="relative mx-auto mb-8 group">
-                  {/* Animated ring effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-spin opacity-75 blur-sm"></div>
-                  <div className="absolute inset-1 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-pulse"></div>
+                  {/* Tech grid background */}
+                  <div className="absolute inset-0 w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 mx-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full border border-blue-200/30 dark:border-blue-500/30 backdrop-blur-sm"></div>
+                    {/* Floating tech elements */}
+                    <div className="absolute top-4 left-6 w-2 h-2 bg-blue-400 rounded-sm opacity-60 tech-pulse"></div>
+                    <div className="absolute top-6 right-8 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-70 tech-pulse" style={{animationDelay: '0.5s'}}></div>
+                    <div className="absolute bottom-6 left-8 w-2 h-2 bg-cyan-400 rounded-sm opacity-50 tech-pulse" style={{animationDelay: '1s'}}></div>
+                    <div className="absolute bottom-4 right-6 w-1.5 h-1.5 bg-green-400 rounded-full opacity-60 tech-pulse" style={{animationDelay: '1.5s'}}></div>
+                    
+                    {/* Corner tech details */}
+                    <div className="absolute top-2 left-2 w-3 h-3 border-l border-t border-blue-400 opacity-40"></div>
+                    <div className="absolute top-2 right-2 w-3 h-3 border-r border-t border-purple-400 opacity-40"></div>
+                    <div className="absolute bottom-2 left-2 w-3 h-3 border-l border-b border-cyan-400 opacity-40"></div>
+                    <div className="absolute bottom-2 right-2 w-3 h-3 border-r border-b border-green-400 opacity-40"></div>
+                  </div>
                   
                   {/* Profile picture container */}
-                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-2xl ring-4 ring-white dark:ring-gray-800 transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl">
+                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl ring-2 ring-blue-200/50 dark:ring-blue-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:ring-blue-400/60 fast-hover">
                     <img 
                       src={profilePicture} 
                       alt="Muhammad Fazeel - Technical Operations Coordinator" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       loading="eager"
+                      decoding="async"
                     />
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    {/* Tech overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Scanning line effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tech-scan">
+                      <div className="absolute top-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"></div>
+                      <div className="absolute bottom-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                    </div>
                   </div>
                   
-                  {/* Brand badge with pulsing effect */}
+                  {/* Tech badge */}
                   <motion.div 
-                    className="absolute -bottom-2 -right-2 w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300"
+                    className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
-                    animate={{ 
-                      boxShadow: [
-                        "0 0 20px rgb(59 130 246 / 0.3)",
-                        "0 0 40px rgb(59 130 246 / 0.6)",
-                        "0 0 20px rgb(59 130 246 / 0.3)"
-                      ]
-                    }}
-                    transition={{ 
-                      boxShadow: { duration: 2, repeat: Infinity, repeatType: "reverse" }
-                    }}
                   >
-                    <span className="text-white font-bold text-sm drop-shadow-lg">MF</span>
-                    <Sparkles className="absolute -top-1 -right-1 w-3 h-3 text-yellow-300 animate-ping" />
+                    <span className="text-white font-bold text-xs">MF</span>
                   </motion.div>
                   
-                  {/* Status indicator */}
-                  <div className="absolute -top-1 -left-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white shadow-lg animate-pulse">
-                    <div className="w-full h-full bg-green-500 rounded-full animate-ping"></div>
+                  {/* Online status */}
+                  <div className="absolute -top-1 -left-1 w-3 h-3 bg-green-400 rounded-full border border-white shadow-sm tech-pulse">
+                    <div className="w-full h-full bg-green-500 rounded-full opacity-30"></div>
                   </div>
                 </div>
               </motion.div>

@@ -21,18 +21,40 @@ export default function Home() {
       <InteractiveBackground />
       <div className="relative z-10">
         <Navigation />
-        <main className="performance-optimized">
-          <HeroSection />
-          <CareerProfile />
-          <BrandManifesto />
-          <SkillsSection />
-          <ProjectsSection />
-          <DemonstrationsSection />
-          <ExperienceSection />
-          <EducationSection />
-          <CertificationsSection />
-          <TwoColumnResumeExport />
-          <ContactSection />
+        <main className="performance-optimized gpu-accelerated">
+          <div className="content-optimized">
+            <HeroSection />
+          </div>
+          <div className="content-optimized">
+            <CareerProfile />
+          </div>
+          <div className="content-optimized">
+            <BrandManifesto />
+          </div>
+          <div className="content-optimized">
+            <SkillsSection />
+          </div>
+          <div className="content-optimized">
+            <ProjectsSection />
+          </div>
+          <div className="content-optimized">
+            <DemonstrationsSection />
+          </div>
+          <div className="content-optimized">
+            <ExperienceSection />
+          </div>
+          <div className="content-optimized">
+            <EducationSection />
+          </div>
+          <div className="content-optimized">
+            <CertificationsSection />
+          </div>
+          <div className="content-optimized">
+            <TwoColumnResumeExport />
+          </div>
+          <div className="content-optimized">
+            <ContactSection />
+          </div>
         </main>
         <Footer />
         <FloatingCTAElements />
