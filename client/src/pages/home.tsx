@@ -14,11 +14,13 @@ import Footer from "@/components/footer-redesigned";
 import InteractiveBackground from "@/components/interactive-background-ultra-optimized";
 import FloatingCTAElements from "@/components/floating-cta-elements";
 import BackToTop from "@/components/back-to-top";
+import { FloatingBrandElements } from "@/components/brand-presence";
 
 export default function Home() {
   return (
     <div className="min-h-screen relative">
       <InteractiveBackground />
+      <FloatingBrandElements />
       <div className="relative z-10">
         <Navigation />
         <main className="performance-optimized gpu-accelerated">

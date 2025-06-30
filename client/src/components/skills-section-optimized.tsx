@@ -4,6 +4,7 @@ import { Code, Palette, Server, Brain, Zap, Cloud, Settings, TrendingUp } from "
 import { motion } from "framer-motion";
 import { useOptimizedScrollReveal } from "@/hooks/use-optimized-scroll-reveal";
 import { useMemo } from "react";
+import { BrandText, BrandSkillBadge } from "@/components/brand-presence";
 
 const skillCategories = [
   {
