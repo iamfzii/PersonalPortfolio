@@ -286,7 +286,6 @@ export default function UnifiedDesignControls() {
           <SheetHeader className="pb-6">
             <SheetTitle className="flex items-center space-x-2">
               <Palette className="w-5 h-5 text-blue-600" />
-              <span>Design Studio</span>
             </SheetTitle>
           </SheetHeader>
 
