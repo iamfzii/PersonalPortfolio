@@ -199,6 +199,7 @@ Changelog:
 - June 30, 2025. Mobile menu elimination: Replaced UnifiedDesignControls with SimpleDesignControls component to remove the three-line hamburger menu button that was appearing on mobile devices like OnePlus 9 Pro. Now uses consistent popover-based design controls across all devices for a cleaner interface.
 - June 30, 2025. Button minimization: Removed "Design" text from navigation button, leaving only the palette icon for maximum visual simplicity and clean aesthetic.
 - June 30, 2025. Mobile download optimization: Fixed two-column resume download button for OnePlus 9 Pro with compact mobile design - reduced height (48px mobile, 64px desktop), shorter text ("Download" vs full text), smaller icons, and optimized spacing for perfect mobile fit.
+- June 30, 2025. Resume section consolidation: Removed professional resume download section and renamed two-column resume section to "Resume Download" with simplified content focused on single PDF download option.
 ```
 
 ## User Preferences

@@ -39,7 +39,7 @@ export default function TwoColumnResumeExport() {
   ];
 
   return (
-    <section className="py-16 md:py-24 relative" id="two-column-resume">
+    <section className="py-16 md:py-24 relative" id="resume-download">
       <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -48,15 +48,15 @@ export default function TwoColumnResumeExport() {
           className="text-center mb-12"
         >
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 mb-6 shadow-lg">
-            <Layout className="w-8 h-8 text-white" />
+            <FileText className="w-8 h-8 text-white" />
           </div>
           
           <h2 className="text-3xl md:text-4xl font-heading font-bold theme-text-primary mb-4">
-            Two-Column Professional Resume
+            Resume Download
           </h2>
           
           <p className="text-lg theme-text-secondary max-w-2xl mx-auto leading-relaxed">
-            Download a modern, recruiter-optimized two-column resume format with clean layout and professional design
+            Download professional resume in PDF format, optimized for ATS systems and recruiter review
           </p>
         </motion.div>
 
@@ -73,17 +73,17 @@ export default function TwoColumnResumeExport() {
               </div>
               
               <h3 className="text-2xl font-heading font-bold theme-text-primary mb-2">
-                Two-Column Layout Resume
+                Professional Resume PDF
               </h3>
               
               <p className="theme-text-secondary text-base">
-                Professional A4 format with optimized two-column design
+                Clean two-column layout optimized for ATS systems
               </p>
               
               <div className="mt-6 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700">
                 <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                 <span className="text-sm font-medium text-emerald-700 dark:text-emerald-300">
-                  New Enhanced Layout
+                  Ready to Download
                 </span>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function TwoColumnResumeExport() {
                     ) : (
                       <div className="flex items-center space-x-2 sm:space-x-3">
                         <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span className="hidden sm:inline">Download Two-Column Resume</span>
+                        <span className="hidden sm:inline">Download Resume PDF</span>
                         <span className="sm:hidden">Download</span>
                       </div>
                     )}
