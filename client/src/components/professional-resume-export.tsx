@@ -101,7 +101,7 @@ export default function ProfessionalResumeExport() {
                     disabled={isGenerating}
                     size="lg"
                     className={`
-                      w-full h-14 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl
+                      w-full h-16 rounded-2xl font-semibold text-base md:text-lg transition-all duration-300 shadow-xl
                       ${isGenerated 
                         ? 'bg-green-600 hover:bg-green-700 text-white' 
                         : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white hover:shadow-2xl'
