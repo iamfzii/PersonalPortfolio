@@ -123,39 +123,25 @@ export default function HeroSection() {
 
               <motion.h1
                 variants={itemVariants}
-                className="font-heading font-black theme-text-primary tracking-tight mb-6 cursor-magnetic signature-element"
+                className="font-heading font-black theme-text-primary tracking-tight mb-6"
                 style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)' }}
               >
-                <span className="hover-highlight">Muhammad</span>
-                <span className="mx-3 text-gradient brand-pulse">•</span>
-                <span className="hover-highlight trust-indicator">Fazeel</span>
+                Muhammad Fazeel
               </motion.h1>
 
               <motion.h2
                 variants={itemVariants}
-                className="font-heading font-bold theme-text-secondary mb-4 ripple-effect cursor-magnetic"
+                className="font-heading font-bold theme-text-secondary mb-4"
                 style={{ fontSize: 'clamp(1.25rem, 4vw, 2rem)' }}
               >
-                <span className="hover-highlight">Technical Operations</span>
-                <span className="mx-2 text-gradient">◆</span>
-                <span className="hover-highlight">Coordinator</span>
+                Technical Operations Coordinator
               </motion.h2>
 
-              <motion.div
+              <motion.p
                 variants={itemVariants}
-                className="mb-6"
-              >
-                <div className="group relative inline-block">
-                  <p className="text-blue-600 dark:text-blue-400 font-semibold hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-500 cursor-default text-glow"
-                     style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}
-                  >
-                    <span className="hover-highlight">Where Strategy</span>
-                    <span className="mx-2 text-gradient">⚡</span>
-                    <span className="hover-highlight">Meets Technical Execution</span>
-                  </p>
-                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-700 ease-out"></div>
-                </div>
-              </motion.div>
+                className="text-blue-600 dark:text-blue-400 font-semibold mb-6"
+                style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)' }}
+              >Where Strategy Meets Technical Execution</motion.p>
 
               <motion.p
                 variants={itemVariants}
@@ -172,37 +158,37 @@ export default function HeroSection() {
                 className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-12 max-w-xs sm:max-w-md mx-auto"
               >
                 <motion.div 
-                  className="group relative overflow-hidden trust-indicator"
+                  className="group relative overflow-hidden"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300 cursor-magnetic ripple-effect">
+                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300">
                     <Target className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-pulse" />
-                    <span className="hover-highlight">Project Leader</span>
+                    Project Leader
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
                   </Badge>
                 </motion.div>
                 
                 <motion.div 
-                  className="group relative overflow-hidden signature-element"
+                  className="group relative overflow-hidden"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300 cursor-magnetic ripple-effect">
+                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300">
                     <Heart className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 heartbeat" />
-                    <span className="hover-highlight">Process Optimizer</span>
+                    Process Optimizer
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
                   </Badge>
                 </motion.div>
                 
                 <motion.div 
-                  className="group relative overflow-hidden trust-indicator"
+                  className="group relative overflow-hidden"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300 cursor-magnetic ripple-effect">
+                  <Badge className="px-2 py-1.5 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 rounded-full text-xs font-semibold shadow-lg transition-all duration-300">
                     <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-bounce" />
-                    <span className="hover-highlight">Operations Expert</span>
+                    Operations Expert
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
                   </Badge>
                 </motion.div>
@@ -272,10 +258,10 @@ export default function HeroSection() {
                       }
                     }}
                     size="lg"
-                    className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold px-12 py-5 text-lg rounded-3xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform border-0 cursor-magnetic ripple-effect signature-element trust-indicator"
+                    className="group relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white font-bold px-12 py-5 text-lg rounded-3xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform border-0"
                   >
                     <MessageCircle className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform duration-300" />
-                    <span className="relative z-10 hover-highlight">Let's Work Together</span>
+                    <span className="relative z-10">Let's Work Together</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <Star className="absolute top-1 right-2 w-4 h-4 text-yellow-300 opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300" />
@@ -290,10 +276,10 @@ export default function HeroSection() {
                     onClick={handleDownloadPDF}
                     variant="outline"
                     size="lg"
-                    className="group relative overflow-hidden border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-12 py-5 text-lg font-bold rounded-3xl transition-all duration-500 hover:shadow-xl bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 backdrop-blur-sm cursor-magnetic signature-element trust-indicator"
+                    className="group relative overflow-hidden border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-12 py-5 text-lg font-bold rounded-3xl transition-all duration-500 hover:shadow-xl bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 backdrop-blur-sm"
                   >
                     <Download className="w-6 h-6 mr-3 group-hover:animate-bounce transition-transform duration-300" />
-                    <span className="relative z-10 hover-highlight">Download Resume</span>
+                    <span className="relative z-10">Download Resume</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-100/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   </Button>
