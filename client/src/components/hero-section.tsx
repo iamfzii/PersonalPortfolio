@@ -163,14 +163,14 @@ export default function HeroSection() {
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"
+                className="flex flex-row flex-nowrap justify-center items-center gap-1.5 sm:gap-3 mb-12 overflow-x-auto px-4 md:flex-wrap md:overflow-visible md:px-0"
               >
                 <motion.div 
-                  className="group relative overflow-hidden"
+                  className="group relative overflow-hidden flex-shrink-0"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-blue-600 group-hover:to-cyan-600">
+                  <Badge className="px-2 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-blue-600 group-hover:to-cyan-600 whitespace-nowrap">
                     <Target className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-pulse" />
                     Project Leader
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
@@ -178,11 +178,11 @@ export default function HeroSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="group relative overflow-hidden"
+                  className="group relative overflow-hidden flex-shrink-0"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-emerald-600 group-hover:to-green-600">
+                  <Badge className="px-2 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-emerald-600 group-hover:to-green-600 whitespace-nowrap">
                     <Heart className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 heartbeat" />
                     Process Optimizer
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
@@ -190,11 +190,11 @@ export default function HeroSection() {
                 </motion.div>
                 
                 <motion.div 
-                  className="group relative overflow-hidden"
+                  className="group relative overflow-hidden flex-shrink-0"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Badge className="px-3 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-purple-600 group-hover:to-pink-600">
+                  <Badge className="px-2 sm:px-5 py-2 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 rounded-full text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group-hover:from-purple-600 group-hover:to-pink-600 whitespace-nowrap">
                     <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 animate-bounce" />
                     Operations Expert
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 shimmer" />
