@@ -205,6 +205,7 @@ Changelog:
 - June 30, 2025. Personality badges update: Changed hero section personality badges from "Problem Solver, Team Builder, Innovation Driver" to "Project Leader, Process Optimizer, Operations Expert" to better reflect technical operations leadership focus.
 - June 30, 2025. Mobile personality badges fix: Fixed horizontal alignment of personality badges on OnePlus 9 Pro with flex-nowrap layout, flex-shrink-0 containers, reduced mobile padding, and whitespace-nowrap text to prevent vertical stacking.
 - June 30, 2025. Profile picture and badges enhancement: Added shadow-2xl and ring-4 outline to profile picture, removed all hover effects for clean professional look. Updated personality badges to wrap naturally line-by-line with max-width container instead of forced horizontal layout.
+- June 30, 2025. OnePlus 9 Pro optimization: Fixed badge layout with max-w-xs container and compact padding for proper 2-per-line display. Removed profile picture outline, added subtle hover effects with scale and brightness adjustments.
 ```
 
 ## User Preferences
