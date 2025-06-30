@@ -122,7 +122,7 @@ export default function TwoColumnResumeExport() {
                     disabled={isGenerating}
                     size="lg"
                     className={`
-                      w-full h-16 rounded-2xl font-semibold text-base md:text-lg transition-all duration-300 shadow-xl
+                      w-full h-12 sm:h-16 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 shadow-xl px-4 sm:px-6
                       ${isGenerated 
                         ? 'bg-emerald-600 hover:bg-emerald-700 text-white' 
                         : 'bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white hover:shadow-2xl'
@@ -131,19 +131,22 @@ export default function TwoColumnResumeExport() {
                     `}
                   >
                     {isGenerating ? (
-                      <div className="flex items-center space-x-3">
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        <span>Generating Resume...</span>
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                        <span className="hidden sm:inline">Generating Resume...</span>
+                        <span className="sm:hidden">Generating...</span>
                       </div>
                     ) : isGenerated ? (
-                      <div className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5" />
-                        <span>Downloaded Successfully!</span>
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="hidden sm:inline">Downloaded Successfully!</span>
+                        <span className="sm:hidden">Downloaded!</span>
                       </div>
                     ) : (
-                      <div className="flex items-center space-x-3">
-                        <Download className="w-5 h-5" />
-                        <span>Download Two-Column Resume</span>
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                        <span className="hidden sm:inline">Download Two-Column Resume</span>
+                        <span className="sm:hidden">Download</span>
                       </div>
                     )}
                   </Button>
