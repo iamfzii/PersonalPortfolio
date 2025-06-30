@@ -66,142 +66,138 @@ const twoColumnResumeData: TwoColumnResumeData = {
     linkedin: "linkedin.com/in/iamfzii",
     github: "github.com/iamfzii"
   },
-  careerProfile: "Experienced Technical Operations Coordinator with a proven track record in system administration, technical support, and project management. Skilled in optimizing operational workflows, implementing technical solutions, and leading cross-functional teams to achieve organizational objectives.",
+  careerProfile: "Dynamic Technical Operations Coordinator who transforms complex technical challenges into streamlined business solutions. With 7+ years of hands-on experience, I bridge the gap between technical innovation and operational excellence, driving project success through strategic coordination and adaptive problem-solving.",
   skills: [
     {
-      category: "Core Technologies",
-      items: ["Python", "JavaScript", "React", "Node.js", "Firebase", "MongoDB"]
+      category: "Frontend",
+      items: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design"]
     },
     {
-      category: "Development Tools",
-      items: ["Git", "Docker", "AWS", "Linux", "PostgreSQL", "REST APIs"]
+      category: "Backend",
+      items: ["Node.js", "Express.js", "Python", "Java", "RESTful APIs", "Authentication", "CRUD Operations"]
     },
     {
-      category: "Operations & Management",
-      items: ["Technical Support", "System Administration", "Project Management", "Team Leadership"]
+      category: "Cloud & Tools",
+      items: ["MongoDB", "Firebase", "Git", "GitHub", "Netlify", "Vercel", "Docker", "CI/CD"]
     },
     {
-      category: "Specialized Skills",
-      items: ["Machine Learning", "Data Analysis", "Process Optimization", "Quality Assurance"]
+      category: "Data & ML",
+      items: ["Python", "Pandas", "Scikit-learn", "TensorFlow", "OpenCV", "Data Visualization"]
+    },
+    {
+      category: "Project Management",
+      items: ["Jira", "Trello", "Asana", "ClickUp", "Agile Methodologies", "Sprint Planning"]
     }
   ],
   certifications: [
     {
-      title: "Google IT Support Professional Certificate",
-      issuer: "Google Career Certificates",
-      year: "2023"
-    },
-    {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      year: "2023"
-    },
-    {
-      title: "Python for Data Science",
-      issuer: "IBM",
-      year: "2022"
-    },
-    {
-      title: "Project Management Fundamentals",
-      issuer: "LinkedIn Learning",
-      year: "2022"
+      title: "Android Developer Certification",
+      issuer: "PNY Trainings",
+      year: "2018"
     }
   ],
   projects: [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack web application with user authentication, product management, and payment integration",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe API"]
+      title: "Messaging Android Application",
+      description: "Designed native Android UI, implemented RecyclerView for dynamic message loading, applied custom XML layouts, and followed Material Design principles.",
+      techStack: ["Java", "Android Studio", "XML", "Material Design"]
     },
     {
-      title: "Task Management System",
-      description: "Collaborative project management tool with real-time updates and team coordination features",
-      techStack: ["JavaScript", "Firebase", "Material-UI"]
+      title: "Tax Calculator Web App",
+      description: "Converted static Figma designs into responsive components, implemented real-time form logic, and applied React state management for user input handling.",
+      techStack: ["React.js", "JavaScript", "HTML", "CSS", "Bootstrap"]
     },
     {
-      title: "Data Analytics Dashboard",
-      description: "Interactive dashboard for business intelligence and data visualization",
-      techStack: ["Python", "Flask", "Chart.js", "PostgreSQL"]
+      title: "Logistics Dashboard (Internship)",
+      description: "Built frontend dashboard views, integrated REST APIs for backend data flow, and participated in feature coordination during development sprints.",
+      techStack: ["MongoDB", "Express.js", "React.js", "Node.js"]
     },
     {
-      title: "Mobile Inventory App",
-      description: "Cross-platform mobile application for inventory management and tracking",
-      techStack: ["React Native", "Firebase", "Redux"]
+      title: "Fake News Classification System",
+      description: "Preprocessed text data, applied TF-IDF vectorization, trained logistic regression model, and evaluated classification accuracy.",
+      techStack: ["Python", "Scikit-learn", "NLTK", "TfidfVectorizer"]
     }
   ],
   demonstrations: {
     web: [
       {
-        title: "Interactive Web Components",
-        tools: ["React", "TypeScript", "Tailwind CSS"],
-        purpose: "Modern UI/UX implementations"
+        title: "Dynamic Tax Calculator",
+        tools: ["React.js", "JavaScript", "Bootstrap"],
+        purpose: "Real-time form validation and calculations"
       },
       {
-        title: "Real-time Dashboard",
-        tools: ["Next.js", "WebSocket", "Chart.js"],
-        purpose: "Live data visualization"
+        title: "MERN Stack Dashboard",
+        tools: ["MongoDB", "Express.js", "React.js", "Node.js"],
+        purpose: "Full-stack logistics management system"
       },
       {
-        title: "API Integration Suite",
-        tools: ["Node.js", "Express", "MongoDB"],
-        purpose: "Backend service architecture"
+        title: "Responsive Mobile App",
+        tools: ["Java", "Android Studio", "XML"],
+        purpose: "Native Android messaging application"
       }
     ],
     ml: [
       {
-        title: "Predictive Analytics Model",
-        tools: ["Python", "Scikit-learn", "Pandas"],
-        purpose: "Business forecasting solution"
+        title: "Fake News Classification",
+        tools: ["Python", "Scikit-learn", "NLTK"],
+        purpose: "Text preprocessing and classification model"
       },
       {
-        title: "Image Classification System",
-        tools: ["TensorFlow", "OpenCV", "Flask"],
-        purpose: "Computer vision application"
+        title: "Hand Gesture Controller",
+        tools: ["Python", "OpenCV", "Mediapipe"],
+        purpose: "Real-time gesture recognition system"
       },
       {
-        title: "Natural Language Processing",
-        tools: ["NLTK", "spaCy", "Transformers"],
-        purpose: "Text analysis and insights"
+        title: "Titanic Survival Prediction",
+        tools: ["Python", "Pandas", "Seaborn"],
+        purpose: "Data analysis and machine learning model"
       }
     ]
   },
   experience: [
     {
-      title: "Technical Operations Coordinator",
-      company: "Tech Solutions Inc.",
-      period: "2021 - Present",
+      title: "Project & Marketing Lead",
+      company: "Capestone Shipping - Dubai (Remote)",
+      period: "Feb 2024 - Present",
       achievements: [
-        "Led technical support operations for 500+ clients with 98% satisfaction rate",
-        "Implemented automated workflows reducing response time by 40%",
-        "Coordinated cross-functional teams on 15+ successful project deliveries"
+        "Led cross-functional teams across logistics, hosting, and marketing for 50+ international clients",
+        "Managed AED 100k+ monthly project portfolio with 97% on-time delivery",
+        "Oversaw web hosting, server setup, domain, and email configurations for 30+ clients",
+        "Applied Agile (Scrum) to cut project delays by 35% and improve delivery speed"
       ]
     },
     {
-      title: "System Administrator",
-      company: "Digital Systems Ltd.",
-      period: "2019 - 2021",
+      title: "Project Assistant & Coordinator",
+      company: "GODEV",
+      period: "June 2022 - Jan 2024",
       achievements: [
-        "Managed server infrastructure supporting 200+ concurrent users",
-        "Reduced system downtime by 60% through proactive monitoring",
-        "Streamlined deployment processes using CI/CD pipelines"
+        "Coordinated schedules and resources across 5 teams, delivering 40+ projects with high satisfaction",
+        "Facilitated 60+ client meetings resulting in 98% requirement accuracy",
+        "Monitored multiple project progress, reporting risks and corrective actions to senior management",
+        "Maintained documentation and version control, reducing communication gaps by 50%"
       ]
     },
     {
-      title: "Technical Support Specialist",
-      company: "InfoTech Services",
-      period: "2018 - 2019",
+      title: "Web Developer Intern (MERN Stack)",
+      company: "GODEV",
+      period: "March 2022 - June 2022",
       achievements: [
-        "Resolved 95% of technical issues within SLA requirements",
-        "Developed comprehensive documentation improving team efficiency",
-        "Trained 8 junior technicians on best practices and procedures"
+        "Contributed to front-end development tasks using HTML, CSS, and JavaScript",
+        "Worked in an Agile environment with regular sprint planning and team collaboration",
+        "Participated in standups, project updates, and code versioning discussions"
       ]
     }
   ],
   education: [
     {
       degree: "Bachelor of Science in Computer Science",
-      institution: "University of Punjab",
-      period: "2014 - 2018"
+      institution: "NCBA&E (National College of Business Administration & Economics)",
+      period: "2019 - 2023"
+    },
+    {
+      degree: "Diploma of Computer Information Technology",
+      institution: "GCT Iqbal Town Lahore",
+      period: "2016 - 2019"
     }
   ]
 };
