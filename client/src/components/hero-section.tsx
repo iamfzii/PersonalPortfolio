@@ -95,15 +95,14 @@ export default function HeroSection() {
                   </div>
                   
                   {/* Profile picture container */}
-                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-shadow duration-300">
                     <img 
                       src={profilePicture} 
                       alt="Muhammad Fazeel - Technical Operations Coordinator" 
-                      className="w-full h-full object-cover hover:brightness-110 transition-all duration-300"
+                      className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
                   {/* Tech badge */}

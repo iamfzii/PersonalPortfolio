@@ -4,6 +4,60 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations for ultra-fast loading */
+@layer base {
+  /* Critical performance CSS */
+  html {
+    font-display: swap;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* GPU acceleration for smooth animations */
+  .performance-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  .gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  
+  /* Content visibility optimization for off-screen content */
+  .content-optimized {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+  }
+  
+  /* Preload critical images */
+  img[loading="eager"] {
+    content-visibility: visible;
+  }
+  
+  /* Optimize scrolling performance */
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Reduce motion for accessibility and performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
 /* Performance Critical CSS - First Load Optimizations */
 html {
   scroll-behavior: smooth;
