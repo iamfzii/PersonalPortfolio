@@ -28,13 +28,27 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.documentElement.setAttribute("data-font", fontCombination);
+    const root = document.documentElement;
+    
+    // Set theme and font attributes
+    root.setAttribute("data-theme", theme);
+    root.setAttribute("data-font", fontCombination);
+    
+    // Handle dark class for Tailwind
     if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+      root.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
     }
+    
+    // Force CSS variable update by removing and re-adding data-theme
+    root.removeAttribute("data-theme");
+    // Use requestAnimationFrame to ensure the removal is processed
+    requestAnimationFrame(() => {
+      root.setAttribute("data-theme", theme);
+    });
+    
+    // Save preferences
     localStorage.setItem("preferred-theme", theme);
     localStorage.setItem("preferred-font", fontCombination);
   }, [theme, fontCombination]);

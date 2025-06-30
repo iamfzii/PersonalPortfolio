@@ -357,14 +357,29 @@ export default function UnifiedDesignControls() {
   const { theme, setTheme, fontCombination, setFontCombination } = useTheme();
 
   const applyDesignCombination = (combination: DesignCombination) => {
+    // First set the theme and font in React state
     setTheme(combination.theme);
     setFontCombination(combination.font);
     
-    // Apply CSS custom properties for immediate visual feedback
+    // Force immediate DOM update
     const root = document.documentElement;
+    root.setAttribute('data-theme', combination.theme);
+    root.setAttribute('data-font', combination.font);
+    
+    // Handle dark class
+    if (combination.theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    
+    // Apply preview colors as fallback for immediate visual feedback
     root.style.setProperty('--theme-primary', combination.preview.primary);
     root.style.setProperty('--theme-secondary', combination.preview.secondary);
     root.style.setProperty('--theme-accent', combination.preview.accent);
+    
+    // Force a reflow to ensure changes are applied
+    root.offsetHeight;
   };
 
   const applyAdvancedSettings = () => {

@@ -1114,6 +1114,67 @@ img {
     }
   }
 
+  /* Theme-aware text utilities */
+  .theme-text-primary {
+    color: hsl(var(--theme-text-primary)) !important;
+    transition: color 0.3s ease;
+  }
+
+  .theme-text-secondary {
+    color: hsl(var(--theme-text-secondary)) !important;
+    transition: color 0.3s ease;
+  }
+
+  .theme-text-muted {
+    color: hsl(var(--theme-text-muted)) !important;
+    transition: color 0.3s ease;
+  }
+
+  .theme-primary {
+    color: hsl(var(--theme-primary)) !important;
+    transition: color 0.3s ease;
+  }
+
+  .theme-surface {
+    background-color: hsl(var(--theme-surface));
+    transition: background-color 0.3s ease;
+  }
+
+  .theme-background {
+    background-color: hsl(var(--theme-background));
+    transition: background-color 0.3s ease;
+  }
+
+  .theme-border {
+    border-color: hsl(var(--theme-border));
+    transition: border-color 0.3s ease;
+  }
+
+  /* Font family theme-aware utilities */
+  [data-font="modern"] {
+    font-family: 'Inter', 'Source Sans Pro', system-ui, sans-serif;
+  }
+
+  [data-font="classic"] {
+    font-family: 'Playfair Display', 'Lora', serif;
+  }
+
+  [data-font="tech"] {
+    font-family: 'Space Grotesk', 'IBM Plex Sans', 'JetBrains Mono', monospace;
+  }
+
+  [data-font="elegant"] {
+    font-family: 'Montserrat', 'Source Sans Pro', sans-serif;
+  }
+
+  [data-font="bold"] {
+    font-family: 'Poppins', 'Roboto', sans-serif;
+  }
+
+  [data-font="minimal"] {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
   /* Layout improvements with CSS Grid */
   .grid-layout {
     display: grid;
