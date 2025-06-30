@@ -23,7 +23,7 @@ interface DesignCombination {
     secondary: string;
     accent: string;
   };
-  category: "professional" | "creative" | "modern" | "classic";
+  category: "professional" | "creative" | "modern" | "classic" | "technical";
 }
 
 const designCombinations: DesignCombination[] = [
@@ -213,6 +213,128 @@ const designCombinations: DesignCombination[] = [
     gradient: "from-slate-600 to-blue-700",
     preview: { primary: "#475569", secondary: "#1d4ed8", accent: "#3b82f6" },
     category: "classic"
+  },
+
+  // Technical Operations Category
+  {
+    id: "command-interface",
+    name: "Command Interface",
+    description: "Terminal-inspired design for technical professionals",
+    theme: "dark",
+    font: "tech",
+    gradient: "from-green-600 to-emerald-700",
+    preview: { primary: "#059669", secondary: "#10b981", accent: "#34d399" },
+    category: "technical"
+  },
+  {
+    id: "operations-dashboard",
+    name: "Operations Dashboard",
+    description: "Clean monitoring interface aesthetic",
+    theme: "blue",
+    font: "modern",
+    gradient: "from-blue-600 to-cyan-600",
+    preview: { primary: "#2563eb", secondary: "#3b82f6", accent: "#06b6d4" },
+    category: "technical"
+  },
+  {
+    id: "system-admin",
+    name: "System Admin",
+    description: "Professional system administration theme",
+    theme: "dark",
+    font: "minimal",
+    gradient: "from-gray-700 to-slate-800",
+    preview: { primary: "#374151", secondary: "#4b5563", accent: "#6b7280" },
+    category: "technical"
+  },
+  {
+    id: "tech-lead",
+    name: "Tech Lead",
+    description: "Leadership-focused technical design",
+    theme: "purple",
+    font: "bold",
+    gradient: "from-purple-600 to-violet-700",
+    preview: { primary: "#7c3aed", secondary: "#8b5cf6", accent: "#a855f7" },
+    category: "technical"
+  },
+  {
+    id: "devops-professional",
+    name: "DevOps Professional",
+    description: "Infrastructure and automation focused",
+    theme: "green",
+    font: "tech",
+    gradient: "from-emerald-600 to-teal-600",
+    preview: { primary: "#059669", secondary: "#10b981", accent: "#14b8a6" },
+    category: "technical"
+  },
+  {
+    id: "cybersecurity-pro",
+    name: "Cybersecurity Pro",
+    description: "Security-focused professional design",
+    theme: "dark",
+    font: "bold",
+    gradient: "from-red-600 to-rose-700",
+    preview: { primary: "#dc2626", secondary: "#ef4444", accent: "#f87171" },
+    category: "technical"
+  },
+  {
+    id: "cloud-architect",
+    name: "Cloud Architect",
+    description: "Modern cloud infrastructure aesthetic",
+    theme: "blue",
+    font: "minimal",
+    gradient: "from-sky-500 to-blue-600",
+    preview: { primary: "#0ea5e9", secondary: "#3b82f6", accent: "#60a5fa" },
+    category: "technical"
+  },
+  {
+    id: "data-engineer",
+    name: "Data Engineer",
+    description: "Analytics and data processing theme",
+    theme: "purple",
+    font: "tech",
+    gradient: "from-indigo-600 to-purple-700",
+    preview: { primary: "#4f46e5", secondary: "#7c3aed", accent: "#8b5cf6" },
+    category: "technical"
+  },
+  {
+    id: "site-reliability",
+    name: "Site Reliability",
+    description: "Reliability engineering focused design",
+    theme: "green",
+    font: "modern",
+    gradient: "from-teal-600 to-emerald-700",
+    preview: { primary: "#0d9488", secondary: "#14b8a6", accent: "#5eead4" },
+    category: "technical"
+  },
+  {
+    id: "network-operations",
+    name: "Network Operations",
+    description: "Network infrastructure management style",
+    theme: "sunset",
+    font: "tech",
+    gradient: "from-orange-500 to-amber-600",
+    preview: { primary: "#f97316", secondary: "#fb923c", accent: "#fbbf24" },
+    category: "technical"
+  },
+  {
+    id: "it-operations",
+    name: "IT Operations",
+    description: "Traditional IT operations professional",
+    theme: "light",
+    font: "classic",
+    gradient: "from-amber-600 to-yellow-700",
+    preview: { primary: "#d97706", secondary: "#f59e0b", accent: "#fbbf24" },
+    category: "technical"
+  },
+  {
+    id: "technical-writer",
+    name: "Technical Writer",
+    description: "Documentation and communication style",
+    theme: "light",
+    font: "elegant",
+    gradient: "from-slate-500 to-gray-600",
+    preview: { primary: "#64748b", secondary: "#6b7280", accent: "#9ca3af" },
+    category: "technical"
   }
 ];
 
@@ -321,7 +443,7 @@ export default function UnifiedDesignControls() {
               
               <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent pr-2">
                 <div className="space-y-6">
-                  {["professional", "modern", "creative", "classic"].map((category) => (
+                  {["professional", "technical", "modern", "creative", "classic"].map((category) => (
                     <div key={category} className="space-y-3">
                       <h4 className="font-medium text-sm uppercase tracking-wide text-gray-500 dark:text-gray-400 sticky top-0 bg-white dark:bg-gray-900 py-1 -my-1 z-10">
                         {category}
