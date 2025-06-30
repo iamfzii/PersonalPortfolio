@@ -41,7 +41,7 @@ export default function ProfessionalResumeExport() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <Card className="theme-surface rounded-3xl shadow-2xl border-0 ring-1 ring-black/5 dark:ring-white/10 p-8 md:p-12 backdrop-blur-sm bg-white/95 dark:bg-gray-900/95">
+          <Card className="theme-surface rounded-3xl shadow-2xl border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 md:p-12 backdrop-blur-sm bg-white/95 dark:bg-gray-900/95">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 mb-6 shadow-lg">
                 <FileText className="w-8 h-8 text-white" />
@@ -67,9 +67,9 @@ export default function ProfessionalResumeExport() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center px-2 md:px-0">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Features List */}
-              <div className="space-y-4">
+              <div className="space-y-4 px-4 md:px-0">
                 <h3 className="font-heading font-semibold text-lg theme-text-primary mb-4">
                   What's Included:
                 </h3>
@@ -90,7 +90,7 @@ export default function ProfessionalResumeExport() {
               </div>
 
               {/* Download Button */}
-              <div className="text-center px-2">
+              <div className="px-4 md:px-0">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -101,7 +101,7 @@ export default function ProfessionalResumeExport() {
                     disabled={isGenerating}
                     size="lg"
                     className={`
-                      w-full h-14 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl max-w-full
+                      w-full h-14 rounded-2xl font-semibold text-sm sm:text-base transition-all duration-300 shadow-xl
                       ${isGenerated 
                         ? 'bg-green-600 hover:bg-green-700 text-white' 
                         : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white hover:shadow-2xl'
@@ -122,7 +122,7 @@ export default function ProfessionalResumeExport() {
                     ) : (
                       <div className="flex items-center space-x-3">
                         <Download className="w-5 h-5" />
-                        <span>Download Professional Resume</span>
+                        <span>Download</span>
                       </div>
                     )}
                   </Button>

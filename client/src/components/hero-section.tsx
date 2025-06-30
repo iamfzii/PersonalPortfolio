@@ -207,7 +207,7 @@ export default function HeroSection() {
                   onClick={handleDownloadPDF}
                   variant="outline"
                   size="lg"
-                  className="border-2 border-slate-300 dark:border-slate-600 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl fast-transition hover:shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm gpu-accelerated"
+                  className="border-2 border-slate-400 dark:border-slate-500 hover:border-blue-500 dark:hover:border-blue-400 px-10 py-4 text-lg font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400"
                 >
                   <Download className="w-6 h-6 mr-3 theme-icon-secondary" />
                   Download Resume
