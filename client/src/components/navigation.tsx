@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
-import { Menu, Settings, Download, Mail, Phone, ExternalLink, Palette } from "lucide-react";
+import { Palette } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { motion } from "framer-motion";
 import UnifiedDesignControls from "@/components/unified-design-controls";
+
 
 const navigation = [
   { name: "Home", href: "#hero", ariaLabel: "Go to hero section" },
@@ -142,14 +142,6 @@ export default function Navigation() {
               </PopoverTrigger>
               <PopoverContent className="w-80 theme-surface theme-border" side="bottom" align="end">
                 <div className="space-y-6">
-                  {/* Quick Design Combinations */}
-                  <div>
-                    <h4 className="font-medium theme-text-primary mb-3">Design Combinations</h4>
-                    <DesignSystemSwitcher />
-                  </div>
-                  
-                  <Separator />
-                  
                   {/* Individual Controls */}
                   <div>
                     <h4 className="font-medium theme-text-primary mb-3">Individual Controls</h4>
@@ -213,7 +205,6 @@ export default function Navigation() {
                 <PopoverContent className="w-72 theme-surface theme-border">
                   <div className="space-y-4">
                     <h4 className="font-medium theme-text-primary text-sm">Design Controls</h4>
-                    <DesignSystemSwitcher />
                     
                     <div className="space-y-3">
                       <div>
@@ -243,65 +234,7 @@ export default function Navigation() {
               </Popover>
             </div>
 
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden theme-surface theme-border">
-                  <Menu className="h-4 w-4 theme-text-secondary" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="theme-surface">
-                <div className="flex flex-col space-y-6 mt-6">
-                  {/* Navigation Links */}
-                  <div className="space-y-2">
-                    <h4 className="font-medium theme-text-primary text-sm mb-3">Navigation</h4>
-                    {navigation.map((item) => (
-                      <button
-                        key={item.name}
-                        onClick={() => scrollToSection(item.href)}
-                        className="w-full text-left px-3 py-2 rounded-md theme-text-secondary hover:theme-primary transition-colors duration-200"
-                      >
-                        {item.name}
-                      </button>
-                    ))}
-                  </div>
 
-                  {/* Enhanced PDF Download for Mobile */}
-                  <div className="space-y-2">
-                    <h4 className="font-medium theme-text-primary text-sm mb-3">Resume</h4>
-                    <EnhancedPDFGenerator />
-                  </div>
-
-                  {/* Design System for Mobile */}
-                  <div className="space-y-4">
-                    <h4 className="font-medium theme-text-primary text-sm">Design Style</h4>
-                    <DesignSystemSwitcher />
-                    
-                    {/* Quick Theme Switcher */}
-                    <div className="space-y-2">
-                      <label className="text-xs theme-text-secondary">Quick Themes</label>
-                      <div className="grid grid-cols-2 gap-2">
-                        {themes.slice(0, 4).map((themeOption) => (
-                          <button
-                            key={themeOption.value}
-                            onClick={() => setTheme(themeOption.value as any)}
-                            className={`p-2 rounded-md border text-xs transition-all duration-150 ${
-                              theme === themeOption.value
-                                ? "ring-2 ring-blue-500 border-blue-300"
-                                : "border-gray-200 dark:border-gray-700"
-                            }`}
-                          >
-                            <div className={`w-full h-3 ${themeOption.color} rounded mb-1`} />
-                            <div className="theme-text-primary truncate">
-                              {themeOption.name.split(' ')[0]}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
           </div>
         </div>
       </div>
