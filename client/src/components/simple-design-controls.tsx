@@ -67,6 +67,48 @@ const technicalCombinations = [
     description: "Documentation and communication style",
     color: "bg-slate-500"
   },
+  { 
+    name: "Cybersecurity Pro", 
+    theme: "dark", 
+    font: "bold", 
+    description: "Security-focused professional design",
+    color: "bg-red-500"
+  },
+  { 
+    name: "Cloud Architect", 
+    theme: "blue", 
+    font: "minimal", 
+    description: "Modern cloud infrastructure aesthetic",
+    color: "bg-sky-500"
+  },
+  { 
+    name: "Data Engineer", 
+    theme: "purple", 
+    font: "tech", 
+    description: "Analytics and data processing theme",
+    color: "bg-indigo-500"
+  },
+  { 
+    name: "Site Reliability", 
+    theme: "green", 
+    font: "modern", 
+    description: "Reliability engineering focused design",
+    color: "bg-teal-500"
+  },
+  { 
+    name: "Network Operations", 
+    theme: "sunset", 
+    font: "tech", 
+    description: "Network infrastructure management style",
+    color: "bg-orange-500"
+  },
+  { 
+    name: "IT Operations", 
+    theme: "light", 
+    font: "classic", 
+    description: "Traditional IT operations professional",
+    color: "bg-amber-500"
+  },
 ];
 
 export default function SimpleDesignControls() {
@@ -90,7 +132,7 @@ export default function SimpleDesignControls() {
       </PopoverTrigger>
       
       <PopoverContent 
-        className="w-80 max-h-96 overflow-y-auto theme-surface theme-border" 
+        className="w-80 max-h-[500px] overflow-y-auto theme-surface theme-border" 
         side="bottom" 
         align="end"
       >
