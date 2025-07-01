@@ -1,0 +1,62 @@
+# Enhanced robots.txt for Muhammad Fazeel - Technical Operations Portfolio
+User-agent: *
+Allow: /
+
+# High-priority sections for search engines
+Allow: /#hero
+Allow: /#career
+Allow: /#skills
+Allow: /#projects
+Allow: /#experience
+Allow: /#education
+Allow: /#contact
+
+# Essential assets for proper indexing
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.woff2
+Allow: /src/assets/
+
+# Optimize crawling performance
+Crawl-delay: 1
+
+# Block unnecessary resources
+Disallow: /api/
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /dist/
+Disallow: /.env*
+Disallow: /package*.json
+Disallow: /*.map$
+Disallow: /vite.config.*
+Disallow: /tsconfig.*
+Disallow: /attached_assets/
+
+# Search engine specific optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://muhammadzeel.com/sitemap.xml
