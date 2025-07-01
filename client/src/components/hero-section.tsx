@@ -98,7 +98,7 @@ export default function HeroSection() {
                   <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-shadow duration-300">
                     <img 
                       src={profilePicture} 
-                      alt="Muhammad Fazeel - Technical Operations Coordinator" 
+                      alt="Muhammad Fazeel - Technical Project Coordinator" 
                       className="w-full h-full object-cover"
                       loading="eager"
                       decoding="async"
@@ -134,7 +134,7 @@ export default function HeroSection() {
                 className="font-heading font-bold theme-text-secondary mb-4"
                 style={{ fontSize: 'clamp(1.25rem, 4vw, 2rem)' }}
               >
-                Technical Operations Coordinator
+                Technical Project Coordinator
               </motion.h2>
 
               <motion.p
