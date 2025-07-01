@@ -169,32 +169,7 @@ export default function ProjectsSection() {
           })}
         </div>
 
-        {/* Project Summary Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8"
-        >
-          <div className="text-center">
-            <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
-              <div className="heading-md font-bold theme-text-primary mb-2">6</div>
-              <div className="body-base theme-text-secondary">Projects Completed</div>
-            </Card>
-          </div>
-          <div className="text-center">
-            <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
-              <div className="heading-md font-bold theme-text-primary mb-2">15+</div>
-              <div className="body-base theme-text-secondary">Technologies Used</div>
-            </Card>
-          </div>
-          <div className="text-center">
-            <Card className="theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90">
-              <div className="heading-md font-bold theme-text-primary mb-2">100%</div>
-              <div className="body-base theme-text-secondary">Success Rate</div>
-            </Card>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
