@@ -19,7 +19,13 @@ if [ -f "node_modules/.bin/esbuild" ]; then
 fi
 
 echo "Running build process..."
-# Run the build process
-npm run build
+# Build the frontend only
+npx vite build
+
+# Copy redirects file
+cp _redirects dist/_redirects || echo "No _redirects file found, skipping..."
+
+# Build the production server
+npx esbuild server/production.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
 
 echo "Build completed successfully!"

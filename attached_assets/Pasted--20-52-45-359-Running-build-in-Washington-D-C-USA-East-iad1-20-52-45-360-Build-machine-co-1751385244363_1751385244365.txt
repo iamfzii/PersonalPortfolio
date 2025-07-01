@@ -1,0 +1,61 @@
+[20:52:45.359] Running build in Washington, D.C., USA (East) – iad1
+[20:52:45.360] Build machine configuration: 2 cores, 8 GB
+[20:52:45.393] Cloning github.com/iamfzii/PersonalPortfolio (Branch: main, Commit: b0aebbb)
+[20:52:45.726] Previous build caches not available
+[20:52:54.814] Cloning completed: 9.421s
+[20:52:56.670] Found .vercelignore
+[20:52:58.282] Removed 26401 ignored files defined in .vercelignore
+[20:52:58.283]   /.git/config
+[20:52:58.283]   /.git/description
+[20:52:58.283]   /.git/FETCH_HEAD
+[20:52:58.283]   /.git/HEAD
+[20:52:58.283]   /.git/hooks/applypatch-msg.sample
+[20:52:58.283]   /.git/hooks/commit-msg.sample
+[20:52:58.283]   /.git/hooks/fsmonitor-watchman.sample
+[20:52:58.283]   /.git/hooks/post-update.sample
+[20:52:58.283]   /.git/hooks/pre-applypatch.sample
+[20:52:58.283]   /.git/hooks/pre-commit.sample
+[20:52:58.612] Running "vercel build"
+[20:52:59.140] Vercel CLI 43.3.0
+[20:52:59.339] WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
+[20:52:59.749] Installing dependencies...
+[20:53:03.448] npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+[20:53:03.450] npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+[20:53:11.377] 
+[20:53:11.378] added 38 packages, and changed 482 packages in 11s
+[20:53:11.378] 
+[20:53:11.378] 69 packages are looking for funding
+[20:53:11.378]   run `npm fund` for details
+[20:53:11.423] Running "npm run build"
+[20:53:11.540] 
+[20:53:11.540] > rest-express@1.0.0 build
+[20:53:11.540] > vite build && cp _redirects dist/_redirects && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+[20:53:11.540] 
+[20:53:11.805] [36mvite v5.4.19 [32mbuilding for production...[36m[39m
+[20:53:11.879] transforming...
+[20:53:19.809] [32m✓[39m 2457 modules transformed.
+[20:53:20.277] rendering chunks...
+[20:53:20.665] computing gzip size...
+[20:53:20.700] [2m../dist/public/[22m[32mindex.html                                         [39m[1m[2m    9.35 kB[22m[1m[22m[2m │ gzip:   3.19 kB[22m
+[20:53:20.700] [2m../dist/public/[22m[2massets/[22m[32mprofile picture_1751053870878-BPpeSFd4.jpg  [39m[1m[2m1,758.11 kB[22m[1m[22m
+[20:53:20.700] [2m../dist/public/[22m[2massets/[22m[35mindex-BgyLwbMz.css                          [39m[1m[2m  158.88 kB[22m[1m[22m[2m │ gzip:  25.50 kB[22m
+[20:53:20.701] [2m../dist/public/[22m[2massets/[22m[36mpurify.es-CQJ0hv7W.js                       [39m[1m[2m   21.82 kB[22m[1m[22m[2m │ gzip:   8.58 kB[22m
+[20:53:20.701] [2m../dist/public/[22m[2massets/[22m[36mindex.es-nJsOAKJr.js                        [39m[1m[2m  150.42 kB[22m[1m[22m[2m │ gzip:  51.39 kB[22m
+[20:53:20.702] [2m../dist/public/[22m[2massets/[22m[36mhtml2canvas.esm-CBrSDip1.js                 [39m[1m[2m  201.42 kB[22m[1m[22m[2m │ gzip:  48.03 kB[22m
+[20:53:20.702] [2m../dist/public/[22m[2massets/[22m[36mindex-C2PzBeLw.js                           [39m[1m[33m  923.56 kB[39m[22m[2m │ gzip: 289.78 kB[22m
+[20:53:20.702] [33m
+[20:53:20.707] (!) Some chunks are larger than 500 kB after minification. Consider:
+[20:53:20.708] - Using dynamic import() to code-split the application
+[20:53:20.708] - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+[20:53:20.708] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[20:53:20.709] [32m✓ built in 8.87s[39m
+[20:53:20.749] ✘ [ERROR] Could not resolve "./vite"
+[20:53:20.750] 
+[20:53:20.750]     server/index.ts:3:44:
+[20:53:20.751]       3 │ import { setupVite, serveStatic, log } from "./vite";
+[20:53:20.751]         ╵                                             ~~~~~~~~
+[20:53:20.751] 
+[20:53:20.752] 1 error
+[20:53:20.762] Error: Command "npm run build" exited with 1
+[20:53:21.020] 
+[20:53:24.376] Exiting build container
