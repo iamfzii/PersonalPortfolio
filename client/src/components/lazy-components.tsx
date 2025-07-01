@@ -6,3 +6,4 @@ export const LazyDemonstrationsSection = lazy(() => import("@/components/demonst
 export const LazyEnhancedPDFGenerator = lazy(() => import("@/components/enhanced-pdf-generator"));
 export const LazyUnifiedDesignControls = lazy(() => import("@/components/unified-design-controls-fixed"));
 export const LazyTwoColumnResumeExport = lazy(() => import("@/components/two-column-resume-export"));
+export const LazyHTMLResumeExport = lazy(() => import("@/components/html-resume-export"));
