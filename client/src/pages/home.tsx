@@ -9,7 +9,7 @@ import ExperienceSection from "@/components/experience-section";
 import EducationSection from "@/components/education-section";
 import CertificationsSection from "@/components/certifications-section";
 import ContactSection from "@/components/contact-section-mobile-redesigned";
-import TwoColumnResumeExport from "@/components/two-column-resume-export";
+import ProfessionalResume from "@/components/professional-resume";
 import Footer from "@/components/footer-redesigned";
 import InteractiveBackground from "@/components/ultra-fast-interactive-background";
 import FloatingCTAElements from "@/components/floating-cta-elements";
@@ -59,7 +59,7 @@ export default function Home() {
           </section>
           
           <section className="content-optimized" id="resume-download" aria-label="Resume Download">
-            <TwoColumnResumeExport />
+            <ProfessionalResume />
           </section>
           
           <section className="content-optimized" id="contact" aria-label="Contact Information">
