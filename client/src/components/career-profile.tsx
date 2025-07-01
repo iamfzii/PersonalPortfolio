@@ -7,12 +7,7 @@ import { Award, Target, Users, Briefcase, Clipboard, Package, Headphones } from 
 export default function CareerProfile() {
   const { ref } = useScrollReveal();
 
-  const highlights = [
-    { number: "7+", label: "Years Experience", description: "In Computer Science & IT", icon: Award },
-    { number: "50+", label: "Projects Delivered", description: "Across multiple domains", icon: Target },
-    { number: "15+", label: "Technologies", description: "Mastered and applied", icon: Briefcase },
-    { number: "100%", label: "Success Rate", description: "In project delivery", icon: Users }
-  ];
+
 
   return (
     <div
@@ -81,43 +76,7 @@ export default function CareerProfile() {
             </Card>
           </motion.div>
 
-          {/* Achievement Highlights */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-6"
-          >
-            {highlights.map((highlight, index) => {
-              const IconComponent = highlight.icon;
-              return (
-                <motion.div
-                  key={highlight.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                >
-                  <Card className="text-center theme-surface rounded-2xl shadow-lg border-0 ring-1 ring-black/5 dark:ring-white/10 p-6 hover:shadow-2xl transition-all duration-500 backdrop-blur-sm bg-white/90 dark:bg-gray-900/90 group hover:ring-blue-500/30 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20">
-                    <div className="mb-4 flex justify-center">
-                      <div className="p-3 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300">
-                        <IconComponent className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    <div className="heading-md font-bold theme-text-primary mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {highlight.number}
-                    </div>
-                    <div className="body-base font-semibold theme-text-primary mb-1">
-                      {highlight.label}
-                    </div>
-                    <div className="body-sm theme-text-muted">
-                      {highlight.description}
-                    </div>
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+
         </div>
 
         {/* Core Competencies */}
