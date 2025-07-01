@@ -1,7 +1,7 @@
 import Navigation from "@/components/navigation-clean";
 import HeroSection from "@/components/hero-section";
 import CareerProfile from "@/components/career-profile";
-import BrandManifesto from "@/components/brand-manifesto";
+
 import SkillsSection from "@/components/skills-section-optimized";
 import ProjectsSection from "@/components/projects-section";
 import DemonstrationsSection from "@/components/demonstrations-section";
@@ -32,9 +32,7 @@ export default function Home() {
             <CareerProfile />
           </section>
           
-          <section className="content-optimized" id="brand-manifesto" aria-label="Brand Manifesto">
-            <BrandManifesto />
-          </section>
+
           
           <section className="content-optimized" id="skills" aria-label="Technical Skills">
             <SkillsSection />
