@@ -1,0 +1,17 @@
+node_modules
+.git
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+.vscode
+.idea
+*.log
+coverage
+.nyc_output
+.cache
+dist/index.js.map
+server/vite.ts
