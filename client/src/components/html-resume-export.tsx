@@ -52,16 +52,16 @@ export default function HTMLResumeExport() {
               <div className="text-center space-y-3">
                 <div className="flex items-center justify-center gap-2 text-blue-600 dark:text-blue-400">
                   <Palette className="w-5 h-5" />
-                  <span className="font-semibold">HTML-Styled Resume</span>
+                  <span className="font-semibold">Two-Column Resume</span>
                 </div>
                 
                 <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-                  Professional One-Page Format
+                  Technical Project Coordinator
                 </h3>
                 
                 <p className="text-gray-600 dark:text-gray-400 max-w-2xl">
-                  Clean, modern resume design with professional typography, optimized spacing, 
-                  and structured layout. Perfect for ATS systems and recruiter review.
+                  Compact two-column layout with gradient header, optimized for single-page printing. 
+                  Professional typography with space-efficient design perfect for technical roles.
                 </p>
               </div>
 
@@ -69,27 +69,27 @@ export default function HTMLResumeExport() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl text-sm">
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>Professional HTML/CSS styling</span>
+                  <span>Two-column compact layout</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>One-page optimized layout</span>
+                  <span>Gradient header design</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>ATS-friendly format</span>
+                  <span>Single-page optimized</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>High-quality PDF output</span>
+                  <span>Professional color scheme</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>Clean typography & spacing</span>
+                  <span>Space-efficient design</span>
                 </div>
                 <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
                   <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                  <span>Print-ready resolution</span>
+                  <span>Print-optimized format</span>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export default function HTMLResumeExport() {
                     ) : (
                       <div className="flex items-center space-x-2 sm:space-x-3">
                         <Download className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>Download Enhanced Resume</span>
+                        <span>Download Two-Column Resume</span>
                       </div>
                     )}
                   </Button>
@@ -136,8 +136,8 @@ export default function HTMLResumeExport() {
               {/* Additional Info */}
               <div className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-lg">
                 <p>
-                  This resume uses HTML/CSS styling for professional presentation with 
-                  optimized typography, consistent spacing, and modern design elements.
+                  Compact two-column resume layout with gradient header, optimized for single-page printing. 
+                  Professional styling with efficient space utilization for technical roles.
                 </p>
               </div>
             </div>
